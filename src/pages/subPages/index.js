@@ -1,2 +1,2 @@
-// Export: WardTiles
-export { default as WardTiles } from "./WardTiles/WardTiles.component";
+// Export: TileSection
+// export { default as TileSection } from "./TileSection/TileSection.component";
