@@ -1,15 +1,19 @@
 // Import: Dependencies
 import React from "react";
 
-// Import: Components
+// Import: Elements
+import { Container } from "./App.elements";
+
+// Import: Pages, Components
+import { Home } from "./pages";
 import { Header } from "./components";
 
 // Component: App
 export default function App() {
   return (
-    <>
+    <Container>
       <Header />
-      <h1>One ED</h1>
-    </>
+      <Home />
+    </Container>
   );
 }
