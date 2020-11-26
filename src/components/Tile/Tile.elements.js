@@ -46,7 +46,7 @@ export const Wrapper = styled.div`
 
   & h3 {
     color: #f1f1f1;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
   }
 
