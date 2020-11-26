@@ -2,7 +2,7 @@
 import React from "react";
 
 // Import: Assets
-import LogoWhite from "../../assets/img/logo-white.png";
+import LogoWhite from "../../assets/img/logo/logo-white.png";
 
 // Import: Icons
 import { RiHospitalFill as WardIcon } from "react-icons/ri";
