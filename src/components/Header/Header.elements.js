@@ -7,6 +7,8 @@ export const Container = styled.header`
   box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
   height: 70px;
   min-height: 70px;
+  position: sticky;
+  top: 0;
   width: 100%;
   min-width: 100%;
 `;

@@ -5,11 +5,11 @@ import React from "react";
 import { Container } from "./Tile.elements";
 
 // Component: Tile
-export default function Tile({ icon, alt, title }) {
+export default function Tile({ icon, alt, text }) {
   return (
     <Container>
       <img src={icon} alt={alt} />
-      <h3>{title}</h3>
+      <h3>{text}</h3>
     </Container>
   );
 }
