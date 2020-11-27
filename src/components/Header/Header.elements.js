@@ -3,15 +3,30 @@ import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.header`
-  background: #11bac1;
   box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
-  height: 70px;
-  min-height: 70px;
   position: sticky;
   top: 0;
   width: 100%;
   min-width: 100%;
   z-index: 2;
+`;
+
+// Element: PrimaryContainer
+export const PrimaryContainer = styled.div`
+  background: #11bac1;
+  height: 60px;
+  min-height: 60px;
+  width: 100%;
+  min-width: 100%;
+`;
+
+// Element: SecondaryContainer
+export const SecondaryContainer = styled.div`
+  background: #2a2a2e;
+  height: 42px;
+  min-height: 42px;
+  width: 100%;
+  min-width: 100%;
 `;
 
 // Element: Wrapper
@@ -37,6 +52,11 @@ export const Logo = styled.div`
   & img {
     width: 100px;
     max-width: 100px;
+  }
+
+  & span {
+    color: #f1f1f1;
+    text-transform: uppercase;
   }
 
   @media screen and (max-width: 1098px) {

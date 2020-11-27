@@ -10,6 +10,8 @@ import { FaUserCircle as UserIcon } from "react-icons/fa";
 // Import: Elements
 import {
   Container,
+  PrimaryContainer,
+  SecondaryContainer,
   Wrapper,
   Logo,
   Settings,
@@ -20,18 +22,28 @@ import {
 export default function Header() {
   return (
     <Container>
-      <Wrapper>
-        <Logo>
-          <img src={LogoWhite} alt="OneED Logo" />
-        </Logo>
+      <PrimaryContainer>
+        <Wrapper>
+          <Logo>
+            <img src={LogoWhite} alt="OneED Logo" />
+          </Logo>
 
-        <Settings>
-          <SettingsItem>
-            <UserIcon />
-            <p>User</p>
-          </SettingsItem>
-        </Settings>
-      </Wrapper>
+          <Settings>
+            <SettingsItem>
+              <UserIcon />
+              <p>User</p>
+            </SettingsItem>
+          </Settings>
+        </Wrapper>
+      </PrimaryContainer>
+
+      <SecondaryContainer>
+        <Wrapper>
+          <Logo>
+            <span>Dashboard</span>
+          </Logo>
+        </Wrapper>
+      </SecondaryContainer>
     </Container>
   );
 }
