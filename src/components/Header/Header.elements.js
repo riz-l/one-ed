@@ -57,6 +57,11 @@ export const Logo = styled.div`
   & span {
     color: #f1f1f1;
     text-transform: uppercase;
+
+    @media screen and (max-width: 706px) {
+      display: none;
+      visibility: hidden;
+    }
   }
 
   @media screen and (max-width: 1098px) {
@@ -82,13 +87,52 @@ export const SettingsItem = styled.div`
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
   transition: all 100ms linear;
 
   &:hover {
+    background: #0fa4a9;
     border-top: 2px solid #0fa4a9;
     color: #ffffff;
-    background: #0fa4a9;
+    transition: all 100ms linear;
+
+    & svg {
+      fill: #ffffff;
+      transition: all 100ms linear;
+    }
+  }
+
+  & svg {
+    fill: #f1f1f1;
+    height: 25px;
+    transition: all 100ms linear;
+    width: 25px;
+  }
+`;
+
+// Element: Options
+export const Options = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+`;
+
+// Element: OptionsItem
+export const OptionsItem = styled.div`
+  align-items: center;
+  border-top: 2px solid #2a2a2e;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 0 1rem;
+  transition: all 100ms linear;
+
+  &:hover {
+    background: #1d1d20;
+    border-top: 2px solid #1d1d20;
     transition: all 100ms linear;
 
     & svg {
