@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -14,6 +14,7 @@ export const Container = styled.div`
 
   & h2 {
     color: #2a2a2e;
+    margin-left: 10px;
   }
 `;
 
@@ -23,11 +24,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 1rem;
   width: 100%;
-
-  @media screen and (max-width: 1098px) {
-    justify-content: center;
-  }
 `;
