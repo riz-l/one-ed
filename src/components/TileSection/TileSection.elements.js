@@ -3,9 +3,11 @@ import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
+  background: pink;
+
   align-items: flex-start;
   display: flex;
-  flex: 1;
+  flex: 25%;
   flex-direction: column;
   height: auto;
   justify-content: center;
