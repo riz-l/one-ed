@@ -20,6 +20,14 @@ export const Container = styled.div`
     flex: 10%;
   }
 
+  &:nth-child(2) {
+    flex: 25%;
+  }
+
+  &:nth-child(3) {
+    flex: 25%;
+  }
+
   &:nth-child(4) {
     flex: 10%;
   }
