@@ -41,6 +41,11 @@ export const Navigation = styled.nav`
   display: flex;
   height: 100%;
   justify-content: space-between;
+
+  @media screen and (max-width: 894px) {
+    display: none;
+    visibility: hidden;
+  }
 `;
 
 // Element: NavigationItem
