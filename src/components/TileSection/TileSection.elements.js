@@ -31,10 +31,6 @@ export const Container = styled.div`
   &:nth-child(4) {
     flex: 10%;
   }
-
-  @media screen and (max-width: 530px) {
-    margin: 2rem 0;
-  }
 `;
 
 // Element: Wrapper
