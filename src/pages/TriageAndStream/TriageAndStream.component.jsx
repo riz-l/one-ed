@@ -1,11 +1,16 @@
 // Import: Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 
 // Import: Elements
 import { Container } from "./TriageAndStream.elements";
 
 // Page: TriageAndStream
 export default function TriageAndStream() {
+  // Upon navigation to Home, moves DOM to top of window
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Container>

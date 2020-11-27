@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Import: Assets
@@ -23,6 +23,11 @@ import { Tile, TileSection } from "../../components";
 
 // Page: Dashboard
 export default function Dashboard() {
+  // Upon navigation to Home, moves DOM to top of window
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container>
       <Wrapper>

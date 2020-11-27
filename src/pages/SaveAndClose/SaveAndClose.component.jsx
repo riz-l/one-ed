@@ -1,11 +1,16 @@
 // Import: Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 
 // Import: Elements
 import { Container } from "./SaveAndClose.elements";
 
 // Page: SaveAndClose
 export default function SaveAndClose() {
+  // Upon navigation to Home, moves DOM to top of window
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Container>
