@@ -20,7 +20,8 @@ export const Wrapper = styled.div`
   display: flex;
   height: 100%;
   justify-content: space-between;
-  margin: 0 1rem;
+  margin: auto;
+  width: 90%;
 `;
 
 // Element: Logo
@@ -32,45 +33,6 @@ export const Logo = styled.div`
   & img {
     width: 100px;
     max-width: 100px;
-  }
-`;
-
-// Element: Navigation
-export const Navigation = styled.nav`
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-
-  @media screen and (max-width: 1098px) {
-    display: none;
-    visibility: hidden;
-  }
-`;
-
-// Element: NavigationItem
-export const NavigationItem = styled.div`
-  align-items: center;
-  border-top: 2px solid #11bac1;
-  color: #f1f1f1;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  padding: 0 2rem;
-  transition: all 100ms linear;
-
-  &:hover {
-    border-top: 2px solid #0fa4a9;
-    color: #ffffff;
-    background: #0fa4a9;
-    transition: all 100ms linear;
-  }
-
-  & svg {
-    height: 25px;
-    width: 25px;
   }
 `;
 

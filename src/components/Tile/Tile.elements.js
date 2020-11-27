@@ -7,13 +7,13 @@ export const Container = styled.div`
   background: #11bac1;
   cursor: pointer;
   display: flex;
-  height: 180px;
-  min-height: 180px;
+  height: 160px;
+  min-height: 160px;
   justify-content: center;
-  margin: 10px;
+  margin: 0 10px 10px 0;
   transition: all 100ms linear;
-  width: 180px;
-  min-width: 180px;
+  width: 160px;
+  min-width: 160px;
 
   &:nth-last-child() {
     margin-bottom: 0;
@@ -39,9 +39,9 @@ export const Wrapper = styled.div`
   width: 100%;
 
   & img {
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     padding: 8px;
-    width: 50%;
+    width: 55%;
   }
 
   & h3 {

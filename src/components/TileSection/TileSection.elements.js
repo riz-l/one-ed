@@ -9,12 +9,11 @@ export const Container = styled.div`
   flex-direction: column;
   height: auto;
   justify-content: center;
-  margin: 2rem 1rem 1rem 1rem;
+  margin: 2rem 0;
   width: 100%;
 
   & h2 {
     color: #2a2a2e;
-    margin-left: 10px;
   }
 `;
 
