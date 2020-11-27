@@ -21,8 +21,7 @@ export default function App() {
 
 // Element: Container
 const Container = styled.main`
-  background: transparent;
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
