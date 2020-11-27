@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: auto;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 2rem 1rem 2rem 0;
   width: 100%;
 
   & h2 {
