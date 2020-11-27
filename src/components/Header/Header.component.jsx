@@ -1,5 +1,6 @@
 // Import: Dependencies
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Import: Assets
 import LogoWhite from "../../assets/img/logo/logo-white.png";
@@ -30,9 +31,11 @@ export default function Header() {
     <Container>
       <PrimaryContainer>
         <Wrapper>
-          <Logo>
-            <img src={LogoWhite} alt="OneED Logo" />
-          </Logo>
+          <Link to="/" exact>
+            <Logo>
+              <img src={LogoWhite} alt="OneED Logo" />
+            </Logo>
+          </Link>
 
           <Settings>
             <SettingsItem>
