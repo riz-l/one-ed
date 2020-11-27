@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   height: 100%;
   margin: auto;
-  width: 90%;
+  width: 95%;
 
   @media screen and (max-width: 1098px) {
     align-items: center;

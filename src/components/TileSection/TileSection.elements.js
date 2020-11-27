@@ -3,8 +3,6 @@ import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
-  background: pink;
-
   align-items: flex-start;
   display: flex;
   flex: 25%;

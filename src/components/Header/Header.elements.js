@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   height: 100%;
   justify-content: space-between;
   margin: auto;
-  width: 90%;
+  width: 95%;
 `;
 
 // Element: Logo
