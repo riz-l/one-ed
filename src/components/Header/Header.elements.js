@@ -42,7 +42,7 @@ export const Navigation = styled.nav`
   height: 100%;
   justify-content: space-between;
 
-  @media screen and (max-width: 894px) {
+  @media screen and (max-width: 1098px) {
     display: none;
     visibility: hidden;
   }
