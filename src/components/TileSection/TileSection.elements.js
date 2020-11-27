@@ -15,6 +15,18 @@ export const Container = styled.div`
   & h2 {
     color: #2a2a2e;
   }
+
+  &:nth-child(1) {
+    flex: 10%;
+  }
+
+  &:nth-child(4) {
+    flex: 10%;
+  }
+
+  @media screen and (max-width: 530px) {
+    margin: 2rem 0;
+  }
 `;
 
 // Element: Wrapper
