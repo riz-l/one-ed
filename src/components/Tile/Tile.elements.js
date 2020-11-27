@@ -17,6 +17,15 @@ export const Container = styled.div`
   max-width: 140px;
   min-width: 140px;
 
+  @media screen and (max-width: 352px) {
+    height: 120px;
+    max-height: 120px;
+    min-height: 120px;
+    width: 120px;
+    max-width: 120px;
+    min-width: 120px;
+  }
+
   &:nth-last-child() {
     margin-bottom: 0;
   }
@@ -50,6 +59,10 @@ export const Wrapper = styled.div`
     font-size: 1.1rem;
     font-weight: 400;
     text-align: center;
+
+    @media screen and (max-width: 352px) {
+      font-size: 1rem;
+    }
   }
 
   &:hover {
