@@ -20,5 +20,6 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 1098px) {
     align-items: center;
     flex-direction: column;
+    width: 85%;
   }
 `;

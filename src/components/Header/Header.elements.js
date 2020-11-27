@@ -22,6 +22,10 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   margin: auto;
   width: 95%;
+
+  @media screen and (max-width: 1098px) {
+    width: 85%;
+  }
 `;
 
 // Element: Logo
@@ -33,6 +37,10 @@ export const Logo = styled.div`
   & img {
     width: 100px;
     max-width: 100px;
+  }
+
+  @media screen and (max-width: 1098px) {
+    margin-left: -8px;
   }
 `;
 
