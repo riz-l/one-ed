@@ -31,7 +31,7 @@ export default function Header() {
     <Container>
       <PrimaryContainer>
         <Wrapper>
-          <Link to="/" exact>
+          <Link to="/">
             <Logo>
               <img src={LogoWhite} alt="OneED Logo" />
             </Logo>
