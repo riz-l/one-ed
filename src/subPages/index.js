@@ -1,2 +1,2 @@
-// Export: TileSection
-// export { default as TileSection } from "./TileSection/TileSection.component";
+// Export: Alerts
+export { default as Alerts } from "./Alerts/Alerts.component";
