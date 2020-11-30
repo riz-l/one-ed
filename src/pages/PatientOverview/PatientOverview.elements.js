@@ -125,6 +125,10 @@ export const Navigation = styled.div`
   justify-content: center;
   padding-left: 8rem;
   width: 100%;
+
+  @media screen and (max-width: 706px) {
+    padding-left: 0;
+  }
 `;
 
 // Element: NavigationItem
@@ -147,6 +151,10 @@ export const NavigationItem = styled.div`
     margin-left: 8rem;
     position: absolute;
     width: 100px;
+
+    @media screen and (max-width: 706px) {
+      margin-left: 0;
+    }
   }
 
   &:hover {
@@ -163,5 +171,10 @@ export const NavigationItem = styled.div`
 
   & p {
     font-size: 0.7rem;
+
+    @media screen and (max-width: 1520px) {
+      display: none;
+      visibility: hidden;
+    }
   }
 `;
