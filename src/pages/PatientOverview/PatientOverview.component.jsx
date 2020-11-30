@@ -7,6 +7,13 @@ import HistoryHeader from "../../assets/img/header/patient-history.jpg";
 import { ReactComponent as DetailsIcon } from "../../assets/img/icon/patient-overview.svg";
 import { ReactComponent as HistoryIcon } from "../../assets/img/icon/patient-history.svg";
 import { ReactComponent as AlertsIcon } from "../../assets/img/icon/alerts.svg";
+import { ReactComponent as AllergiesIcon } from "../../assets/img/icon/allergies.svg";
+import { ReactComponent as ComplicationsIcon } from "../../assets/img/icon/complications.svg";
+import { ReactComponent as DiagnosisIcon } from "../../assets/img/icon/assessments-seen.svg";
+import { ReactComponent as FindingsIcon } from "../../assets/img/icon/findings.svg";
+import { ReactComponent as PresentingComplaintIcon } from "../../assets/img/icon/presenting-complaint.svg";
+import { ReactComponent as ProceduresIcon } from "../../assets/img/icon/procedures.svg";
+import { ReactComponent as SymptomsIcon } from "../../assets/img/icon/symptoms.svg";
 
 // Import: Elements
 import {
@@ -50,7 +57,7 @@ export default function PatientOverview({ setSelectedPage }) {
             <SecondHeaderRow>
               <Navigation>
                 <NavigationItem>
-                  <AlertsIcon />
+                  <DetailsIcon />
                   <p>Patient Details</p>
                 </NavigationItem>
               </Navigation>
@@ -79,37 +86,37 @@ export default function PatientOverview({ setSelectedPage }) {
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <AllergiesIcon />
                   <p>Allergies</p>
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <ComplicationsIcon />
                   <p>Complications</p>
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <DiagnosisIcon />
                   <p>Diagnosis</p>
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <FindingsIcon />
                   <p>Findings</p>
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <PresentingComplaintIcon />
                   <p>Presenting Complaint</p>
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <ProceduresIcon />
                   <p>Procedures</p>
                 </NavigationItem>
 
                 <NavigationItem>
-                  <AlertsIcon />
+                  <SymptomsIcon />
                   <p>Symptoms</p>
                 </NavigationItem>
               </Navigation>

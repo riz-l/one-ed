@@ -142,7 +142,11 @@ export const NavigationItem = styled.div`
   transition: all 100ms linear;
 
   &:only-child {
-    max-width: 120px;
+    height: 65px;
+    left: 0;
+    margin-left: 8rem;
+    position: absolute;
+    width: 100px;
   }
 
   &:hover {
