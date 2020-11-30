@@ -2,7 +2,11 @@
 import React, { useEffect } from "react";
 
 // Import: Elements
-import { Container } from "./PatientOverview.elements";
+import {
+  Container,
+  Wrapper,
+  ReportContainer,
+} from "./PatientOverview.elements";
 
 // Page: PatientOverview
 export default function PatientOverview({ setSelectedPage }) {
@@ -14,10 +18,16 @@ export default function PatientOverview({ setSelectedPage }) {
   }, [setSelectedPage]);
 
   return (
-    <>
-      <Container>
-        <h1>Patient Overview</h1>
-      </Container>
-    </>
+    <Container>
+      <Wrapper>
+        <ReportContainer>
+          <p>Test 1</p>
+        </ReportContainer>
+
+        <ReportContainer>
+          <p>Test 2</p>
+        </ReportContainer>
+      </Wrapper>
+    </Container>
   );
 }

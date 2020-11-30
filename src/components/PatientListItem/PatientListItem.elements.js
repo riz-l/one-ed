@@ -94,6 +94,10 @@ export const DetailItem = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
+
+  & h2 {
+    font-weight: 400;
+  }
 `;
 
 // Element: StatusContainer
