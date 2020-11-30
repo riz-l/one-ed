@@ -65,7 +65,7 @@ export const Logo = styled.div`
   }
 
   @media screen and (max-width: 1098px) {
-    margin-left: -8px;
+    margin-left: 0;
   }
 `;
 

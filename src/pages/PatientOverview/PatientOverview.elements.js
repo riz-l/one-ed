@@ -44,10 +44,10 @@ export const ReportContainer = styled.section`
   }
 
   @media screen and (max-width: 1098px) {
-    margin: 1rem 1rem 1rem -8px;
+    margin: 1rem;
 
     &:last-child {
-      margin: 0rem 1rem 1rem -8px;
+      margin: 0rem 1rem 1rem 1rem;
     }
   }
 `;
