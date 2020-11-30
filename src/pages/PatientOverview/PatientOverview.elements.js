@@ -46,7 +46,7 @@ export const ReportContainer = styled.section`
     margin: 1rem;
 
     &:last-child {
-      margin: 0rem 1rem 1rem 1rem;
+      margin: 1rem;
     }
   }
 `;
@@ -90,7 +90,7 @@ export const FirstHeaderRow = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 95px;
+  height: 90px;
   width: 100%;
 `;
 
@@ -113,6 +113,51 @@ export const HeaderText = styled.div`
 // Element: SecondHeaderRow
 export const SecondHeaderRow = styled.div`
   background: #f1f1f1;
-  height: 60px;
+  height: 65px;
   width: 100%;
+`;
+
+// Element: Navigation
+export const Navigation = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding-left: 8rem;
+  width: 100%;
+`;
+
+// Element: NavigationItem
+export const NavigationItem = styled.div`
+  align-items: center;
+  background: #f1f1f1;
+  border-top: 4px solid #f1f1f1;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  transition: all 100ms linear;
+
+  &:only-child {
+    max-width: 120px;
+  }
+
+  &:hover {
+    background: #e1e1e1;
+    border-top: 4px solid #11bac1;
+    transition: all 100ms linear;
+  }
+
+  & svg {
+    fill: #2a2a2e;
+    height: 30px;
+    width: 30px;
+  }
+
+  & p {
+    font-size: 0.7rem;
+  }
 `;

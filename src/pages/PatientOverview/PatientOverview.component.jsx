@@ -5,6 +5,8 @@ import React, { useEffect } from "react";
 import DetailsHeader from "../../assets/img/header/patient-details.jpg";
 import HistoryHeader from "../../assets/img/header/patient-history.jpg";
 import { ReactComponent as DetailsIcon } from "../../assets/img/icon/patient-overview.svg";
+import { ReactComponent as HistoryIcon } from "../../assets/img/icon/patient-history.svg";
+import { ReactComponent as AlertsIcon } from "../../assets/img/icon/alerts.svg";
 
 // Import: Elements
 import {
@@ -16,6 +18,8 @@ import {
   FirstHeaderRow,
   HeaderText,
   SecondHeaderRow,
+  Navigation,
+  NavigationItem,
 } from "./PatientOverview.elements";
 
 // Page: PatientOverview
@@ -42,14 +46,22 @@ export default function PatientOverview({ setSelectedPage }) {
                 <p>Patient demographics and contact information</p>
               </HeaderText>
             </FirstHeaderRow>
-            <SecondHeaderRow></SecondHeaderRow>
+
+            <SecondHeaderRow>
+              <Navigation>
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Patient Details</p>
+                </NavigationItem>
+              </Navigation>
+            </SecondHeaderRow>
           </ReportHeader>
         </ReportContainer>
 
         <ReportContainer>
           <ReportHeader>
             <IconContainer>
-              <DetailsIcon />
+              <HistoryIcon />
             </IconContainer>
 
             <FirstHeaderRow imgSrc={HistoryHeader}>
@@ -58,7 +70,50 @@ export default function PatientOverview({ setSelectedPage }) {
                 <p>Alerts, allergies and medications, etc.</p>
               </HeaderText>
             </FirstHeaderRow>
-            <SecondHeaderRow></SecondHeaderRow>
+
+            <SecondHeaderRow>
+              <Navigation>
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Alerts</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Allergies</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Complications</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Diagnosis</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Findings</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Presenting Complaint</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Procedures</p>
+                </NavigationItem>
+
+                <NavigationItem>
+                  <AlertsIcon />
+                  <p>Symptoms</p>
+                </NavigationItem>
+              </Navigation>
+            </SecondHeaderRow>
           </ReportHeader>
         </ReportContainer>
       </Wrapper>
