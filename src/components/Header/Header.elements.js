@@ -8,7 +8,7 @@ export const Container = styled.header`
   top: 0;
   width: 100%;
   min-width: 100%;
-  z-index: 2;
+  z-index: 3;
 `;
 
 // Element: PrimaryContainer

@@ -22,13 +22,17 @@ import { Header, PatientList } from "./components";
 
 // Component: App
 export default function App() {
-  //State = selectedPage
+  //State = selectedPage, isPatientListOpen
   const [selectedPage, setSelectedPage] = useState("");
+  const [isPatientListOpen, setIsPatientListOpen] = useState(false);
 
   return (
     <>
-      <Header selectedPage={selectedPage} />
-      <PatientList />
+      <Header
+        selectedPage={selectedPage}
+        setIsPatientListOpen={setIsPatientListOpen}
+      />
+      <PatientList isPatientListOpen={isPatientListOpen} />
 
       <Container>
         <Switch>

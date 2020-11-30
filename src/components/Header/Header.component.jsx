@@ -26,7 +26,7 @@ import {
 } from "./Header.elements";
 
 // Component: Header
-export default function Header({ selectedPage }) {
+export default function Header({ selectedPage, setIsPatientListOpen }) {
   return (
     <Container>
       <PrimaryContainer>
@@ -53,7 +53,11 @@ export default function Header({ selectedPage }) {
           </Logo>
 
           <Options>
-            <OptionsItem>
+            <OptionsItem
+              onClick={() => {
+                setIsPatientListOpen((isPatientListOpen) => !isPatientListOpen);
+              }}
+            >
               <AddIcon />
             </OptionsItem>
 
