@@ -56,7 +56,7 @@ export const Wrapper = styled.div`
 
   & h3 {
     color: #f1f1f1;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     text-align: center;
 
