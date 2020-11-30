@@ -24,7 +24,7 @@ import { Header, PatientList } from "./components";
 export default function App() {
   //State = selectedPage, isPatientListOpen
   const [selectedPage, setSelectedPage] = useState("");
-  const [isPatientListOpen, setIsPatientListOpen] = useState(false);
+  const [isPatientListOpen, setIsPatientListOpen] = useState(true);
 
   return (
     <>

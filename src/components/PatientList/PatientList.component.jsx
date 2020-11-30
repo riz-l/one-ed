@@ -5,7 +5,15 @@ import React from "react";
 import { ReactComponent as PatientIcon } from "../../assets/img/icon/list-patient.svg";
 
 // Import: Elements
-import { Container, Header, Heading } from "./PatientList.elements";
+import {
+  Container,
+  Header,
+  Heading,
+  ItemWrapper,
+} from "./PatientList.elements";
+
+// Import: Components
+import { PatientListItem } from "../index";
 
 // Component: PatientList
 export default function PatientList({ isPatientListOpen }) {
@@ -20,7 +28,15 @@ export default function PatientList({ isPatientListOpen }) {
         </Heading>
       </Header>
 
-      <p>Flavour text</p>
+      <ItemWrapper>
+        <PatientListItem />
+        <PatientListItem />
+        <PatientListItem />
+        <PatientListItem />
+        <PatientListItem />
+        <PatientListItem />
+        <PatientListItem />
+      </ItemWrapper>
     </Container>
   );
 }

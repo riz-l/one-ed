@@ -7,6 +7,7 @@ export const Container = styled.div`
   height: calc(100vh - 102px);
   max-height: calc(100vh - 102px);
   min-height: calc(100vh - 102px);
+  overflow-y: auto;
   position: fixed;
   right: 0;
   top: 102px;
@@ -15,8 +16,8 @@ export const Container = styled.div`
   transition: all 100ms linear;
   visibility: ${({ isPatientListOpen }) =>
     isPatientListOpen ? `visible` : `hidden`};
-  width: 450px;
-  z-index: 2;
+  width: 500px;
+  z-index: 3;
 
   @media screen and (max-width: 768px) {
     width: 100vw;
@@ -25,7 +26,9 @@ export const Container = styled.div`
 
 // Element: Header
 export const Header = styled.div`
-  align-items: center;
+  align-items: flex-start;
+  background: #2a2a2e;
+  box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -35,7 +38,7 @@ export const Header = styled.div`
   -webkit-position: sticky;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 `;
 
 // Element: Heading
@@ -56,4 +59,9 @@ export const Heading = styled.div`
     font-weight: 400;
     padding: 0 1rem;
   }
+`;
+
+// Element: ItemWrapper
+export const ItemWrapper = styled.div`
+  z-index: 2;
 `;
