@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Switch, Route } from "react-router-dom";
 
@@ -22,63 +22,66 @@ import { Header } from "./components";
 
 // Component: App
 export default function App() {
+  //State = selectedPage
+  const [selectedPage, setSelectedPage] = useState("");
+
   return (
     <>
-      <Header />
+      <Header selectedPage={selectedPage} />
 
       <Container>
         <Switch>
           {/* Dashboard */}
           <Route path="/" exact>
-            <Dashboard />
+            <Dashboard setSelectedPage={setSelectedPage} />
           </Route>
 
           {/* Ward */}
           <Route path="/ward/ed-overview">
-            <EDOverview />
+            <EDOverview setSelectedPage={setSelectedPage} />
           </Route>
 
           {/* Patient */}
           <Route path="/patient/patient-overview">
-            <PatientOverview />
+            <PatientOverview setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/patient/view-cas-card">
-            <ViewCAS />
+            <ViewCAS setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/patient/save-and-close-record">
-            <SaveAndClose />
+            <SaveAndClose setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/patient/cancel-and-close-record">
-            <CancelAndClose />
+            <CancelAndClose setSelectedPage={setSelectedPage} />
           </Route>
 
           {/* Assessments */}
           <Route path="/assessments/triage-and-stream">
-            <TriageAndStream />
+            <TriageAndStream setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/assessments/observations">
-            <Observations />
+            <Observations setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/assessments/seen">
-            <Seen />
+            <Seen setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/assessments/clinical-notes">
-            <ClinicalNotes />
+            <ClinicalNotes setSelectedPage={setSelectedPage} />
           </Route>
 
           <Route path="/assessments/view-seen">
-            <ViewSeen />
+            <ViewSeen setSelectedPage={setSelectedPage} />
           </Route>
 
           {/* Training */}
           <Route path="/training/clinical-guidelines">
-            <ClinicalGuidelines />
+            <ClinicalGuidelines setSelectedPage={setSelectedPage} />
           </Route>
         </Switch>
       </Container>

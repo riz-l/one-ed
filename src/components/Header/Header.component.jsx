@@ -26,7 +26,7 @@ import {
 } from "./Header.elements";
 
 // Component: Header
-export default function Header() {
+export default function Header({ selectedPage }) {
   return (
     <Container>
       <PrimaryContainer>
@@ -49,7 +49,7 @@ export default function Header() {
       <SecondaryContainer>
         <Wrapper>
           <Logo>
-            <span>Dashboard</span>
+            <span>{selectedPage}</span>
           </Logo>
 
           <Options>
