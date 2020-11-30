@@ -18,7 +18,7 @@ import {
   ViewCAS,
   ViewSeen,
 } from "./pages";
-import { Header } from "./components";
+import { Header, PatientList } from "./components";
 
 // Component: App
 export default function App() {
@@ -28,6 +28,7 @@ export default function App() {
   return (
     <>
       <Header selectedPage={selectedPage} />
+      <PatientList />
 
       <Container>
         <Switch>
