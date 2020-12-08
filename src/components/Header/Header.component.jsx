@@ -48,7 +48,7 @@ export default function Header({ setIsPatientListOpen }) {
       <SecondaryContainer>
         <Wrapper>
           <Logo>
-            <span>Current Patient:</span>
+            <span>Current Patient: n/a</span>
           </Logo>
 
           <Options>

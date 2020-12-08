@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
   width: 100%;
 
   @media screen and (max-width: 1098px) {

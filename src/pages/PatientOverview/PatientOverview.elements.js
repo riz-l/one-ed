@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   display: flex;
   height: 100%;
   justify-content: center;
-  padding: 1rem;
+  padding: 0 1rem;
   width: 100%;
 
   @media screen and (max-width: 1098px) {
@@ -30,9 +30,9 @@ export const ReportContainer = styled.section`
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: calc((100vh - 102px) - 2rem);
-  max-height: calc((100vh - 102px) - 2rem);
-  min-height: calc((100vh - 102px) - 2rem);
+  height: calc((100vh - 100px) - 2rem);
+  max-height: calc((100vh - 100px) - 2rem);
+  min-height: calc((100vh - 100px) - 2rem);
   justify-content: flex-start;
   margin: 1rem 1rem 1rem 0;
   width: 100%;
