@@ -5,13 +5,12 @@ import React, { useEffect } from "react";
 import { Container } from "./CancelAndClose.elements";
 
 // Page: CancelAndClose
-export default function CancelAndClose({ setSelectedPage }) {
+export default function CancelAndClose() {
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
     window.scrollTo(0, 0);
-    setSelectedPage("Patient - Cancel and Close Record");
-  }, [setSelectedPage]);
+  }, []);
 
   return (
     <>

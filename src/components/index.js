@@ -7,6 +7,9 @@ export { default as PatientList } from "./PatientList/PatientList.component";
 // Export: PatientListItem
 export { default as PatientListItem } from "./PatientListItem/PatientListItem.component";
 
+// Export: ReportHeader
+export { default as ReportHeader } from "./ReportHeader/ReportHeader.component";
+
 // Export: Tile
 export { default as Tile } from "./Tile/Tile.component";
 

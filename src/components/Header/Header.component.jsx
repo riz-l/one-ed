@@ -26,7 +26,7 @@ import {
 } from "./Header.elements";
 
 // Component: Header
-export default function Header({ selectedPage, setIsPatientListOpen }) {
+export default function Header({ setIsPatientListOpen }) {
   return (
     <Container>
       <PrimaryContainer>
@@ -48,7 +48,7 @@ export default function Header({ selectedPage, setIsPatientListOpen }) {
       <SecondaryContainer>
         <Wrapper>
           <Logo>
-            <span>{selectedPage}</span>
+            <span>Current Patient:</span>
           </Logo>
 
           <Options>

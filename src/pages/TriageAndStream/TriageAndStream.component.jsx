@@ -5,13 +5,12 @@ import React, { useEffect } from "react";
 import { Container } from "./TriageAndStream.elements";
 
 // Page: TriageAndStream
-export default function TriageAndStream({ setSelectedPage }) {
+export default function TriageAndStream() {
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
     window.scrollTo(0, 0);
-    setSelectedPage("Assessments - Triage and Stream");
-  }, [setSelectedPage]);
+  }, []);
 
   return (
     <>

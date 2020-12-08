@@ -2,8 +2,6 @@
 import React, { useEffect } from "react";
 
 // Import: Assets
-import DetailsHeader from "../../assets/img/header/patient-details.jpg";
-import HistoryHeader from "../../assets/img/header/patient-history.jpg";
 import { ReactComponent as DetailsIcon } from "../../assets/img/icon/patient-overview.svg";
 import { ReactComponent as HistoryIcon } from "../../assets/img/icon/patient-history.svg";
 import { ReactComponent as AlertsIcon } from "../../assets/img/icon/alerts.svg";
@@ -20,57 +18,39 @@ import {
   Container,
   Wrapper,
   ReportContainer,
-  ReportHeader,
-  SecondaryHeader,
-  PrimaryHeader,
-  HeaderWrapper,
-  Icon,
 } from "./PatientOverview.elements";
 
-// Import: SubPages
-// import { Alerts } from "../../subPages";
+// Import: Components
+import { ReportHeader } from "../../components";
 
 // Page: PatientOverview
-export default function PatientOverview({ setSelectedPage }) {
+export default function PatientOverview() {
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
     window.scrollTo(0, 0);
-    setSelectedPage("Patient - Patient Overview");
-  }, [setSelectedPage]);
+  }, []);
 
   return (
     <Container>
       <Wrapper>
+        {/* Patient Details */}
         <ReportContainer>
-          <ReportHeader>
-            <PrimaryHeader>
-              <Icon>
-                <DetailsIcon />
-              </Icon>
-
-              <HeaderWrapper>
-                <h2>Patient Details</h2>
-                <span>Demographics and contact information</span>
-              </HeaderWrapper>
-            </PrimaryHeader>
-            <SecondaryHeader></SecondaryHeader>
+          <ReportHeader
+            heading="Patient Details"
+            subtext="Demographics and contact information"
+          >
+            <DetailsIcon />
           </ReportHeader>
         </ReportContainer>
 
+        {/* Patient History */}
         <ReportContainer>
-          <ReportHeader>
-            <PrimaryHeader>
-              <Icon>
-                <HistoryIcon />
-              </Icon>
-
-              <HeaderWrapper>
-                <h2>Patient History</h2>
-                <span>Alerts, allergies and medications, etc.</span>
-              </HeaderWrapper>
-            </PrimaryHeader>
-            <SecondaryHeader></SecondaryHeader>
+          <ReportHeader
+            heading="Patient History"
+            subtext="Alerts, allergies, medications, etc."
+          >
+            <HistoryIcon />
           </ReportHeader>
         </ReportContainer>
       </Wrapper>

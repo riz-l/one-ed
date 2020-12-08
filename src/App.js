@@ -22,78 +22,74 @@ import { Header, PatientList } from "./components";
 
 // Component: App
 export default function App() {
-  //State = selectedPage, isPatientListOpen
-  const [selectedPage, setSelectedPage] = useState("");
+  //State: isPatientListOpen
   const [isPatientListOpen, setIsPatientListOpen] = useState(false);
 
   return (
     <>
-      <Header
-        selectedPage={selectedPage}
-        setIsPatientListOpen={setIsPatientListOpen}
-      />
+      <Header setIsPatientListOpen={setIsPatientListOpen} />
       <PatientList isPatientListOpen={isPatientListOpen} />
 
       <Container>
         <Switch>
           {/* Dashboard */}
           <Route path="/" exact>
-            <Dashboard setSelectedPage={setSelectedPage} />
+            <Dashboard />
           </Route>
 
           {/* Ward - ED Overview */}
           <Route path="/ward/ed-overview">
-            <EDOverview setSelectedPage={setSelectedPage} />
+            <EDOverview />
           </Route>
 
           {/* Patient - Patient Overview */}
           <Route path="/patient/patient-overview">
-            <PatientOverview setSelectedPage={setSelectedPage} />
+            <PatientOverview />
           </Route>
 
           {/* Patient - View CAS Card */}
           <Route path="/patient/view-cas-card">
-            <ViewCAS setSelectedPage={setSelectedPage} />
+            <ViewCAS />
           </Route>
 
           {/* Patient - Save and Close Record */}
           <Route path="/patient/save-and-close-record">
-            <SaveAndClose setSelectedPage={setSelectedPage} />
+            <SaveAndClose />
           </Route>
 
           {/* Patient - Cancel and Close Record */}
           <Route path="/patient/cancel-and-close-record">
-            <CancelAndClose setSelectedPage={setSelectedPage} />
+            <CancelAndClose />
           </Route>
 
           {/* Assessments - Triage and Stream */}
           <Route path="/assessments/triage-and-stream">
-            <TriageAndStream setSelectedPage={setSelectedPage} />
+            <TriageAndStream />
           </Route>
 
           {/* Assessments - Observations */}
           <Route path="/assessments/observations">
-            <Observations setSelectedPage={setSelectedPage} />
+            <Observations />
           </Route>
 
           {/* Assessments - Seen */}
           <Route path="/assessments/seen">
-            <Seen setSelectedPage={setSelectedPage} />
+            <Seen />
           </Route>
 
           {/* Assessments - Clinical Notes */}
           <Route path="/assessments/clinical-notes">
-            <ClinicalNotes setSelectedPage={setSelectedPage} />
+            <ClinicalNotes />
           </Route>
 
           {/* Assessments - View Seen */}
           <Route path="/assessments/view-seen">
-            <ViewSeen setSelectedPage={setSelectedPage} />
+            <ViewSeen />
           </Route>
 
           {/* Training - Clinical Guidelines */}
           <Route path="/training/clinical-guidelines">
-            <ClinicalGuidelines setSelectedPage={setSelectedPage} />
+            <ClinicalGuidelines />
           </Route>
         </Switch>
       </Container>

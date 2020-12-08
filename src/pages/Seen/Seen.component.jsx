@@ -5,13 +5,12 @@ import React, { useEffect } from "react";
 import { Container } from "./Seen.elements";
 
 // Page: Seen
-export default function Seen({ setSelectedPage }) {
+export default function Seen() {
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
     window.scrollTo(0, 0);
-    setSelectedPage("Assessments - Seen");
-  }, [setSelectedPage]);
+  }, []);
 
   return (
     <>

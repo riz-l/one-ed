@@ -5,13 +5,12 @@ import React, { useEffect } from "react";
 import { Container } from "./ViewCAS.elements";
 
 // Page: ViewCAS
-export default function ViewCAS({ setSelectedPage }) {
+export default function ViewCAS() {
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
     window.scrollTo(0, 0);
-    setSelectedPage("Patient - View CAS Card");
-  }, [setSelectedPage]);
+  }, []);
 
   return (
     <>
