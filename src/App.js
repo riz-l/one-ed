@@ -41,50 +41,57 @@ export default function App() {
             <Dashboard setSelectedPage={setSelectedPage} />
           </Route>
 
-          {/* Ward */}
+          {/* Ward - ED Overview */}
           <Route path="/ward/ed-overview">
             <EDOverview setSelectedPage={setSelectedPage} />
           </Route>
 
-          {/* Patient */}
+          {/* Patient - Patient Overview */}
           <Route path="/patient/patient-overview">
             <PatientOverview setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Patient - View CAS Card */}
           <Route path="/patient/view-cas-card">
             <ViewCAS setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Patient - Save and Close Record */}
           <Route path="/patient/save-and-close-record">
             <SaveAndClose setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Patient - Cancel and Close Record */}
           <Route path="/patient/cancel-and-close-record">
             <CancelAndClose setSelectedPage={setSelectedPage} />
           </Route>
 
-          {/* Assessments */}
+          {/* Assessments - Triage and Stream */}
           <Route path="/assessments/triage-and-stream">
             <TriageAndStream setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Assessments - Observations */}
           <Route path="/assessments/observations">
             <Observations setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Assessments - Seen */}
           <Route path="/assessments/seen">
             <Seen setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Assessments - Clinical Notes */}
           <Route path="/assessments/clinical-notes">
             <ClinicalNotes setSelectedPage={setSelectedPage} />
           </Route>
 
+          {/* Assessments - View Seen */}
           <Route path="/assessments/view-seen">
             <ViewSeen setSelectedPage={setSelectedPage} />
           </Route>
 
-          {/* Training */}
+          {/* Training - Clinical Guidelines */}
           <Route path="/training/clinical-guidelines">
             <ClinicalGuidelines setSelectedPage={setSelectedPage} />
           </Route>

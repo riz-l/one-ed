@@ -19,8 +19,8 @@ import {
   SecondaryContainer,
   Wrapper,
   Logo,
-  Settings,
-  SettingsItem,
+  UserWrapper,
+  User,
   Options,
   OptionsItem,
 } from "./Header.elements";
@@ -37,12 +37,11 @@ export default function Header({ selectedPage, setIsPatientListOpen }) {
             </Logo>
           </Link>
 
-          <Settings>
-            <SettingsItem>
+          <UserWrapper>
+            <User>
               <UserIcon />
-              <p>User</p>
-            </SettingsItem>
-          </Settings>
+            </User>
+          </UserWrapper>
         </Wrapper>
       </PrimaryContainer>
 

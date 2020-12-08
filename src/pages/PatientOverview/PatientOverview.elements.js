@@ -15,12 +15,11 @@ export const Wrapper = styled.div`
   height: 100%;
   justify-content: center;
   margin: auto;
-  width: 95%;
+  width: 100%;
 
   @media screen and (max-width: 1098px) {
     align-items: center;
     flex-direction: column;
-    width: 85%;
   }
 `;
 
