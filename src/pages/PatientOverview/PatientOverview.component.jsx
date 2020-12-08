@@ -21,12 +21,10 @@ import {
   Wrapper,
   ReportContainer,
   ReportHeader,
-  IconContainer,
-  FirstHeaderRow,
-  HeaderText,
-  SecondHeaderRow,
-  Navigation,
-  NavigationItem,
+  SecondaryHeader,
+  PrimaryHeader,
+  HeaderWrapper,
+  Icon,
 } from "./PatientOverview.elements";
 
 // Import: SubPages
@@ -46,84 +44,33 @@ export default function PatientOverview({ setSelectedPage }) {
       <Wrapper>
         <ReportContainer>
           <ReportHeader>
-            <IconContainer>
-              <DetailsIcon />
-            </IconContainer>
+            <PrimaryHeader>
+              <Icon>
+                <DetailsIcon />
+              </Icon>
 
-            <FirstHeaderRow imgSrc={DetailsHeader}>
-              <HeaderText>
+              <HeaderWrapper>
                 <h2>Patient Details</h2>
-                <p>Patient demographics and contact information</p>
-              </HeaderText>
-            </FirstHeaderRow>
-
-            <SecondHeaderRow>
-              <Navigation>
-                <NavigationItem>
-                  <DetailsIcon />
-                  <p>Patient Details</p>
-                </NavigationItem>
-              </Navigation>
-            </SecondHeaderRow>
+                <span>Demographics and contact information</span>
+              </HeaderWrapper>
+            </PrimaryHeader>
+            <SecondaryHeader></SecondaryHeader>
           </ReportHeader>
         </ReportContainer>
 
         <ReportContainer>
           <ReportHeader>
-            <IconContainer>
-              <HistoryIcon />
-            </IconContainer>
+            <PrimaryHeader>
+              <Icon>
+                <HistoryIcon />
+              </Icon>
 
-            <FirstHeaderRow imgSrc={HistoryHeader}>
-              <HeaderText>
+              <HeaderWrapper>
                 <h2>Patient History</h2>
-                <p>Alerts, allergies and medications, etc.</p>
-              </HeaderText>
-            </FirstHeaderRow>
-
-            <SecondHeaderRow>
-              <Navigation>
-                <NavigationItem>
-                  <AlertsIcon />
-                  <p>Alerts</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <AllergiesIcon />
-                  <p>Allergies</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <ComplicationsIcon />
-                  <p>Complications</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <DiagnosisIcon />
-                  <p>Diagnosis</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <FindingsIcon />
-                  <p>Findings</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <PresentingComplaintIcon />
-                  <p>Presenting Complaint</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <ProceduresIcon />
-                  <p>Procedures</p>
-                </NavigationItem>
-
-                <NavigationItem>
-                  <SymptomsIcon />
-                  <p>Symptoms</p>
-                </NavigationItem>
-              </Navigation>
-            </SecondHeaderRow>
+                <span>Alerts, allergies and medications, etc.</span>
+              </HeaderWrapper>
+            </PrimaryHeader>
+            <SecondaryHeader></SecondaryHeader>
           </ReportHeader>
         </ReportContainer>
       </Wrapper>
