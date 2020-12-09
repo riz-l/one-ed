@@ -7,21 +7,23 @@ import {
   Report,
   Wrapper,
   Header,
-  Content,
+  ContentWrapper,
   Navigation,
+  Content,
 } from "./ReportSection.elements";
 
 // Component: ReportSection
-export default function ReportSection({ header, nav }) {
+export default function ReportSection({ header, nav, content }) {
   return (
     <Container>
       <Wrapper>
         <Report>
           <Header>{header}</Header>
 
-          <Content>
+          <ContentWrapper>
             <Navigation>{nav}</Navigation>
-          </Content>
+            <Content>{content}</Content>
+          </ContentWrapper>
         </Report>
       </Wrapper>
     </Container>

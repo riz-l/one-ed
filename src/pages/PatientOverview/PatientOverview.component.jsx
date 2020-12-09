@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // Import: Assets
 import { ReactComponent as DetailsIcon } from "../../assets/img/icon/patient-overview.svg";
@@ -16,16 +16,20 @@ import { ReactComponent as SymptomsIcon } from "../../assets/img/icon/symptoms.s
 // Import: Elements
 import { Container, Wrapper } from "./PatientOverview.elements";
 
-// Import: Components
+// Import: Components, subPages
 import {
   ReportHeader,
   ReportNavigation,
+  ReportNavigationItem,
   ReportSection,
 } from "../../components";
-import ReportNavigationItem from "../../components/ReportNavigationItem/ReportNavigationItem.component";
+import { Alerts } from "../../subPages";
 
 // Page: PatientOverview
 export default function PatientOverview() {
+  // State: showAlerts
+  const [showAlerts, setShowAlerts] = useState(false);
+
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
@@ -52,7 +56,7 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
-        ></ReportSection>
+        />
 
         {/* Patient History */}
         <ReportSection
@@ -65,10 +69,15 @@ export default function PatientOverview() {
           }
           nav={
             <ReportNavigation>
-              <ReportNavigationItem>
-                <AlertsIcon />
-                <span>Alerts</span>
-              </ReportNavigationItem>
+              <div
+                onClick={() => setShowAlerts(true)}
+                style={{ borderBottom: "1px solid rgba(42, 42, 46, 0.3)" }}
+              >
+                <ReportNavigationItem>
+                  <AlertsIcon />
+                  <span>Alerts</span>
+                </ReportNavigationItem>
+              </div>
 
               <ReportNavigationItem>
                 <AllergiesIcon />
@@ -106,7 +115,8 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
-        ></ReportSection>
+          content={showAlerts && <Alerts />}
+        />
       </Wrapper>
     </Container>
   );

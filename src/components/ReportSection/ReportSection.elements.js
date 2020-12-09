@@ -50,20 +50,40 @@ export const Report = styled.section`
   }
 `;
 
+// Element: ContentWrapper
+export const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-areas: "navigation content";
+  grid-template-columns: 85px 1fr;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (max-width: 706px) {
+    grid-template-columns: 0 1fr;
+  }
+`;
+
 // Element: Header
 export const Header = styled.header`
   height: 100px;
   width: 100%;
 `;
 
-// Element: Content
-export const Content = styled.div`
-  height: 100%;
-  width: 100%;
-`;
-
 // Element: Navigation
 export const Navigation = styled.nav`
+  grid-area: navigation;
   height: 100%;
   width: 85px;
+
+  @media screen and (max-width: 706px) {
+    display: none;
+    visibility: hidden;
+  }
+`;
+
+// Element: Content
+export const Content = styled.div`
+  grid-area: content;
+  height: 100%;
+  width: 100%;
 `;

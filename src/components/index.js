@@ -13,6 +13,9 @@ export { default as ReportHeader } from "./ReportHeader/ReportHeader.component";
 // Export: ReportNavigation
 export { default as ReportNavigation } from "./ReportNavigation/ReportNavigation.component";
 
+// Export: ReportNavigationItem
+export { default as ReportNavigationItem } from "./ReportNavigationItem/ReportNavigationItem.component";
+
 // Export: ReportSection
 export { default as ReportSection } from "./ReportSection/ReportSection.component";
 
