@@ -3,8 +3,7 @@ import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
-  background: pink;
+  background: #d4d4d8;
   height: 100%;
-  left: 0;
-  width: 100px;
+  width: 85px;
 `;

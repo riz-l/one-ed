@@ -42,11 +42,16 @@ export const HeaderWrapper = styled.div`
 
   @media screen and (max-width: 454px) {
     margin-left: 1rem;
+
+    & span {
+      display: none;
+      visibility: hidden;
+    }
   }
 `;
 
-// Element: Icon
-export const Icon = styled.div`
+// Element: BigIcon
+export const BigIcon = styled.div`
   align-items: center;
   background: #11bac1;
   bottom: 1rem;
@@ -67,5 +72,19 @@ export const Icon = styled.div`
   @media screen and (max-width: 454px) {
     display: none;
     visibility: hidden;
+  }
+`;
+
+// Element: SmallIcon
+export const SmallIcon = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+
+  & svg {
+    fill: #f1f1f1;
+    height: 42px;
+    width: 42px;
   }
 `;

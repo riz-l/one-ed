@@ -14,7 +14,7 @@ import { ReactComponent as ProceduresIcon } from "../../assets/img/icon/procedur
 import { ReactComponent as SymptomsIcon } from "../../assets/img/icon/symptoms.svg";
 
 // Import: Elements
-import { Container } from "./PatientOverview.elements";
+import { Container, Wrapper } from "./PatientOverview.elements";
 
 // Import: Components
 import {
@@ -22,6 +22,7 @@ import {
   ReportNavigation,
   ReportSection,
 } from "../../components";
+import ReportNavigationItem from "../../components/ReportNavigationItem/ReportNavigationItem.component";
 
 // Page: PatientOverview
 export default function PatientOverview() {
@@ -33,30 +34,80 @@ export default function PatientOverview() {
 
   return (
     <Container>
-      {/* Patient Details */}
-      <ReportSection
-        header={
-          <ReportHeader
-            heading="Patient Details"
-            subtext="Demographics and contact information"
-          >
-            <DetailsIcon />
-          </ReportHeader>
-        }
-        // nav={<ReportNavigation></ReportNavigation>}
-      ></ReportSection>
+      <Wrapper>
+        {/* Patient Details */}
+        <ReportSection
+          header={
+            <ReportHeader
+              icon={<DetailsIcon />}
+              heading="Patient Details"
+              subtext="Demographics and contact information"
+            />
+          }
+          nav={
+            <ReportNavigation>
+              <ReportNavigationItem>
+                <DetailsIcon />
+                <span>Details</span>
+              </ReportNavigationItem>
+            </ReportNavigation>
+          }
+        ></ReportSection>
 
-      {/* Patient History */}
-      <ReportSection
-        header={
-          <ReportHeader
-            heading="Patient History"
-            subtext="Alerts, allergies, medications, etc."
-          >
-            <HistoryIcon />
-          </ReportHeader>
-        }
-      ></ReportSection>
+        {/* Patient History */}
+        <ReportSection
+          header={
+            <ReportHeader
+              heading="Patient History"
+              subtext="Alerts, allergies, medications, etc."
+              icon={<HistoryIcon />}
+            />
+          }
+          nav={
+            <ReportNavigation>
+              <ReportNavigationItem>
+                <AlertsIcon />
+                <span>Alerts</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <AllergiesIcon />
+                <span>Allergies</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <ComplicationsIcon />
+                <span>Complications</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <DiagnosisIcon />
+                <span>Diagnosis</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <FindingsIcon />
+                <span>Findings</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <PresentingComplaintIcon />
+                <span>Presenting Complaint</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <ProceduresIcon />
+                <span>Procedures</span>
+              </ReportNavigationItem>
+
+              <ReportNavigationItem>
+                <SymptomsIcon />
+                <span>Symptoms</span>
+              </ReportNavigationItem>
+            </ReportNavigation>
+          }
+        ></ReportSection>
+      </Wrapper>
     </Container>
   );
 }

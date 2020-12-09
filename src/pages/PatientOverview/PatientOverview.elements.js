@@ -7,3 +7,18 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
 `;
+
+// Element: Wrapper
+export const Wrapper = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 0 1rem;
+  width: 100%;
+
+  @media screen and (max-width: 1098px) {
+    align-items: center;
+    flex-direction: column;
+  }
+`;

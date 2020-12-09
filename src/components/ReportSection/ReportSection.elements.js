@@ -65,5 +65,5 @@ export const Content = styled.div`
 // Element: Navigation
 export const Navigation = styled.nav`
   height: 100%;
-  width: 100px;
+  width: 85px;
 `;

@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Import: Elements
 import {
@@ -7,15 +7,33 @@ import {
   PrimaryHeader,
   SecondaryHeader,
   HeaderWrapper,
-  Icon,
+  BigIcon,
+  SmallIcon,
 } from "./ReportHeader.elements";
 
 // Component: ReportHeader
-export default function ReportHeader({ children, heading, subtext }) {
+export default function ReportHeader({ icon, heading, subtext }) {
+  // State: windowWidth
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Effect: Checks and updates inner window width
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setWindowWidth(newWidth);
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+  }, []);
+
   return (
     <Container>
       <PrimaryHeader>
-        {children && <Icon>{children}</Icon>}
+        {windowWidth > 454 ? (
+          <BigIcon>{icon}</BigIcon>
+        ) : (
+          <SmallIcon>{icon}</SmallIcon>
+        )}
 
         <HeaderWrapper>
           <h2>{heading}</h2>
