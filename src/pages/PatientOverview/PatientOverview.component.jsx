@@ -14,16 +14,17 @@ import { ReactComponent as ProceduresIcon } from "../../assets/img/icon/procedur
 import { ReactComponent as SymptomsIcon } from "../../assets/img/icon/symptoms.svg";
 
 // Import: Elements
-import { Container, Wrapper } from "./PatientOverview.elements";
+import { Container, Wrapper, ItemWrapper } from "./PatientOverview.elements";
 
 // Import: Components, subPages
 import {
+  ReportForm,
   ReportHeader,
   ReportNavigation,
   ReportNavigationItem,
   ReportSection,
 } from "../../components";
-import { Alerts } from "../../subPages";
+import { Alerts, Details } from "../../subPages";
 
 // Page: PatientOverview
 export default function PatientOverview() {
@@ -56,6 +57,11 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
+          content={
+            <ReportForm>
+              <p>Oh my God, it's a Form!</p>
+            </ReportForm>
+          }
         />
 
         {/* Patient History */}
@@ -69,15 +75,12 @@ export default function PatientOverview() {
           }
           nav={
             <ReportNavigation>
-              <div
-                onClick={() => setShowAlerts(true)}
-                style={{ borderBottom: "1px solid rgba(42, 42, 46, 0.3)" }}
-              >
+              <ItemWrapper onClick={() => setShowAlerts(true)}>
                 <ReportNavigationItem>
                   <AlertsIcon />
                   <span>Alerts</span>
                 </ReportNavigationItem>
-              </div>
+              </ItemWrapper>
 
               <ReportNavigationItem>
                 <AllergiesIcon />

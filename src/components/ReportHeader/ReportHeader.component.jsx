@@ -29,7 +29,7 @@ export default function ReportHeader({ icon, heading, subtext }) {
   return (
     <Container>
       <PrimaryHeader>
-        {windowWidth > 454 ? (
+        {windowWidth > 706 ? (
           <BigIcon>{icon}</BigIcon>
         ) : (
           <SmallIcon>{icon}</SmallIcon>

@@ -21,3 +21,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
+// Element: ItemWrapper
+export const ItemWrapper = styled.div`
+  border-bottom: 1px solid rgba(42, 42, 46, 0.3);
+`;

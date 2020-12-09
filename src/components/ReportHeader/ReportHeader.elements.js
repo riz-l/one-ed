@@ -40,7 +40,7 @@ export const HeaderWrapper = styled.div`
   justify-content: center;
   margin-left: 6.4rem;
 
-  @media screen and (max-width: 454px) {
+  @media screen and (max-width: 706px) {
     margin-left: 1rem;
 
     & span {
@@ -69,7 +69,7 @@ export const BigIcon = styled.div`
     width: 42px;
   }
 
-  @media screen and (max-width: 454px) {
+  @media screen and (max-width: 706px) {
     display: none;
     visibility: hidden;
   }
