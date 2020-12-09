@@ -14,14 +14,14 @@ import { ReactComponent as ProceduresIcon } from "../../assets/img/icon/procedur
 import { ReactComponent as SymptomsIcon } from "../../assets/img/icon/symptoms.svg";
 
 // Import: Elements
-import {
-  Container,
-  Wrapper,
-  ReportContainer,
-} from "./PatientOverview.elements";
+import { Container } from "./PatientOverview.elements";
 
 // Import: Components
-import { ReportHeader } from "../../components";
+import {
+  ReportHeader,
+  ReportNavigation,
+  ReportSection,
+} from "../../components";
 
 // Page: PatientOverview
 export default function PatientOverview() {
@@ -33,27 +33,30 @@ export default function PatientOverview() {
 
   return (
     <Container>
-      <Wrapper>
-        {/* Patient Details */}
-        <ReportContainer>
+      {/* Patient Details */}
+      <ReportSection
+        header={
           <ReportHeader
             heading="Patient Details"
             subtext="Demographics and contact information"
           >
             <DetailsIcon />
           </ReportHeader>
-        </ReportContainer>
+        }
+        // nav={<ReportNavigation></ReportNavigation>}
+      ></ReportSection>
 
-        {/* Patient History */}
-        <ReportContainer>
+      {/* Patient History */}
+      <ReportSection
+        header={
           <ReportHeader
             heading="Patient History"
             subtext="Alerts, allergies, medications, etc."
           >
             <HistoryIcon />
           </ReportHeader>
-        </ReportContainer>
-      </Wrapper>
+        }
+      ></ReportSection>
     </Container>
   );
 }
