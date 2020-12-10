@@ -55,7 +55,9 @@ export const ContentWrapper = styled.div`
   display: grid;
   grid-template-areas: "navigation content";
   grid-template-columns: 85px 1fr;
-  height: 100%;
+  height: calc((100vh - 100px) - 2rem);
+  max-height: calc((100vh - 100px) - 2rem);
+  overflow-y: auto;
   width: 100%;
 
   @media screen and (max-width: 706px) {

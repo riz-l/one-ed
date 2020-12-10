@@ -18,7 +18,6 @@ import { Container, Wrapper, ItemWrapper } from "./PatientOverview.elements";
 
 // Import: Components, subPages
 import {
-  ReportForm,
   ReportHeader,
   ReportNavigation,
   ReportNavigationItem,
@@ -57,11 +56,7 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
-          content={
-            <ReportForm>
-              <p>Oh my God, it's a Form!</p>
-            </ReportForm>
-          }
+          content={<Details />}
         />
 
         {/* Patient History */}

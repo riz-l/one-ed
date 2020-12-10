@@ -5,10 +5,10 @@ import React from "react";
 import { Container, Form } from "./ReportForm.elements";
 
 // Component: ReportForm
-export default function ReportForm({ children }) {
+export default function ReportForm({ onSubmit, children }) {
   return (
     <Container>
-      <Form>{children}</Form>
+      <Form onSubmit={onSubmit}>{children}</Form>
     </Container>
   );
 }

@@ -13,6 +13,12 @@ export { default as ReportForm } from "./ReportForm/ReportForm.component";
 // Export: ReportHeader
 export { default as ReportHeader } from "./ReportHeader/ReportHeader.component";
 
+// Export: ReportInput
+export { default as ReportInput } from "./ReportInput/ReportInput.component";
+
+// Export: ReportLabel
+export { default as ReportLabel } from "./ReportLabel/ReportLabel.component";
+
 // Export: ReportNavigation
 export { default as ReportNavigation } from "./ReportNavigation/ReportNavigation.component";
 
