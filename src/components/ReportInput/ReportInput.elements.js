@@ -3,10 +3,10 @@ import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   height: auto;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-bottom: 1rem;
 `;
 
