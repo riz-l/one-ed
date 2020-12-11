@@ -71,7 +71,7 @@ export default function PatientOverview() {
           nav={
             <ReportNavigation>
               <ItemWrapper onClick={() => setShowAlerts(true)}>
-                <ReportNavigationItem>
+                <ReportNavigationItem isActive={showAlerts ? true : false}>
                   <AlertsIcon />
                   <span>Alerts</span>
                 </ReportNavigationItem>
