@@ -2,13 +2,19 @@
 import React, { useState, useEffect } from "react";
 
 // Import: Elements
-import { Column, Container, Grid, Item } from "./Alerts.elements";
+import {
+  Container,
+  Heading,
+  Grid,
+  Column,
+  Item,
+} from "./Complications.elements";
 
 // Import: Components
-import { ReportForm, ReportInput, ReportLabel } from "../../components";
+import { ReportForm, ReportInput, ReportLabel } from "../../../../components";
 
-// SubPage: Alerts
-export default function Alerts() {
+// SubPage: Complications
+export default function Complications() {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -24,6 +30,10 @@ export default function Alerts() {
 
   return (
     <Container>
+      <Heading>
+        <h2>Complications</h2>
+      </Heading>
+
       <ReportForm>
         <Grid>
           <Column>

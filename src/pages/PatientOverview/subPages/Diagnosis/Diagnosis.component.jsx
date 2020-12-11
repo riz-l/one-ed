@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from "react";
 
 // Import: Elements
-import { Column, Container, Grid, Item } from "./Details.elements";
+import { Container, Heading, Grid, Column, Item } from "./Diagnosis.elements";
 
 // Import: Components
-import { ReportForm, ReportInput, ReportLabel } from "../../components";
+import { ReportForm, ReportInput, ReportLabel } from "../../../../components";
 
-// SubPage: Details
-export default function Details() {
+// SubPage: Diagnosis
+export default function Diagnosis() {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -24,6 +24,10 @@ export default function Details() {
 
   return (
     <Container>
+      <Heading>
+        <h2>Diagnosis</h2>
+      </Heading>
+
       <ReportForm>
         <Grid>
           <Column>

@@ -9,6 +9,18 @@ export const Container = styled.div`
   width: 100%;
 `;
 
+// Element: Heading
+export const Heading = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+
+  & h2 {
+    margin: 1rem 0 0 1rem;
+  }
+`;
+
 // Element: Grid
 export const Grid = styled.div`
   align-items: flex-start;
