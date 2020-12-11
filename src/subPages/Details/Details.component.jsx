@@ -61,7 +61,23 @@ export default function Details() {
                 <ReportInput type="text" width="250px" />
               </Item>
             </Item>
+          </Column>
 
+          <Column>
+            <Item>
+              <ReportLabel text="Address" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+              <ReportLabel text="Post Code" />
+              <ReportInput type="text" width="250px" />
+            </Item>
+          </Column>
+        </Grid>
+
+        <Grid>
+          <Column>
             <Item>
               <Item>
                 <ReportLabel text="Contact 1" />
@@ -76,15 +92,6 @@ export default function Details() {
           </Column>
 
           <Column>
-            <Item>
-              <ReportLabel text="Address" />
-              <ReportInput type="text" width="250px" />
-              <ReportInput type="text" width="250px" />
-              <ReportInput type="text" width="250px" />
-              <ReportInput type="text" width="250px" />
-              <ReportInput type="text" width="250px" />
-            </Item>
-
             <Item>
               <Item>
                 <ReportLabel text="Contact 3" />

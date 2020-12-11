@@ -11,10 +11,10 @@ export const Container = styled.div`
 
 // Element: Grid
 export const Grid = styled.div`
-  align-items: center;
+  align-items: flex-start;
   display: flex;
-  height: 100%;
-  justify-content: center;
+  height: auto;
+  justify-content: space-between;
   margin: auto;
   width: 100%;
 
@@ -30,7 +30,7 @@ export const Column = styled.div`
   flex: 1;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 `;
 

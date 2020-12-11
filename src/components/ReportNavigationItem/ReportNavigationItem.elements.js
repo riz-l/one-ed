@@ -13,7 +13,7 @@ export const Container = styled.div`
   justify-content: center;
   text-align: center;
   transition: all 100ms linear;
-  width: 80px;
+  width: 85px;
   word-wrap: wrap;
 
   &:last-child {
