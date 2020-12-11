@@ -1,59 +1,101 @@
 // Import: Dependencies
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Import: Elements
-import { Column, Container, Grid } from "./Details.elements";
+import { Column, Container, Grid, Item } from "./Details.elements";
 
 // Import: Components
 import { ReportForm, ReportInput, ReportLabel } from "../../components";
 
 // SubPage: Details
 export default function Details() {
+  // State: windowWidth
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Effect: Checks and updates inner window width
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setWindowWidth(newWidth);
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+  }, []);
+
   return (
     <Container>
       <ReportForm>
         <Grid>
           <Column>
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
-
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
-
-            <Grid>
-              <Column>
+            <Item>
+              <Item>
                 <ReportLabel text="Name" />
-                <ReportInput type="text" placeholder="Name" />
-              </Column>
+                <ReportInput type="text" width="250px" />
+              </Item>
 
-              <Column style={{ marginLeft: "1rem" }}>
-                <ReportLabel text="Name" />
-                <ReportInput type="text" placeholder="Name" />
-              </Column>
-            </Grid>
+              <Item>
+                <ReportLabel text="Date of Birth" />
+                <ReportInput type="text" width="250px" />
+              </Item>
 
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
+              <Grid>
+                <Column>
+                  <Item>
+                    <ReportLabel text="Age (Years)" />
+                    <ReportInput type="text" width="80px" />
+                  </Item>
+                </Column>
 
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
+                <Column
+                  style={windowWidth > 1378 ? { marginLeft: "1rem" } : null}
+                >
+                  <Item>
+                    <ReportLabel text="Gender" />
+                    <ReportInput type="text" width="150px" />
+                  </Item>
+                </Column>
+              </Grid>
 
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
+              <Item>
+                <ReportLabel text="NHS No" />
+                <ReportInput type="text" width="250px" />
+              </Item>
+            </Item>
+
+            <Item>
+              <Item>
+                <ReportLabel text="Contact 1" />
+                <ReportInput type="text" width="250px" />
+              </Item>
+
+              <Item>
+                <ReportLabel text="Contact 2" />
+                <ReportInput type="text" width="250px" />
+              </Item>
+            </Item>
           </Column>
 
           <Column>
-            <ReportLabel text="Test" />
-            <ReportInput type="text" placeholder="Test" />
-            <ReportInput type="text" placeholder="Test" />
-            <ReportInput type="text" placeholder="Test" />
-            <ReportInput type="text" placeholder="Test" />
+            <Item>
+              <ReportLabel text="Address" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+              <ReportInput type="text" width="250px" />
+            </Item>
 
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
+            <Item>
+              <Item>
+                <ReportLabel text="Contact 3" />
+                <ReportInput type="text" width="250px" />
+              </Item>
 
-            <ReportLabel text="Name" />
-            <ReportInput type="text" placeholder="Name" />
+              <Item>
+                <ReportLabel text="Contact 4" />
+                <ReportInput type="text" width="250px" />
+              </Item>
+            </Item>
           </Column>
         </Grid>
       </ReportForm>

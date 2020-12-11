@@ -5,7 +5,14 @@ import React from "react";
 import { Container, Input } from "./ReportInput.elements";
 
 // Component: ReportInput
-export default function ReportInput({ type, id, value, name, placeholder }) {
+export default function ReportInput({
+  type,
+  id,
+  value,
+  name,
+  placeholder,
+  width,
+}) {
   return (
     <Container>
       <Input
@@ -14,6 +21,7 @@ export default function ReportInput({ type, id, value, name, placeholder }) {
         value={value}
         name={name}
         placeholder={placeholder}
+        style={{ width: `${width}` }}
       />
     </Container>
   );
