@@ -4,8 +4,9 @@ import styled from "styled-components/macro";
 // Element: Container
 export const Container = styled.div`
   align-items: center;
+  background: ${({ isActive }) => (isActive ? "#bfbfc5" : "#d4d4d8")};
   border-bottom: 1px solid rgba(42, 42, 46, 0.3);
-  cursor: pointer;
+  cursor: ${({ isActive }) => (isActive ? "default" : "pointer")};
   display: flex;
   flex-direction: column;
   height: 75px;

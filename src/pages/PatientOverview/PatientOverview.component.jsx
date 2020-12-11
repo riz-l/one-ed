@@ -50,7 +50,7 @@ export default function PatientOverview() {
           }
           nav={
             <ReportNavigation>
-              <ReportNavigationItem>
+              <ReportNavigationItem isActive>
                 <DetailsIcon />
                 <span>Details</span>
               </ReportNavigationItem>

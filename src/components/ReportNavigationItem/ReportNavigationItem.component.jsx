@@ -5,6 +5,6 @@ import React from "react";
 import { Container } from "./ReportNavigationItem.elements";
 
 // Component: ReportNavigationItem
-export default function ReportNavigationItem({ children }) {
-  return <Container>{children}</Container>;
+export default function ReportNavigationItem({ isActive, children }) {
+  return <Container isActive={isActive}>{children}</Container>;
 }
