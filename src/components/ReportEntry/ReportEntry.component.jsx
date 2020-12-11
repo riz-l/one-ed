@@ -3,6 +3,7 @@ import React from "react";
 
 // Import: Icons
 import { MdKeyboardArrowRight as ArrowIcon } from "react-icons/md";
+import { BiPlusMedical as DefaultIcon } from "react-icons/bi";
 
 // Import: Elements
 import { Container } from "../../globalComponents";
@@ -11,6 +12,7 @@ import {
   EntryContainer,
   Left,
   Heading,
+  Icon,
   Detail,
   Right,
   Status,
@@ -19,25 +21,33 @@ import {
 } from "./ReportEntry.elements";
 
 // Component: ReportEntry
-export default function ReportEntry({ themeColor, icon }) {
+export default function ReportEntry({
+  themeColor,
+  icon,
+  type,
+  details,
+  status,
+}) {
   return (
     <Container>
-      <Wrapper style={{ borderColor: `${themeColor}` }}>
+      <Wrapper themeColor={themeColor}>
         <EntryContainer>
           <Left>
             <Heading>
-              {icon}
-              <h3>Impairment</h3>
+              <Icon themeColor={themeColor}>
+                {icon ? icon : <DefaultIcon />}
+              </Icon>
+              <h3>{type ? type : "Type"}</h3>
             </Heading>
 
             <Detail>
-              <p>Communication difficulties</p>
+              <p>{details ? details : "Details"}</p>
             </Detail>
           </Left>
 
           <Right>
             <Status>
-              <p>Active</p>
+              <p>{status ? status : "Status"}</p>
             </Status>
           </Right>
 

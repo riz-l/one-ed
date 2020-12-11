@@ -3,7 +3,8 @@ import styled from "styled-components/macro";
 
 // Element: Wrapper
 export const Wrapper = styled.div`
-  border: 1px solid #ff6347;
+  border: ${({ themeColor }) =>
+    themeColor ? `1px solid ${themeColor}` : "1px solid #3a3a40"};
   align-items: center;
   display: flex;
   height: auto;
@@ -36,6 +37,24 @@ export const Heading = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 0.4rem;
+`;
+
+// Element: Icon
+export const Icon = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: ${({ themeColor }) => (themeColor ? themeColor : "#3a3a40")};
+  border-radius: 50%;
+  padding: 0.4rem;
+  margin-right: 0.6rem;
+
+  & svg {
+    fill: #ffffff;
+    height: 25px;
+    width: 25px;
+  }
 `;
 
 // Element: Detail
@@ -67,12 +86,10 @@ export const Arrow = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: all 100ms linear;
 
   & svg {
     fill: #f1f1f1;
     height: 30px;
-    margin-top: 2px;
     transition: all 100ms linear;
     width: 30px;
   }
@@ -81,7 +98,7 @@ export const Arrow = styled.div`
 // Element: ArrowContainer
 export const ArrowContainer = styled.div`
   align-items: center;
-  background: #ff6347;
+  background: ${({ themeColor }) => (themeColor ? themeColor : "#3a3a40")};
   cursor: pointer;
   display: flex;
   height: 100%;
@@ -93,8 +110,7 @@ export const ArrowContainer = styled.div`
   width: 30px;
 
   &:hover {
-    background: ${({ themeColor }) =>
-      themeColor ? `lighten(${themeColor}, 50%)` : "#ff401f"};
+    filter: brightness(0.8);
     transition: all 100ms linear;
 
     & ${Arrow} {
@@ -103,11 +119,10 @@ export const ArrowContainer = styled.div`
         transition: all 100ms linear;
       }
     }
-  }
 
-  & ${Wrapper} {
-    border: ${({ themeColor }) =>
-      themeColor ? `1px solid lighten(${themeColor}, 50%)` : "#ff401f"};
-    transition: all 100ms linear;
+    & ${Wrapper} {
+      filter: brightness(0.8);
+      transition: all 100ms linear;
+    }
   }
 `;
