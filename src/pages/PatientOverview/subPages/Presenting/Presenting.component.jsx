@@ -25,7 +25,7 @@ export default function Presenting() {
   return (
     <Container>
       <Heading>
-        <h2>Presenting</h2>
+        <h2>Presenting Complaint</h2>
       </Heading>
 
       <ReportForm>

@@ -7,6 +7,9 @@ export { default as PatientList } from "./PatientList/PatientList.component";
 // Export: PatientListItem
 export { default as PatientListItem } from "./PatientListItem/PatientListItem.component";
 
+// Export: ReportEntry
+export { default as ReportEntry } from "./ReportEntry/ReportEntry.component";
+
 // Export: ReportForm
 export { default as ReportForm } from "./ReportForm/ReportForm.component";
 
