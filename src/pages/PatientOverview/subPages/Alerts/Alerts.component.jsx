@@ -2,7 +2,7 @@
 import React from "react";
 
 // Import: Icons
-import { FiAlertTriangle as AlertIcon } from "react-icons/fi";
+import { GoAlert as AlertIcon } from "react-icons/go";
 
 // Import: Elements
 import { Container, Heading, Item } from "../../../../globalComponents";
@@ -34,16 +34,6 @@ export default function Alerts() {
           details="Advance decision in effect"
           status="Active"
         />
-
-        <ReportEntry
-          themeColor="#8b5fbf"
-          icon={<AlertIcon />}
-          type="End of life"
-          details="Advance decision in effect"
-          status="Inactive"
-        />
-
-        <ReportEntry />
       </Item>
     </Container>
   );
