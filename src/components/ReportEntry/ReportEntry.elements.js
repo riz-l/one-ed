@@ -55,6 +55,12 @@ export const Icon = styled.div`
     height: 25px;
     width: 25px;
   }
+
+  @media screen and (max-width: 448px) {
+    display: none;
+    visibility: hidden;
+    margin-right: 0;
+  }
 `;
 
 // Element: Detail
