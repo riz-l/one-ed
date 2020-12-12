@@ -6,6 +6,11 @@ import { MdKeyboardArrowRight as ArrowIcon } from "react-icons/md";
 import { GoAlert as AlertsIcon } from "react-icons/go";
 import { GiMedicines as AllergiesIcon } from "react-icons/gi";
 import { FaBandAid as ComplicationsIcon } from "react-icons/fa";
+import { GiStethoscope as DiagnosisIcon } from "react-icons/gi";
+import { FaSearch as FindingsIcon } from "react-icons/fa";
+import { FaBriefcaseMedical as PresentingIcon } from "react-icons/fa";
+import { FaLaptopMedical as ProceduresIcon } from "react-icons/fa";
+import { FaBed as SymptomsIcon } from "react-icons/fa";
 import { BiPlusMedical as DefaultIcon } from "react-icons/bi";
 
 // Import: Elements
@@ -28,6 +33,11 @@ export default function ReportEntry({
   alerts,
   allergies,
   complications,
+  diagnosis,
+  findings,
+  presenting,
+  procedures,
+  symptoms,
   themeColor,
   icon,
   type,
@@ -40,6 +50,11 @@ export default function ReportEntry({
         alerts={alerts}
         allergies={allergies}
         complications={complications}
+        diagnosis={diagnosis}
+        findings={findings}
+        presenting={presenting}
+        procedures={procedures}
+        symptoms={symptoms}
         themeColor={themeColor}
       >
         <EntryContainer>
@@ -49,6 +64,11 @@ export default function ReportEntry({
                 alerts={alerts}
                 allergies={allergies}
                 complications={complications}
+                diagnosis={diagnosis}
+                findings={findings}
+                presenting={presenting}
+                procedures={procedures}
+                symptoms={symptoms}
                 themeColor={themeColor}
               >
                 {alerts ? (
@@ -57,6 +77,16 @@ export default function ReportEntry({
                   <AllergiesIcon />
                 ) : complications ? (
                   <ComplicationsIcon />
+                ) : diagnosis ? (
+                  <DiagnosisIcon />
+                ) : findings ? (
+                  <FindingsIcon />
+                ) : presenting ? (
+                  <PresentingIcon />
+                ) : procedures ? (
+                  <ProceduresIcon />
+                ) : symptoms ? (
+                  <SymptomsIcon />
                 ) : icon ? (
                   icon
                 ) : (
@@ -81,6 +111,11 @@ export default function ReportEntry({
             alerts={alerts}
             allergies={allergies}
             complications={complications}
+            diagnosis={diagnosis}
+            findings={findings}
+            presenting={presenting}
+            procedures={procedures}
+            symptoms={symptoms}
             style={{ background: `${themeColor}` }}
           >
             <Arrow>

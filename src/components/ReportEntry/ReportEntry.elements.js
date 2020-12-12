@@ -3,13 +3,33 @@ import styled from "styled-components/macro";
 
 // Element: Wrapper
 export const Wrapper = styled.div`
-  border: ${({ alerts, allergies, complications, themeColor }) =>
+  border: ${({
+    alerts,
+    allergies,
+    complications,
+    diagnosis,
+    findings,
+    presenting,
+    procedures,
+    symptoms,
+    themeColor,
+  }) =>
     alerts
       ? "1px solid #ff6347"
       : allergies
       ? "1px solid #ffaf85"
       : complications
       ? "1px solid #9bc53d"
+      : diagnosis
+      ? "1px solid #ba2c73"
+      : findings
+      ? "1px solid #1b998b"
+      : presenting
+      ? "1px solid #5398be"
+      : procedures
+      ? "1px solid #585481"
+      : symptoms
+      ? "1px solid #2978a0"
       : themeColor
       ? `1px solid ${themeColor}`
       : "1px solid #3a3a40"};
@@ -53,18 +73,38 @@ export const Icon = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  background: ${({ alerts, allergies, complications, themeColor }) =>
+  background: ${({
+    alerts,
+    allergies,
+    complications,
+    diagnosis,
+    findings,
+    presenting,
+    procedures,
+    symptoms,
+    themeColor,
+  }) =>
     alerts
       ? "#ff6347"
       : allergies
       ? "#ffaf85"
       : complications
       ? "#9bc53d"
+      : diagnosis
+      ? "#ba2c73"
+      : findings
+      ? "#1b998b"
+      : presenting
+      ? "#5398be"
+      : procedures
+      ? "#585481"
+      : symptoms
+      ? "#2978a0"
       : themeColor
       ? themeColor
       : "#3a3a40"};
   border-radius: 50%;
-  padding: 0.4rem;
+  padding: 0.5rem;
   margin-right: 0.6rem;
 
   & svg {
@@ -121,13 +161,33 @@ export const Arrow = styled.div`
 // Element: ArrowContainer
 export const ArrowContainer = styled.div`
   align-items: center;
-  background: ${({ alerts, allergies, complications, themeColor }) =>
+  background: ${({
+    alerts,
+    allergies,
+    complications,
+    diagnosis,
+    findings,
+    presenting,
+    procedures,
+    symptoms,
+    themeColor,
+  }) =>
     alerts
       ? "#ff6347"
       : allergies
       ? "#ffaf85"
       : complications
       ? "#9bc53d"
+      : diagnosis
+      ? "#ba2c73"
+      : findings
+      ? "#1b998b"
+      : presenting
+      ? "#5398be"
+      : procedures
+      ? "#585481"
+      : symptoms
+      ? "#2978a0"
       : themeColor
       ? themeColor
       : "#3a3a40"};
