@@ -38,7 +38,7 @@ import {
 // Page: PatientOverview
 export default function PatientOverview() {
   // State: Patient History subPages
-  const [showAlerts, setShowAlerts] = useState(false);
+  const [showAlerts, setShowAlerts] = useState(true);
   const [showAllergies, setShowAllergies] = useState(false);
   const [showComplications, setShowComplications] = useState(false);
   const [showDiagnosis, setShowDiagnosis] = useState(false);
