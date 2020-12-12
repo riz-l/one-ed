@@ -3,8 +3,16 @@ import styled from "styled-components/macro";
 
 // Element: Wrapper
 export const Wrapper = styled.div`
-  border: ${({ themeColor }) =>
-    themeColor ? `1px solid ${themeColor}` : "1px solid #3a3a40"};
+  border: ${({ alerts, allergies, complications, themeColor }) =>
+    alerts
+      ? "1px solid #ff6347"
+      : allergies
+      ? "1px solid #ffaf85"
+      : complications
+      ? "1px solid #9bc53d"
+      : themeColor
+      ? `1px solid ${themeColor}`
+      : "1px solid #3a3a40"};
   align-items: center;
   display: flex;
   height: auto;
@@ -45,7 +53,16 @@ export const Icon = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  background: ${({ themeColor }) => (themeColor ? themeColor : "#3a3a40")};
+  background: ${({ alerts, allergies, complications, themeColor }) =>
+    alerts
+      ? "#ff6347"
+      : allergies
+      ? "#ffaf85"
+      : complications
+      ? "#9bc53d"
+      : themeColor
+      ? themeColor
+      : "#3a3a40"};
   border-radius: 50%;
   padding: 0.4rem;
   margin-right: 0.6rem;
@@ -104,7 +121,16 @@ export const Arrow = styled.div`
 // Element: ArrowContainer
 export const ArrowContainer = styled.div`
   align-items: center;
-  background: ${({ themeColor }) => (themeColor ? themeColor : "#3a3a40")};
+  background: ${({ alerts, allergies, complications, themeColor }) =>
+    alerts
+      ? "#ff6347"
+      : allergies
+      ? "#ffaf85"
+      : complications
+      ? "#9bc53d"
+      : themeColor
+      ? themeColor
+      : "#3a3a40"};
   cursor: pointer;
   display: flex;
   height: 100%;

@@ -1,9 +1,6 @@
 // Import: Dependencies
 import React from "react";
 
-// Import: Icons
-import { GoAlert as AlertIcon } from "react-icons/go";
-
 // Import: Elements
 import { Container, Heading, Item } from "../../../../globalComponents";
 
@@ -20,16 +17,14 @@ export default function Alerts() {
 
       <Item>
         <ReportEntry
-          themeColor="#ff6347"
-          icon={<AlertIcon />}
+          alerts
           type="Impairment"
           details="Communication difficulties"
           status="Active"
         />
 
         <ReportEntry
-          themeColor="#ff6347"
-          icon={<AlertIcon />}
+          alerts
           type="End of life"
           details="Advance decision in effect"
           status="Active"

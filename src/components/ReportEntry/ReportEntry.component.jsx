@@ -3,6 +3,9 @@ import React from "react";
 
 // Import: Icons
 import { MdKeyboardArrowRight as ArrowIcon } from "react-icons/md";
+import { GoAlert as AlertsIcon } from "react-icons/go";
+import { GiMedicines as AllergiesIcon } from "react-icons/gi";
+import { FaBandAid as ComplicationsIcon } from "react-icons/fa";
 import { BiPlusMedical as DefaultIcon } from "react-icons/bi";
 
 // Import: Elements
@@ -22,6 +25,9 @@ import {
 
 // Component: ReportEntry
 export default function ReportEntry({
+  alerts,
+  allergies,
+  complications,
   themeColor,
   icon,
   type,
@@ -30,12 +36,32 @@ export default function ReportEntry({
 }) {
   return (
     <Container>
-      <Wrapper themeColor={themeColor}>
+      <Wrapper
+        alerts={alerts}
+        allergies={allergies}
+        complications={complications}
+        themeColor={themeColor}
+      >
         <EntryContainer>
           <Left>
             <Heading>
-              <Icon themeColor={themeColor}>
-                {icon ? icon : <DefaultIcon />}
+              <Icon
+                alerts={alerts}
+                allergies={allergies}
+                complications={complications}
+                themeColor={themeColor}
+              >
+                {alerts ? (
+                  <AlertsIcon />
+                ) : allergies ? (
+                  <AllergiesIcon />
+                ) : complications ? (
+                  <ComplicationsIcon />
+                ) : icon ? (
+                  icon
+                ) : (
+                  <DefaultIcon />
+                )}
               </Icon>
               <h3>{type ? type : "Type"}</h3>
             </Heading>
@@ -51,7 +77,12 @@ export default function ReportEntry({
             </Status>
           </Right>
 
-          <ArrowContainer style={{ background: `${themeColor}` }}>
+          <ArrowContainer
+            alerts={alerts}
+            allergies={allergies}
+            complications={complications}
+            style={{ background: `${themeColor}` }}
+          >
             <Arrow>
               <ArrowIcon />
             </Arrow>

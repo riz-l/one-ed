@@ -1,9 +1,6 @@
 // Import: Dependencies
 import React from "react";
 
-// Import: Icons
-import { GiMedicines as AllergiesIcon } from "react-icons/gi";
-
 // Import: Elements
 import { Container, Heading, Item } from "../../../../globalComponents";
 
@@ -20,16 +17,14 @@ export default function Allergies() {
 
       <Item>
         <ReportEntry
-          themeColor="#ffaf85"
-          icon={<AllergiesIcon />}
+          allergies
           type="Drug Allergy"
           details="Extreme reaction to paracetamol"
           status="Active"
         />
 
         <ReportEntry
-          themeColor="#ffaf85"
-          icon={<AllergiesIcon />}
+          allergies
           type="Food Allergy"
           details="Mild reaction to lactose"
           status="Active"
