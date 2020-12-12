@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 
 // Element: Wrapper
 export const Wrapper = styled.div`
+  align-items: center;
   border: ${({
     alerts,
     allergies,
@@ -33,12 +34,17 @@ export const Wrapper = styled.div`
       : themeColor
       ? `1px solid ${themeColor}`
       : "1px solid #3a3a40"};
-  align-items: center;
+
   display: flex;
   height: auto;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
   transition: all 100ms linear;
+
+  &:hover {
+    transform: translateY(-4px);
+    transition: all 100ms linear;
+  }
 `;
 
 // Element: EntryContainer
@@ -71,8 +77,6 @@ export const Heading = styled.div`
 // Element: Icon
 export const Icon = styled.div`
   align-items: center;
-  display: flex;
-  justify-content: center;
   background: ${({
     alerts,
     allergies,
@@ -104,6 +108,8 @@ export const Icon = styled.div`
       ? themeColor
       : "#3a3a40"};
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
   padding: 0.5rem;
   margin-right: 0.6rem;
 

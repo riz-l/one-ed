@@ -28,7 +28,7 @@ export const Heading = styled.div`
   width: 100%;
 
   & h2 {
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 0 1rem 1rem;
   }
 `;
 
