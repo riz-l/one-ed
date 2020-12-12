@@ -34,18 +34,12 @@ export const Wrapper = styled.div`
       : themeColor
       ? `1px solid ${themeColor}`
       : "1px solid #3a3a40"};
-  cursor: pointer;
+
   display: flex;
   height: auto;
   justify-content: center;
   margin: 1rem 1rem 0 1rem;
   transition: all 100ms linear;
-
-  &:hover {
-    box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
-    transform: translateY(-4px);
-    transition: all 100ms linear;
-  }
 `;
 
 // Element: EntryContainer
