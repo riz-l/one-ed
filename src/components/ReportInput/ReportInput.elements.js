@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 // Element: Input
 export const Input = styled.input`
-  border: 1px solid #bfbfc5;
+  border: 2px solid #bfbfc5;
   padding: 0.4rem 1rem;
   transition: all 100ms linear;
 
@@ -22,7 +22,7 @@ export const Input = styled.input`
   }
 
   &:focus {
-    border: 1px solid #a9a9b1;
+    border: 2px solid #a9a9b1;
     box-shadow: 0 0 5px #a1f4f7;
     outline: none !important;
     transition: all 100ms linear;

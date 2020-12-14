@@ -13,6 +13,12 @@ export const Container = styled.div`
   justify-content: center;
   text-align: center;
   transition: all 100ms linear;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 85px;
   word-wrap: wrap;
 
