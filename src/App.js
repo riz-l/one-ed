@@ -28,7 +28,10 @@ export default function App() {
   return (
     <>
       <Header setIsPatientListOpen={setIsPatientListOpen} />
-      <PatientList isPatientListOpen={isPatientListOpen} />
+      <PatientList
+        isPatientListOpen={isPatientListOpen}
+        setIsPatientListOpen={setIsPatientListOpen}
+      />
 
       <Container>
         <Switch>

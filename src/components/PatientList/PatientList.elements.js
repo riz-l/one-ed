@@ -4,20 +4,20 @@ import styled from "styled-components/macro";
 // Element: Container
 export const Container = styled.div`
   background: #2a2a2e;
-  height: calc(100vh - 102px);
-  max-height: calc(100vh - 102px);
-  min-height: calc(100vh - 102px);
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
   position: fixed;
   right: 0;
-  top: 102px;
+  top: 0;
   transform: ${({ isPatientListOpen }) =>
     isPatientListOpen ? `translateX(0)` : `translateX(100%)`};
   transition: all 100ms linear;
   visibility: ${({ isPatientListOpen }) =>
     isPatientListOpen ? `visible` : `hidden`};
   width: 500px;
-  z-index: 3;
+  z-index: 6;
 
   @media screen and (max-width: 768px) {
     width: 100vw;
