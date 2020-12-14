@@ -56,6 +56,14 @@ export default function PatientList({
           <h2>
             Patient List <span>(15)</span>
           </h2>
+
+          <button
+            onClick={() =>
+              setIsPatientListOpen((isPatientListOpen) => !isPatientListOpen)
+            }
+          >
+            Close Menu
+          </button>
         </Heading>
       </Header>
 
