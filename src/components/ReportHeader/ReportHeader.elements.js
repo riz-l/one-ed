@@ -23,13 +23,6 @@ export const PrimaryHeader = styled.div`
   width: 100%;
 `;
 
-// Element: SecondaryHeader
-export const SecondaryHeader = styled.div`
-  background: #dfdfe2;
-  height: 35px;
-  width: 100%;
-`;
-
 // Element: HeaderWrapper
 export const HeaderWrapper = styled.div`
   align-items: flex-start;
@@ -47,6 +40,50 @@ export const HeaderWrapper = styled.div`
       display: none;
       visibility: hidden;
     }
+  }
+`;
+
+// Element: NavToggleWrapper
+export const NavToggleWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  width: 100%;
+`;
+
+// Element: NavToggle
+export const NavToggle = styled.div`
+  align-items: center;
+  background: #b3b3bc;
+  cursor: pointer;
+  display: none;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0 1rem;
+  transition: all 100ms linear;
+  visibility: hidden;
+
+  @media screen and (max-width: 706px) {
+    display: flex;
+    visibility: visible;
+  }
+
+  &:hover {
+    background: #9e9ea9;
+    transition: all 100ms linear;
+
+    & svg {
+      fill: #2a2a2e;
+      transition: all 100ms linear;
+    }
+  }
+
+  & svg {
+    fill: #3a3a40;
+    height: 25px;
+    transition: all 100ms linear;
+    width: 25px;
   }
 `;
 
@@ -87,4 +124,11 @@ export const SmallIcon = styled.div`
     height: 42px;
     width: 42px;
   }
+`;
+
+// Element: SecondaryHeader
+export const SecondaryHeader = styled.div`
+  background: #dfdfe2;
+  height: 35px;
+  width: 100%;
 `;
