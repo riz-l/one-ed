@@ -30,7 +30,6 @@ export const Header = styled.div`
   background: #2a2a2e;
   box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
@@ -45,19 +44,53 @@ export const Header = styled.div`
 export const Heading = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-start;
 
   & svg {
     fill: #f1f1f1;
-    height: 45px;
-    width: 45px;
+    height: 35px;
+    margin: 0 8px 0 1rem;
+    width: 35px;
   }
 
   & h2 {
     color: #f1f1f1;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    padding: 0 1rem;
+  }
+`;
+
+// Element: ToggleWrapper
+export const ToggleWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+`;
+
+// Element: Toggle
+export const Toggle = styled.div`
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  transition: all 100ms linear;
+
+  &:hover {
+    & svg {
+      fill: #ffffff;
+      transition: all 100ms linear;
+    }
+  }
+
+  & svg {
+    fill: #f1f1f1;
+    height: 35px;
+    transition: all 100ms linear;
+    width: 35px;
   }
 `;
 

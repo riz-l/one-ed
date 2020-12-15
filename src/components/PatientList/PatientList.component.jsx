@@ -4,12 +4,17 @@ import React, { useRef, useEffect } from "react";
 // Import: Assets
 import { ReactComponent as PatientIcon } from "../../assets/img/icon/list-patient.svg";
 
+// Import: Icons
+import { AiOutlineCloseSquare as ToggleIcon } from "react-icons/ai";
+
 // Import: Elements
 import {
   Container,
   Header,
   Heading,
   ItemWrapper,
+  ToggleWrapper,
+  Toggle,
 } from "./PatientList.elements";
 
 // Import: Components
@@ -56,15 +61,17 @@ export default function PatientList({
           <h2>
             Patient List <span>(15)</span>
           </h2>
+        </Heading>
 
-          <button
+        <ToggleWrapper>
+          <Toggle
             onClick={() =>
               setIsPatientListOpen((isPatientListOpen) => !isPatientListOpen)
             }
           >
-            Close Menu
-          </button>
-        </Heading>
+            <ToggleIcon />
+          </Toggle>
+        </ToggleWrapper>
       </Header>
 
       <ItemWrapper>

@@ -40,6 +40,7 @@ export default function ReportHeader({ icon, heading, subtext }) {
           <span>{subtext}</span>
         </HeaderWrapper>
       </PrimaryHeader>
+
       <SecondaryHeader></SecondaryHeader>
     </Container>
   );
