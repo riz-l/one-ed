@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 
 // Import: Icons
-import { RiMenuUnfoldFill as OpenNavIcon } from "react-icons/ri";
-import { RiMenuFoldFill as CloseNavIcon } from "react-icons/ri";
+// import { RiMenuUnfoldFill as OpenNavIcon } from "react-icons/ri";
+// import { RiMenuFoldFill as CloseNavIcon } from "react-icons/ri";
 
 // Import: Elements
 import {
@@ -12,8 +12,8 @@ import {
   HeaderWrapper,
   BigIcon,
   SmallIcon,
-  NavToggleWrapper,
-  NavToggle,
+  // NavToggleWrapper,
+  // NavToggle,
   SecondaryHeader,
 } from "./ReportHeader.elements";
 
@@ -21,7 +21,6 @@ import {
 export default function ReportHeader({ icon, heading, subtext }) {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isNavOpen, setIsNavOpen] = useState(windowWidth > 706 ? true : false);
 
   // Effect: Checks and updates inner window width
   useEffect(() => {
@@ -49,11 +48,9 @@ export default function ReportHeader({ icon, heading, subtext }) {
       </PrimaryHeader>
 
       <SecondaryHeader>
-        <NavToggleWrapper>
-          <NavToggle onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
-            {isNavOpen ? <CloseNavIcon /> : <OpenNavIcon />}
-          </NavToggle>
-        </NavToggleWrapper>
+        {/* <NavToggleWrapper>
+          <NavToggle></NavToggle>
+        </NavToggleWrapper> */}
       </SecondaryHeader>
     </Container>
   );
