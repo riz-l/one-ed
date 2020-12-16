@@ -1,6 +1,13 @@
 {
+  "theme_color": "#2a2a2e",
+  "background_color": "#11bac1",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "app_name": "OneED",
   "short_name": "OneED",
   "name": "OneED",
+  "description": "Emergency Department overview, triage and treatment solution",
   "icons": [
     {
       "src": "favicon.ico",
@@ -27,9 +34,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#11bac1"
+  ]
 }
