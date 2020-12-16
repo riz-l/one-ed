@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 
 // Import: Icons
-// import { RiMenuUnfoldFill as OpenNavIcon } from "react-icons/ri";
-// import { RiMenuFoldFill as CloseNavIcon } from "react-icons/ri";
+import { RiMenuUnfoldFill as OpenNavIcon } from "react-icons/ri";
+import { RiMenuFoldFill as CloseNavIcon } from "react-icons/ri";
 
 // Import: Elements
 import {
@@ -12,8 +12,8 @@ import {
   HeaderWrapper,
   BigIcon,
   SmallIcon,
-  // NavToggleWrapper,
-  // NavToggle,
+  NavToggleWrapper,
+  NavToggle,
   SecondaryHeader,
 } from "./ReportHeader.elements";
 
@@ -48,9 +48,11 @@ export default function ReportHeader({ icon, heading, subtext }) {
       </PrimaryHeader>
 
       <SecondaryHeader>
-        {/* <NavToggleWrapper>
-          <NavToggle></NavToggle>
-        </NavToggleWrapper> */}
+        <NavToggleWrapper>
+          <NavToggle>
+            {windowWidth > 706 ? <CloseNavIcon /> : <OpenNavIcon />}
+          </NavToggle>
+        </NavToggleWrapper>
       </SecondaryHeader>
     </Container>
   );
