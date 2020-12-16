@@ -48,7 +48,12 @@ export default function Header({ setIsPatientListOpen }) {
           <Link to="/">
             <Logo>
               {urlPath !== "" && urlPath !== "/" ? (
-                <BackIcon />
+                <>
+                  <BackIcon />
+                  <span style={{ marginLeft: "8px", fontWeight: "600" }}>
+                    Return to Hub
+                  </span>
+                </>
               ) : (
                 <img src={LogoWhite} alt="OneED Logo" />
               )}
