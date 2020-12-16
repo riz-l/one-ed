@@ -44,7 +44,7 @@ export const Header = styled.div`
 export const Heading = styled.div`
   align-items: center;
   display: flex;
-  flex: 1;
+  flex: 2;
   height: 100%;
   justify-content: flex-start;
 
