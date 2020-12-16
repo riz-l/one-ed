@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 
 // Import: Elements
 import { Container, Heading, Item } from "../../../../globalComponents";
@@ -9,6 +9,11 @@ import { ReportEntry } from "../../../../components";
 
 // SubPage: Allergies
 export default function Allergies() {
+  // Effect: Upon navigation to Allergies, moves DOM to top of window
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container>
       <Heading>

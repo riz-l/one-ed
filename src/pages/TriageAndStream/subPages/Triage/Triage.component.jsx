@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 
 // Import: Elements
 import { Container, Heading, Grid, Column, Item } from "./Triage.elements";
@@ -9,6 +9,11 @@ import { ReportForm, ReportInput, ReportLabel } from "../../../../components";
 
 // SubPage: Triage
 export default function Triage() {
+  // Effect: Upon navigation to Triage, moves DOM to top of window
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container>
       <Heading>

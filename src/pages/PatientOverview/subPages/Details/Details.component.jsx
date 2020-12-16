@@ -12,13 +12,15 @@ export default function Details() {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Effect: Checks and updates inner window width
+  // Effect: Upon navigation to Details, moves DOM to top of window
+  // ... checks and updates inner window width
   useEffect(() => {
     const updateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setWindowWidth(newWidth);
     };
 
+    window.scrollTo(0, 0);
     window.addEventListener("resize", updateWindowDimensions);
   }, []);
 
