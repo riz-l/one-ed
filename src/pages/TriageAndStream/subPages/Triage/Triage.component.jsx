@@ -19,18 +19,18 @@ export default function Triage() {
         <Grid>
           <Column>
             <Item>
-              <ReportLabel text="Arrival/Date/Time" />
+              <ReportLabel text="Arrival Date/Time" />
               <ReportInput type="text" width="250px" />
             </Item>
 
             <Item>
               <ReportLabel text="Triage Date" />
-              <ReportInput type="text" width="250px" />
+              <ReportInput type="date" width="250px" />
             </Item>
 
             <Item>
               <ReportLabel text="Triage Time" />
-              <ReportInput type="text" width="250px" />
+              <ReportInput type="time" width="250px" />
             </Item>
 
             <Item>
