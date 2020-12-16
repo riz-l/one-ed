@@ -37,6 +37,10 @@ import {
 
 // Page: PatientOverview
 export default function PatientOverview() {
+  // State: isDetailsNavOpen, isHistoryNavOpen
+  const [isDetailsNavOpen, setIsDetailsNavOpen] = useState(false);
+  const [isHistoryNavOpen, setIsHistoryNavOpen] = useState(false);
+
   // State: Patient History subPages
   const [showAlerts, setShowAlerts] = useState(true);
   const [showAllergies, setShowAllergies] = useState(false);
@@ -52,6 +56,16 @@ export default function PatientOverview() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // onClick: Open/close Details Nav
+  function toggleDetailsNav() {
+    setIsDetailsNavOpen((isDetailsNavOpen) => !isDetailsNavOpen);
+  }
+
+  // onClick: Open/close History Nav
+  function toggleHistoryNav() {
+    setIsHistoryNavOpen((isHistoryNavOpen) => !isHistoryNavOpen);
+  }
 
   // onClick: Render Alerts
   function alertsRender() {
@@ -167,10 +181,11 @@ export default function PatientOverview() {
               icon={<DetailsIcon />}
               heading="Patient Details"
               subtext="Demographics and contact information"
+              navToggle={toggleDetailsNav}
             />
           }
           nav={
-            <ReportNavigation>
+            <ReportNavigation navStatus={isDetailsNavOpen}>
               <ReportNavigationItem isActive>
                 <DetailsIcon />
                 <span>Details</span>
@@ -178,6 +193,7 @@ export default function PatientOverview() {
             </ReportNavigation>
           }
           content={<Details />}
+          navStatus={isDetailsNavOpen}
         />
 
         {/* Patient History */}
@@ -187,10 +203,11 @@ export default function PatientOverview() {
               heading="Patient History"
               subtext="Alerts, allergies, medications, etc."
               icon={<HistoryIcon />}
+              navToggle={toggleHistoryNav}
             />
           }
           nav={
-            <ReportNavigation>
+            <ReportNavigation navStatus={isHistoryNavOpen}>
               <ItemWrapper onClick={alertsRender}>
                 <ReportNavigationItem isActive={showAlerts ? true : false}>
                   <AlertsIcon />
@@ -269,6 +286,7 @@ export default function PatientOverview() {
               <Symptoms />
             ) : null
           }
+          navStatus={isHistoryNavOpen}
         />
       </Wrapper>
     </Container>
