@@ -182,6 +182,7 @@ export default function PatientOverview() {
               heading="Patient Details"
               subtext="Demographics and contact information"
               navToggle={toggleDetailsNav}
+              navStatus={isDetailsNavOpen}
             />
           }
           nav={
@@ -204,6 +205,7 @@ export default function PatientOverview() {
               subtext="Alerts, allergies, medications, etc."
               icon={<HistoryIcon />}
               navToggle={toggleHistoryNav}
+              navStatus={isHistoryNavOpen}
             />
           }
           nav={

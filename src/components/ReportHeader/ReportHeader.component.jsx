@@ -18,7 +18,13 @@ import {
 } from "./ReportHeader.elements";
 
 // Component: ReportHeader
-export default function ReportHeader({ icon, heading, subtext, navToggle }) {
+export default function ReportHeader({
+  icon,
+  heading,
+  subtext,
+  navToggle,
+  navStatus,
+}) {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -50,7 +56,7 @@ export default function ReportHeader({ icon, heading, subtext, navToggle }) {
       <SecondaryHeader>
         <NavToggleWrapper>
           <NavToggle onClick={navToggle}>
-            {windowWidth > 706 ? <CloseNavIcon /> : <OpenNavIcon />}
+            {navStatus ? <CloseNavIcon /> : <OpenNavIcon />}
           </NavToggle>
         </NavToggleWrapper>
       </SecondaryHeader>

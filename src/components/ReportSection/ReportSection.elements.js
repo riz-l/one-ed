@@ -64,7 +64,6 @@ export const ContentWrapper = styled.div`
   @media screen and (max-width: 706px) {
     grid-template-columns: ${({ navStatus }) =>
       navStatus ? "85px 1fr" : "0 1fr"};
-    /* grid-template-columns: 0 1fr; */
     transition: all 100ms linear;
   }
 `;
@@ -81,11 +80,10 @@ export const Navigation = styled.nav`
   height: 100%;
   transition: all 100ms linear;
   width: 85px;
+  z-index: 3;
 
   @media screen and (max-width: 706px) {
     display: ${({ navStatus }) => (!navStatus ? "none" : null)};
-    /* display: none; */
-    /* visibility: hidden; */
     transition: all 100ms linear;
     visibility: ${({ navStatus }) => (!navStatus ? "hidden" : "visible")};
   }
@@ -96,4 +94,5 @@ export const Content = styled.div`
   grid-area: content;
   height: 100%;
   width: 100%;
+  z-index: 2;
 `;
