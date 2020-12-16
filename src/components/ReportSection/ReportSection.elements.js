@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
 // Element: Report
 export const Report = styled.section`
   align-items: center;
-  background: #ffffff;
+  background: ${({ background }) => (background ? background : "#ffffff")};
   display: flex;
   flex: 1;
   flex-direction: column;

@@ -13,11 +13,17 @@ import {
 } from "./ReportSection.elements";
 
 // Component: ReportSection
-export default function ReportSection({ header, nav, content, navStatus }) {
+export default function ReportSection({
+  background,
+  header,
+  nav,
+  content,
+  navStatus,
+}) {
   return (
     <Container>
       <Wrapper>
-        <Report>
+        <Report background={background}>
           <Header>{header}</Header>
 
           <ContentWrapper navStatus={navStatus}>
