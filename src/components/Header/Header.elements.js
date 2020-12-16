@@ -52,9 +52,23 @@ export const Logo = styled.div`
   padding: 0 1rem;
   transition: all 100ms linear;
 
+  &:hover {
+    & svg {
+      fill: #ffffff;
+      transition: all 100ms linear;
+    }
+  }
+
   & img {
     width: 100px;
     max-width: 100px;
+  }
+
+  & svg {
+    fill: #f1f1f1;
+    height: 40px;
+    transition: all 100ms linear;
+    width: 40px;
   }
 
   & span {
