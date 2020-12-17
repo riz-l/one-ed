@@ -79,8 +79,26 @@ export const DetailsContainer = styled.div`
   flex: 2;
   height: 100%;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0.4rem 1rem;
   width: 100%;
+`;
+
+// Element: NameItem
+export const NameItem = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
 `;
 
 // Element: DetailItem
@@ -93,10 +111,6 @@ export const DetailItem = styled.div`
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  & h2 {
-    font-weight: 400;
   }
 `;
 

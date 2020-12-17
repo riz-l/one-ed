@@ -11,6 +11,7 @@ import {
   Icon,
   ContentWrapper,
   DetailsContainer,
+  NameItem,
   DetailItem,
   StatusContainer,
 } from "./PatientListItem.elements";
@@ -27,10 +28,10 @@ export default function PatientListItem() {
 
       <ContentWrapper>
         <DetailsContainer>
-          <DetailItem>
+          <NameItem>
             <h2>Firstname</h2>
             <h2>Surname</h2>
-          </DetailItem>
+          </NameItem>
 
           <DetailItem>
             <p>Call Sign</p>
