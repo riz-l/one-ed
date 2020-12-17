@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React, { useEffect } from "react";
+import React from "react";
 
 // Import: Elements
 import { Container, Heading, Item } from "../../../../globalComponents";
@@ -9,11 +9,6 @@ import { ReportEntry } from "../../../../components";
 
 // SubPage: Procedures
 export default function Procedures() {
-  // Effect: Upon navigation to Procedures, moves DOM to top of window
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <Container>
       <Heading>
