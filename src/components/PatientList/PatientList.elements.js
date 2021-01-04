@@ -51,7 +51,7 @@ export const Heading = styled.div`
   & svg {
     fill: #f1f1f1;
     height: 35px;
-    margin: 0 8px 0 1rem;
+    margin: 0 8px;
     width: 35px;
   }
 
