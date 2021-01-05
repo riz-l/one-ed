@@ -1,5 +1,6 @@
 // Import: Dependencies
 import React, { useState, useEffect } from "react";
+import Dexie from "dexie";
 
 // Import: Assets
 import { ReactComponent as DetailsIcon } from "../../assets/img/icon/patient-overview.svg";
@@ -193,7 +194,7 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
-          content={<Details />}
+          content={<Details db={new Dexie("PODetailsDatabase")} />}
           navStatus={isDetailsNavOpen}
         />
 

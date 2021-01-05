@@ -9,6 +9,7 @@ export default function ReportInput({
   type,
   id,
   value,
+  onChange,
   name,
   placeholder,
   width,
@@ -22,6 +23,7 @@ export default function ReportInput({
         name={name}
         placeholder={placeholder}
         style={{ width: `${width}` }}
+        onChange={onChange}
       />
     </Container>
   );

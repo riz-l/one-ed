@@ -126,7 +126,7 @@ export default function TriageAndStream() {
           />
 
           {/* Empty */}
-          {windowWidth > 706 ? (
+          {windowWidth > 1098 ? (
             <ReportSection background="transparent" />
           ) : null}
         </Wrapper>

@@ -1,22 +1,93 @@
 // Import: Dependencies
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { PieChart } from "react-minimal-pie-chart";
+
+// Import: Assets
+import { ReactComponent as EDIcon } from "../../assets/img/icon/ward-ed.svg";
+import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
+import { ReactComponent as SeenIcon } from "../../assets/img/icon/assessments-seen.svg";
 
 // Import: Elements
-import { Container } from "./EDOverview.elements";
+import { Container, Wrapper, ItemWrapper } from "./EDOverview.elements";
+
+// Import: Components, subPages
+import {
+  ReportHeader,
+  ReportNavigation,
+  ReportNavigationItem,
+  ReportSection,
+} from "../../components";
+import {} from "./subPages";
 
 // Page: EDOverview
 export default function EDOverview() {
+  // State: isOverviewNavOpen
+  const [isOverviewNavOpen, setIsOverviewNavOpen] = useState(false);
+
   // Upon navigation to Home, moves DOM to top of window
   // Sets Header text as current page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // onClick: Open/close Overview Nav
+  function toggleOverviewNav() {
+    setIsOverviewNavOpen((isOverviewNavOpen) => !isOverviewNavOpen);
+  }
+
   return (
-    <>
-      <Container>
-        <h1>ED Overview</h1>
-      </Container>
-    </>
+    <Container>
+      <Wrapper>
+        <ReportSection
+          header={
+            <ReportHeader
+              icon={<EDIcon />}
+              heading="Emergency Department Overview"
+              subtext="Patient details, status and breach info"
+              navToggle={toggleOverviewNav}
+              navStatus={isOverviewNavOpen}
+            />
+          }
+          nav={
+            <ReportNavigation navStatus={isOverviewNavOpen}>
+              <ItemWrapper>
+                <ReportNavigationItem isActive>
+                  <EDIcon />
+                  <span>All Patients</span>
+                </ReportNavigationItem>
+              </ItemWrapper>
+
+              <ItemWrapper>
+                <ReportNavigationItem>
+                  <TriageIcon />
+                  <span>To Be Triaged</span>
+                </ReportNavigationItem>
+              </ItemWrapper>
+
+              <ItemWrapper>
+                <ReportNavigationItem>
+                  <SeenIcon />
+                  <span>To Be Seen</span>
+                </ReportNavigationItem>
+              </ItemWrapper>
+            </ReportNavigation>
+          }
+          content={
+            <div style={{ margin: "2rem 8rem 0 8rem" }}>
+              <PieChart
+                data={[
+                  { title: "One", value: 10, color: "#FF5376" },
+                  { title: "Two", value: 15, color: "#685369" },
+                  { title: "Three", value: 20, color: "#A8DADC" },
+                ]}
+              />
+            </div>
+          }
+          navStatus={isOverviewNavOpen}
+        />
+
+        <ReportSection />
+      </Wrapper>
+    </Container>
   );
 }
