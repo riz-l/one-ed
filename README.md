@@ -26,6 +26,14 @@
   $ npm start
   ```
 
+## Please Note:
+
+- If an Installed Dependency (see below) is added, removed or altered, you will need to repeat the above steps, starting with
+
+```
+$ npm install
+```
+
 ## Installed Dependencies
 
 - `create-react-app`
