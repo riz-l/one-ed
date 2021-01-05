@@ -4,18 +4,27 @@
 
 - To start using this app, open your chosen Text Editor, navigate to your specified folder directory, open a new Terminal and run:
 
-  - `$ git clone https://github.com/riz-l/one-ed.git`
+  ```
+  $ git clone https://github.com/riz-l/one-ed.git
+  ```
 
 - After this, make sure you `cd` into the newly cloned folder directory e.g. `cd one-ed`, and then run:
 
-  - `$ npm install`
+  ```
+  $ npm install
+  ```
 
 - When this is complete, check the Terminal log to make sure no fixes are required. If a fix is required, you will be prompted to run:
 
-  - `$ npm audit fix`
+  ```
+  $ npm audit fix
+  ```
 
 - Lastly, after the above fix is complete (or not needed), run:
-  - `$ npm start`
+
+  ```
+  $ npm start
+  ```
 
 ## Installed Dependencies
 
