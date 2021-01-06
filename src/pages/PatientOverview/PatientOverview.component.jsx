@@ -183,6 +183,9 @@ export default function PatientOverview() {
     setSlideName("Symptoms");
   }
 
+  // Dexie: database = PODetailsDatabase
+  const db = new Dexie("PODetailsDatabase");
+
   return (
     <Container>
       <Wrapper>
@@ -205,7 +208,7 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
-          content={<Details db={new Dexie("PODetailsDatabase")} />}
+          content={<Details db={db} />}
           navStatus={isDetailsNavOpen}
         />
 
