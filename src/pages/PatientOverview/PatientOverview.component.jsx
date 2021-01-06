@@ -152,7 +152,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowPresenting(true);
-    setSlideName("Presenting");
+    setSlideName("Presenting Complaint");
   }
 
   // onClick: Render Procedures
