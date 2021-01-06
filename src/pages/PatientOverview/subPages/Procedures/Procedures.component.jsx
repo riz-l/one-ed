@@ -8,7 +8,7 @@ import { Container, Heading, Item } from "../../../../globalComponents";
 import { ReportEntry } from "../../../../components";
 
 // SubPage: Procedures
-export default function Procedures() {
+export default function Procedures({ isEntrySlideOpen, setIsEntrySlideOpen }) {
   return (
     <Container>
       <Heading>
@@ -21,6 +21,8 @@ export default function Procedures() {
           type="Damaged Limb"
           details="Right arm has break at elbow joint"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
 
         <ReportEntry
@@ -28,6 +30,8 @@ export default function Procedures() {
           type="Fear of Ambulance Travel"
           details="Patient is afraid of travelling in Ambulance"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
       </Item>
     </Container>

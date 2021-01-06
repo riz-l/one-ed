@@ -8,7 +8,7 @@ import { Container, Heading, Item } from "../../../../globalComponents";
 import { ReportEntry } from "../../../../components";
 
 // SubPage: Allergies
-export default function Allergies() {
+export default function Allergies({ isEntrySlideOpen, setIsEntrySlideOpen }) {
   return (
     <Container>
       <Heading>
@@ -21,6 +21,8 @@ export default function Allergies() {
           type="Drug Allergy"
           details="Extreme reaction to paracetamol"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
 
         <ReportEntry
@@ -28,6 +30,8 @@ export default function Allergies() {
           type="Food Allergy"
           details="Mild reaction to lactose"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
       </Item>
     </Container>

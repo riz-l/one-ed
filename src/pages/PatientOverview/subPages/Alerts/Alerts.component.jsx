@@ -8,7 +8,7 @@ import { Container, Heading, Item } from "../../../../globalComponents";
 import { ReportEntry } from "../../../../components";
 
 // SubPage: Alerts
-export default function Alerts() {
+export default function Alerts({ isEntrySlideOpen, setIsEntrySlideOpen }) {
   return (
     <Container>
       <Heading>
@@ -21,6 +21,8 @@ export default function Alerts() {
           type="Impairment"
           details="Communication difficulties"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
 
         <ReportEntry
@@ -28,6 +30,8 @@ export default function Alerts() {
           type="End of life"
           details="Advance decision in effect"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
       </Item>
     </Container>

@@ -37,6 +37,8 @@ export default function ReportEntry({
   findings,
   presenting,
   procedures,
+  slideStatus,
+  slideToggle,
   symptoms,
   themeColor,
   icon,
@@ -108,6 +110,11 @@ export default function ReportEntry({
           </Right>
 
           <ArrowContainer
+            onClick={
+              slideToggle
+                ? () => slideToggle((slideStatus) => !slideStatus)
+                : null
+            }
             alerts={alerts}
             allergies={allergies}
             complications={complications}

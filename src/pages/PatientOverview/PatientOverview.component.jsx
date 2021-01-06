@@ -19,6 +19,7 @@ import { Container, Wrapper, ItemWrapper } from "./PatientOverview.elements";
 
 // Import: Components, subPages
 import {
+  ReportEntrySlide,
   ReportHeader,
   ReportNavigation,
   ReportNavigationItem,
@@ -38,11 +39,13 @@ import {
 
 // Page: PatientOverview
 export default function PatientOverview() {
-  // State: isDetailsNavOpen, isHistoryNavOpen
+  // State: isDetailsNavOpen, isHistoryNavOpen, isEntrySlideOpen
   const [isDetailsNavOpen, setIsDetailsNavOpen] = useState(false);
   const [isHistoryNavOpen, setIsHistoryNavOpen] = useState(false);
+  const [isEntrySlideOpen, setIsEntrySlideOpen] = useState(false);
 
   // State: Patient History subPages
+  const [slideName, setSlideName] = useState("Alerts");
   const [showAlerts, setShowAlerts] = useState(true);
   const [showAllergies, setShowAllergies] = useState(false);
   const [showComplications, setShowComplications] = useState(false);
@@ -79,6 +82,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowAlerts(true);
+    setSlideName("Alerts");
   }
 
   // onClick: Render Allergies
@@ -92,6 +96,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowAllergies(true);
+    setSlideName("Allergies");
   }
 
   // onClick: Render Complications
@@ -105,6 +110,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowComplications(true);
+    setSlideName("Complications");
   }
 
   // onClick: Render Diagnosis
@@ -118,6 +124,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowDiagnosis(true);
+    setSlideName("Diagnosis");
   }
 
   // onClick: Render Findings
@@ -131,6 +138,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowFindings(true);
+    setSlideName("Findings");
   }
 
   // onClick: Render Presenting
@@ -144,6 +152,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowPresenting(true);
+    setSlideName("Presenting");
   }
 
   // onClick: Render Procedures
@@ -157,6 +166,7 @@ export default function PatientOverview() {
     setShowSymptoms(false);
 
     setShowProcedures(true);
+    setSlideName("Procedures");
   }
 
   // onClick: Render Symptoms
@@ -170,6 +180,7 @@ export default function PatientOverview() {
     setShowProcedures(false);
 
     setShowSymptoms(true);
+    setSlideName("Symptoms");
   }
 
   return (
@@ -272,24 +283,54 @@ export default function PatientOverview() {
           }
           content={
             showAlerts ? (
-              <Alerts />
+              <Alerts
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showAllergies ? (
-              <Allergies />
+              <Allergies
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showComplications ? (
-              <Complications />
+              <Complications
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showDiagnosis ? (
-              <Diagnosis />
+              <Diagnosis
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showFindings ? (
-              <Findings />
+              <Findings
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showPresenting ? (
-              <Presenting />
+              <Presenting
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showProcedures ? (
-              <Procedures />
+              <Procedures
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : showSymptoms ? (
-              <Symptoms />
+              <Symptoms
+                isEntrySlideOpen={isEntrySlideOpen}
+                setIsEntrySlideOpen={setIsEntrySlideOpen}
+              />
             ) : null
           }
           navStatus={isHistoryNavOpen}
+        />
+
+        <ReportEntrySlide
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
+          slideName={slideName}
         />
       </Wrapper>
     </Container>

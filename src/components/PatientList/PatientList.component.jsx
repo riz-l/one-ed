@@ -28,9 +28,6 @@ export default function PatientList({
   // Ref: node
   const node = useRef();
 
-  // If click is outside of PatientList, isPatientListOpen === false
-  useOnClickOutside(node, () => setIsPatientListOpen(false));
-
   // Effect: Checks to see if click is inside or outside PatientList
   function useOnClickOutside(node, handler) {
     useEffect(() => {
@@ -52,6 +49,9 @@ export default function PatientList({
       };
     }, [node, handler]);
   }
+
+  // If click is outside of PatientList, isPatientListOpen === false
+  useOnClickOutside(node, () => setIsPatientListOpen(false));
 
   return (
     <Container ref={node} isPatientListOpen={isPatientListOpen}>

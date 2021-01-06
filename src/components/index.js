@@ -10,6 +10,9 @@ export { default as PatientListItem } from "./PatientListItem/PatientListItem.co
 // Export: ReportEntry
 export { default as ReportEntry } from "./ReportEntry/ReportEntry.component";
 
+// Export: ReportEntrySlide
+export { default as ReportEntrySlide } from "./ReportEntrySlide/ReportEntrySlide.component";
+
 // Export: ReportForm
 export { default as ReportForm } from "./ReportForm/ReportForm.component";
 
