@@ -1,6 +1,5 @@
 // Import: Dependencies
 import React, { useState, useEffect } from "react";
-import { PieChart } from "react-minimal-pie-chart";
 
 // Import: Assets
 import { ReactComponent as EDIcon } from "../../assets/img/icon/ward-ed.svg";
@@ -72,17 +71,7 @@ export default function EDOverview() {
               </ItemWrapper>
             </ReportNavigation>
           }
-          content={
-            <div style={{ margin: "2rem 8rem 0 8rem" }}>
-              <PieChart
-                data={[
-                  { title: "One", value: 10, color: "#FF5376" },
-                  { title: "Two", value: 15, color: "#685369" },
-                  { title: "Three", value: 20, color: "#A8DADC" },
-                ]}
-              />
-            </div>
-          }
+          content={<p>In progress...</p>}
           navStatus={isOverviewNavOpen}
         />
 
