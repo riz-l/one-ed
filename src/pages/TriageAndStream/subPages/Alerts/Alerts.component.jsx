@@ -8,7 +8,7 @@ import { Container, Heading, Item } from "../../../../globalComponents";
 import { ReportEntry } from "../../../../components";
 
 // SubPage: Alerts
-export default function Alerts() {
+export default function Alerts({ isEntrySlideOpen, setIsEntrySlideOpen }) {
   // Effect: Upon navigation to Alerts, moves DOM to top of window
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,6 +26,8 @@ export default function Alerts() {
           type="Impairment"
           details="Communication difficulties"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
 
         <ReportEntry
@@ -33,6 +35,8 @@ export default function Alerts() {
           type="End of life"
           details="Advance decision in effect"
           status="Active"
+          slideStatus={isEntrySlideOpen}
+          slideToggle={setIsEntrySlideOpen}
         />
       </Item>
     </Container>

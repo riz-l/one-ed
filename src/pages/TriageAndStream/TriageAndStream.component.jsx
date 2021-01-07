@@ -11,6 +11,7 @@ import { Container, Wrapper, ItemWrapper } from "./TriageAndStream.elements";
 
 // Import: Components, subPages
 import {
+  ReportEntrySlide,
   ReportHeader,
   ReportNavigation,
   ReportNavigationItem,
@@ -20,10 +21,12 @@ import { Alerts, Allergies, Triage } from "./subPages";
 
 // Page: TriageAndStream
 export default function TriageAndStream() {
-  // State: isNavOpen
+  // State: isNavOpen, isEntrySlideOpen
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isEntrySlideOpen, setIsEntrySlideOpen] = useState(false);
 
   // State: Triage and Stream subPages
+  const [slideName, setSlideName] = useState("Alerts");
   const [showTriage, setShowTriage] = useState(true);
   const [showAlerts, setShowAlerts] = useState(false);
   const [showAllergies, setShowAllergies] = useState(false);
@@ -64,6 +67,7 @@ export default function TriageAndStream() {
     setShowAllergies(false);
 
     setShowAlerts(true);
+    setSlideName("Alerts");
   }
 
   // onClick: Render Allergies
@@ -72,6 +76,7 @@ export default function TriageAndStream() {
     setShowAlerts(false);
 
     setShowAllergies(true);
+    setSlideName("Allergies");
   }
 
   return (
@@ -117,9 +122,15 @@ export default function TriageAndStream() {
               showTriage ? (
                 <Triage />
               ) : showAlerts ? (
-                <Alerts />
+                <Alerts
+                  isEntrySlideOpen={isEntrySlideOpen}
+                  setIsEntrySlideOpen={setIsEntrySlideOpen}
+                />
               ) : showAllergies ? (
-                <Allergies />
+                <Allergies
+                  isEntrySlideOpen={isEntrySlideOpen}
+                  setIsEntrySlideOpen={setIsEntrySlideOpen}
+                />
               ) : null
             }
             navStatus={isNavOpen}
@@ -129,6 +140,12 @@ export default function TriageAndStream() {
           {windowWidth > 1098 ? (
             <ReportSection background="transparent" />
           ) : null}
+
+          <ReportEntrySlide
+            slideStatus={isEntrySlideOpen}
+            slideToggle={setIsEntrySlideOpen}
+            slideName={slideName}
+          />
         </Wrapper>
       </Container>
     </>
