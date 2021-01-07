@@ -34,9 +34,8 @@ export default function ReportHeader({
       const newWidth = window.innerWidth;
       setWindowWidth(newWidth);
     };
-
     window.addEventListener("resize", updateWindowDimensions);
-  }, []);
+  }, [windowWidth]);
 
   return (
     <Container>
