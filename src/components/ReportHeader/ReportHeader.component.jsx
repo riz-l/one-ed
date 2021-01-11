@@ -30,11 +30,12 @@ export default function ReportHeader({
 
   // Effect: Checks and updates inner window width
   useEffect(() => {
-    const updateWindowDimensions = () => {
+    function updateWindowDimensions() {
       const newWidth = window.innerWidth;
       setWindowWidth(newWidth);
-    };
-    window.addEventListener("resize", updateWindowDimensions);
+    }
+
+    window.addEventListener("resize", updateWindowDimensions());
   }, [windowWidth]);
 
   return (

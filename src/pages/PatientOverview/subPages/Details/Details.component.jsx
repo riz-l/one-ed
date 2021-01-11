@@ -36,12 +36,12 @@ export default function Details({ db }) {
   // ... if no values are in the database, set values === ""
   useEffect(() => {
     // Check current windowWidth assigns current windowWidth to state
-    const updateWindowDimensions = () => {
+    function updateWindowDimensions() {
       const newWidth = window.innerWidth;
       setWindowWidth(newWidth);
-    };
+    }
 
-    window.addEventListener("resize", updateWindowDimensions);
+    window.addEventListener("resize", updateWindowDimensions());
 
     // Create database store
     db.version(1).stores({ formData: "id, value" });
