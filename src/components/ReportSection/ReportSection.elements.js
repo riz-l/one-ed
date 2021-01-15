@@ -54,7 +54,7 @@ export const Report = styled.section`
 export const ContentWrapper = styled.div`
   display: grid;
   grid-template-areas: "navigation content";
-  grid-template-columns: 85px 1fr;
+  grid-template-columns: ${({ nav }) => (nav ? "85px 1fr" : "0 1fr")};
   height: calc((100vh - 100px) - 2rem);
   max-height: calc((100vh - 100px) - 2rem);
   overflow-y: auto;
@@ -79,7 +79,7 @@ export const Navigation = styled.nav`
   grid-area: navigation;
   height: 100%;
   transition: all 100ms linear;
-  width: 85px;
+  width: ${({ nav }) => (nav ? "85px" : "0")};
   z-index: 3;
 
   @media screen and (max-width: 706px) {

@@ -65,8 +65,8 @@ export const NavToggle = styled.div`
   visibility: hidden;
 
   @media screen and (max-width: 706px) {
-    display: flex;
-    visibility: visible;
+    display: ${({ navToggle }) => (navToggle ? "flex" : "none")};
+    visibility: ${({ navToggle }) => (navToggle ? "visible" : "hidden")};
   }
 
   &:hover {

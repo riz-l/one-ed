@@ -1,22 +1,41 @@
 // Import: Dependencies
 import React, { useEffect } from "react";
 
+// Import: Assets
+import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
+
 // Import: Elements
-import { Container } from "./ViewCAS.elements";
+import { Container, Wrapper, ItemWrapper } from "./ViewCAS.elements";
+
+// Import: Components
+import {
+  ReportHeader,
+  ReportNavigation,
+  ReportNavigationItem,
+  ReportSection,
+} from "../../components";
 
 // Page: ViewCAS
 export default function ViewCAS() {
-  // Upon navigation to Home, moves DOM to top of window
-  // Sets Header text as current page
+  // Effect: Upon navigation to PatientOverview, moves DOM to top of window
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <>
-      <Container>
-        <h1>View CAS Card</h1>
-      </Container>
-    </>
+    <Container>
+      <Wrapper>
+        <ReportSection
+          header={
+            <ReportHeader
+              icon={<TriageIcon />}
+              heading="Triage and Stream"
+              subtext="Chief complaint, obs and prioritisation"
+            />
+          }
+          content={<p>View CAS Card</p>}
+        />
+      </Wrapper>
+    </Container>
   );
 }

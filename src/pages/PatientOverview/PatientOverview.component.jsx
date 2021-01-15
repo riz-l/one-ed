@@ -55,8 +55,7 @@ export default function PatientOverview() {
   const [showProcedures, setShowProcedures] = useState(false);
   const [showSymptoms, setShowSymptoms] = useState(false);
 
-  // Upon navigation to Home, moves DOM to top of window
-  // Sets Header text as current page
+  // Effect: Upon navigation to PatientOverview, moves DOM to top of window
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -54,7 +54,7 @@ export default function ReportHeader({
 
       <SecondaryHeader>
         <NavToggleWrapper>
-          <NavToggle onClick={navToggle}>
+          <NavToggle navToggle={navToggle} onClick={navToggle}>
             {navStatus ? <CloseNavIcon /> : <OpenNavIcon />}
           </NavToggle>
         </NavToggleWrapper>
