@@ -146,6 +146,22 @@ export default function Details({ db }) {
     setFormValues("contactFour")("");
   };
 
+  // Delete IndexedDB PODetailsDatabase database
+  function pleaseDelete() {
+    indexedDB.deleteDatabase("PODetailsDatabase").onsuccess = function (e) {
+      console.log("PODetailsDatabase Delete Successful");
+    };
+  }
+
+  // Delete IndexedDB data on browser/tab close and/or refresh
+  // ... prompts user that they are about to leave the page/lose data
+  // window.addEventListener("beforeunload", () => pleaseDelete());
+  window.addEventListener("beforeunload", (ev) => {
+    ev.preventDefault();
+    ev.returnValue = "Are you sure you want to close?";
+    pleaseDelete();
+  });
+
   return (
     <Container>
       <Heading>
@@ -339,6 +355,10 @@ export default function Details({ db }) {
           <Online>
             <Item>
               <ReportInput type="submit" value="Submit" />
+            </Item>
+
+            <Item>
+              <button onClick={pleaseDelete}>DELETE DATA</button>
             </Item>
           </Online>
 

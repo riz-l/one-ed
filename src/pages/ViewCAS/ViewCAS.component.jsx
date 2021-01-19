@@ -8,12 +8,7 @@ import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-
 import { Container, Wrapper, ItemWrapper } from "./ViewCAS.elements";
 
 // Import: Components
-import {
-  ReportHeader,
-  ReportNavigation,
-  ReportNavigationItem,
-  ReportSection,
-} from "../../components";
+import { ReportHeader, ReportSection } from "../../components";
 
 // Page: ViewCAS
 export default function ViewCAS() {
