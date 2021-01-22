@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
 import { ReactComponent as AlertsIcon } from "../../assets/img/icon/alerts.svg";
 import { ReactComponent as AllergiesIcon } from "../../assets/img/icon/allergies.svg";
+import { ReactComponent as PopsIcon } from "../../assets/img/icon/patient-cas.svg";
 
 // Import: Elements
 import { Container, Wrapper, ItemWrapper } from "./TriageAndStream.elements";
@@ -17,12 +18,13 @@ import {
   ReportNavigationItem,
   ReportSection,
 } from "../../components";
-import { Alerts, Allergies, Triage } from "./subPages";
+import { Alerts, Allergies, Ced, Neuro, Triage, Urine } from "./subPages";
 
 // Page: TriageAndStream
 export default function TriageAndStream() {
-  // State: isNavOpen, isEntrySlideOpen
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  // State: isTriageNavOpen, isPopsNavOpen isEntrySlideOpen
+  const [isTriageNavOpen, setIsTriageNavOpen] = useState(false);
+  const [isPopsNavOpen, setIsPopsNavOpen] = useState(false);
   const [isEntrySlideOpen, setIsEntrySlideOpen] = useState(false);
 
   // State: Triage and Stream subPages
@@ -30,6 +32,11 @@ export default function TriageAndStream() {
   const [showTriage, setShowTriage] = useState(true);
   const [showAlerts, setShowAlerts] = useState(false);
   const [showAllergies, setShowAllergies] = useState(false);
+
+  // State: Paediatric Observation Priority Score subPages
+  const [showCed, setShowCed] = useState(true);
+  const [showNeuro, setShowNeuro] = useState(false);
+  const [showUrine, setShowUrine] = useState(false);
 
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -48,9 +55,14 @@ export default function TriageAndStream() {
     window.scrollTo(0, 0);
   }, []);
 
-  // onClick: Open/close Nav
-  function toggleNav() {
-    setIsNavOpen((isNavOpen) => !isNavOpen);
+  // onClick: Open/close Triage Nav
+  function toggleTriageNav() {
+    setIsTriageNavOpen((isTriageNavOpen) => !isTriageNavOpen);
+  }
+
+  // onClick: Open/close Pops Nav
+  function togglePopsNav() {
+    setIsPopsNavOpen((isPopsNavOpen) => !isPopsNavOpen);
   }
 
   // onClick: Render Triage
@@ -79,6 +91,30 @@ export default function TriageAndStream() {
     setSlideName("Allergies");
   }
 
+  // onClick: Render Ced
+  function cedRender() {
+    setShowNeuro(false);
+    setShowUrine(false);
+
+    setShowCed(true);
+  }
+
+  // onClick: Render Neuro
+  function neuroRender() {
+    setShowCed(false);
+    setShowUrine(false);
+
+    setShowNeuro(true);
+  }
+
+  // onClick: Render Urine
+  function urineRender() {
+    setShowCed(false);
+    setShowNeuro(false);
+
+    setShowUrine(true);
+  }
+
   return (
     <>
       <Container>
@@ -90,12 +126,12 @@ export default function TriageAndStream() {
                 icon={<TriageIcon />}
                 heading="Triage and Stream"
                 subtext="Chief complaint, obs and prioritisation"
-                navToggle={toggleNav}
-                navStatus={isNavOpen}
+                navToggle={toggleTriageNav}
+                navStatus={isTriageNavOpen}
               />
             }
             nav={
-              <ReportNavigation navStatus={isNavOpen}>
+              <ReportNavigation navStatus={isTriageNavOpen}>
                 <ItemWrapper onClick={triageRender}>
                   <ReportNavigationItem isActive={showTriage ? true : false}>
                     <TriageIcon />
@@ -133,13 +169,55 @@ export default function TriageAndStream() {
                 />
               ) : null
             }
-            navStatus={isNavOpen}
+            navStatus={isTriageNavOpen}
           />
 
-          {/* Empty */}
-          {windowWidth > 1098 ? (
-            <ReportSection background="transparent" />
-          ) : null}
+          {/* POPs Score */}
+          <ReportSection
+            header={
+              <ReportHeader
+                icon={<PopsIcon />}
+                heading="Paediatric Observation Priority Score"
+                subtext="CED, neuro, urine obs"
+                navToggle={togglePopsNav}
+                navStatus={isPopsNavOpen}
+              />
+            }
+            nav={
+              <ReportNavigation navStatus={isPopsNavOpen}>
+                <ItemWrapper onClick={cedRender}>
+                  <ReportNavigationItem isActive={showCed ? true : false}>
+                    <TriageIcon />
+                    <span>CED Obs</span>
+                  </ReportNavigationItem>
+                </ItemWrapper>
+
+                <ItemWrapper onClick={neuroRender}>
+                  <ReportNavigationItem isActive={showNeuro ? true : false}>
+                    <AlertsIcon />
+                    <span>Neuro Obs</span>
+                  </ReportNavigationItem>
+                </ItemWrapper>
+
+                <ItemWrapper onClick={urineRender}>
+                  <ReportNavigationItem isActive={showUrine ? true : false}>
+                    <AllergiesIcon />
+                    <span>Urine Obs</span>
+                  </ReportNavigationItem>
+                </ItemWrapper>
+              </ReportNavigation>
+            }
+            content={
+              showCed ? (
+                <Ced />
+              ) : showNeuro ? (
+                <Neuro />
+              ) : showUrine ? (
+                <Urine />
+              ) : null
+            }
+            navStatus={isPopsNavOpen}
+          />
 
           <ReportEntrySlide
             slideStatus={isEntrySlideOpen}

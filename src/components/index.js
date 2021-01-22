@@ -1,6 +1,9 @@
 // Export: Header
 export { default as Header } from "./Header/Header.component";
 
+// Export: InputCheckbox
+export { default as InputCheckbox } from "./InputCheckbox/InputCheckbox.component";
+
 // Export: PatientList
 export { default as PatientList } from "./PatientList/PatientList.component";
 
