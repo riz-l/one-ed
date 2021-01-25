@@ -49,6 +49,9 @@ export default function ReportEntry({
   return (
     <Container>
       <Wrapper
+        onClick={
+          slideToggle ? () => slideToggle((slideStatus) => !slideStatus) : null
+        }
         alerts={alerts}
         allergies={allergies}
         complications={complications}
@@ -110,11 +113,6 @@ export default function ReportEntry({
           </Right>
 
           <ArrowContainer
-            onClick={
-              slideToggle
-                ? () => slideToggle((slideStatus) => !slideStatus)
-                : null
-            }
             alerts={alerts}
             allergies={allergies}
             complications={complications}

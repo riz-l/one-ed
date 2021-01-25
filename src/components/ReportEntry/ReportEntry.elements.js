@@ -1,6 +1,75 @@
 // Import: Dependencies
 import styled from "styled-components/macro";
 
+// Element: Arrow
+export const Arrow = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  & svg {
+    fill: #f1f1f1;
+    height: 30px;
+    transition: all 100ms linear;
+    width: 30px;
+  }
+`;
+
+// Element: ArrowContainer
+export const ArrowContainer = styled.div`
+  align-items: center;
+  background: ${({
+    alerts,
+    allergies,
+    complications,
+    diagnosis,
+    findings,
+    presenting,
+    procedures,
+    symptoms,
+    themeColor,
+  }) =>
+    alerts
+      ? "#ff6347"
+      : allergies
+      ? "#ffaf85"
+      : complications
+      ? "#9bc53d"
+      : diagnosis
+      ? "#ba2c73"
+      : findings
+      ? "#1b998b"
+      : presenting
+      ? "#5398be"
+      : procedures
+      ? "#585481"
+      : symptoms
+      ? "#2978a0"
+      : themeColor
+      ? themeColor
+      : "#3a3a40"};
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: auto 0;
+  position: absolute;
+  right: 0;
+  transition: all 100ms linear;
+  width: 30px;
+
+  &:hover {
+    filter: brightness(0.8);
+    transition: all 100ms linear;
+
+    & ${Arrow} {
+      & svg {
+        fill: #ffffff;
+        transition: all 100ms linear;
+      }
+    }
+  }
+`;
+
 // Element: Wrapper
 export const Wrapper = styled.div`
   align-items: center;
@@ -34,12 +103,22 @@ export const Wrapper = styled.div`
       : themeColor
       ? `1px solid ${themeColor}`
       : "1px solid #3a3a40"};
-
+  cursor: pointer;
   display: flex;
   height: auto;
   justify-content: center;
   margin: 1rem 1rem 0 1rem;
   transition: all 100ms linear;
+
+  &:hover {
+    transform: translateY(-4px);
+    transition: all 100ms linear;
+
+    & ${ArrowContainer} {
+      filter: brightness(0.8);
+      transition: all 100ms linear;
+    }
+  }
 `;
 
 // Element: EntryContainer
@@ -143,79 +222,4 @@ export const Status = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-`;
-
-// Element: Arrow
-export const Arrow = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  & svg {
-    fill: #f1f1f1;
-    height: 30px;
-    transition: all 100ms linear;
-    width: 30px;
-  }
-`;
-
-// Element: ArrowContainer
-export const ArrowContainer = styled.div`
-  align-items: center;
-  background: ${({
-    alerts,
-    allergies,
-    complications,
-    diagnosis,
-    findings,
-    presenting,
-    procedures,
-    symptoms,
-    themeColor,
-  }) =>
-    alerts
-      ? "#ff6347"
-      : allergies
-      ? "#ffaf85"
-      : complications
-      ? "#9bc53d"
-      : diagnosis
-      ? "#ba2c73"
-      : findings
-      ? "#1b998b"
-      : presenting
-      ? "#5398be"
-      : procedures
-      ? "#585481"
-      : symptoms
-      ? "#2978a0"
-      : themeColor
-      ? themeColor
-      : "#3a3a40"};
-  cursor: pointer;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  margin: auto 0;
-  position: absolute;
-  right: 0;
-  transition: all 100ms linear;
-  width: 30px;
-
-  &:hover {
-    filter: brightness(0.8);
-    transition: all 100ms linear;
-
-    & ${Arrow} {
-      & svg {
-        fill: #ffffff;
-        transition: all 100ms linear;
-      }
-    }
-
-    & ${Wrapper} {
-      filter: brightness(0.8);
-      transition: all 100ms linear;
-    }
-  }
 `;

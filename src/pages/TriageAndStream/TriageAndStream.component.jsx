@@ -38,20 +38,8 @@ export default function TriageAndStream() {
   const [showNeuro, setShowNeuro] = useState(false);
   const [showUrine, setShowUrine] = useState(false);
 
-  // State: windowWidth
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // Effect: Checks and updates inner window width
-  // ... Upon navigation to Home, moves DOM to top of window
-  // ... Sets Header text as current page
+  // Effect: Upon navigation to TriageAndStream, moves DOM to top of window
   useEffect(() => {
-    const updateWindowDimensions = () => {
-      const newWidth = window.innerWidth;
-      setWindowWidth(newWidth);
-    };
-
-    window.addEventListener("resize", updateWindowDimensions);
-
     window.scrollTo(0, 0);
   }, []);
 
