@@ -111,6 +111,7 @@ export const Wrapper = styled.div`
   transition: all 100ms linear;
 
   &:hover {
+    box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
     transform: translateY(-4px);
     transition: all 100ms linear;
 
