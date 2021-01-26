@@ -19,6 +19,7 @@ export default function InputCheckbox({
   htmlFor,
   name,
   onChange,
+  onClick,
   text,
   under,
   value,
@@ -34,7 +35,7 @@ export default function InputCheckbox({
           value={value}
         />
 
-        <VisualBox onClick={onChange} checked={checked}>
+        <VisualBox onClick={onClick} checked={checked}>
           <TickIcon />
         </VisualBox>
 

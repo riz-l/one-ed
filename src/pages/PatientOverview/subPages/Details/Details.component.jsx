@@ -368,6 +368,9 @@ export default function Details({ db }) {
               htmlFor="testCheckbox"
               checked={detailsForm.testCheckbox}
               onChange={() =>
+                setFormValues("testCheckbox")(!detailsForm.testCheckbox)
+              }
+              onClick={() =>
                 setDetailsForm((detailsForm) => ({
                   ...detailsForm,
                   testCheckbox: !detailsForm.testCheckbox,
