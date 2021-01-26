@@ -6,7 +6,12 @@ import { Offline, Online } from "react-detect-offline";
 import { Container, Heading, Grid, Column, Item } from "./Details.elements";
 
 // Import: Components
-import { ReportForm, ReportInput, ReportLabel } from "../../../../components";
+import {
+  InputCheckbox,
+  ReportForm,
+  ReportInput,
+  ReportLabel,
+} from "../../../../components";
 
 // SubPage: Details
 export default function Details({ db }) {
@@ -29,6 +34,7 @@ export default function Details({ db }) {
     contactTwo: "",
     contactThree: "",
     contactFour: "",
+    testCheckbox: false,
   });
 
   // Effect: Checks and updates inner window width
@@ -63,6 +69,7 @@ export default function Details({ db }) {
       const dbContactTwo = await db.formData.get("contactTwo");
       const dbContactThree = await db.formData.get("contactThree");
       const dbContactFour = await db.formData.get("contactFour");
+      const dbTestCheckbox = await db.formData.get("testCheckbox");
 
       // If the detailsForm values have not been added, populate with ""
       if (!dbName) await db.formData.add({ id: "name", value: "" });
@@ -87,6 +94,8 @@ export default function Details({ db }) {
         await db.formData.add({ id: "contactThree", value: "" });
       if (!dbContactFour)
         await db.formData.add({ id: "contactFour", value: "" });
+      if (!dbTestCheckbox)
+        await db.formData.add({ id: "testCheckbox", value: false });
 
       // Set the initial values
       setDetailsForm({
@@ -104,6 +113,7 @@ export default function Details({ db }) {
         contactTwo: dbContactTwo ? dbContactTwo.value : "",
         contactThree: dbContactThree ? dbContactThree.value : "",
         contactFour: dbContactFour ? dbContactFour.value : "",
+        testCheckbox: dbTestCheckbox ? dbTestCheckbox.value : false,
       });
     }).catch((error) => {
       console.log(error.stack || error);
@@ -144,6 +154,7 @@ export default function Details({ db }) {
     setFormValues("contactTwo")("");
     setFormValues("contactThree")("");
     setFormValues("contactFour")("");
+    setFormValues("testCheckbox")(false);
   };
 
   // Delete IndexedDB PODetailsDatabase database
@@ -348,6 +359,27 @@ export default function Details({ db }) {
                 />
               </Item>
             </Item>
+          </Column>
+        </Grid>
+
+        <Grid>
+          <Column>
+            <InputCheckbox
+              htmlFor="testCheckbox"
+              checked={detailsForm.testCheckbox}
+              onChange={() =>
+                setDetailsForm((detailsForm) => ({
+                  ...detailsForm,
+                  testCheckbox: !detailsForm.testCheckbox,
+                }))
+              }
+              name="testCheckbox"
+              value="testCheckbox"
+              id="testCheckbox"
+              text="testCheckbox"
+            />
+
+            <p>{detailsForm.testCheckbox === true ? "True" : "False"}</p>
           </Column>
         </Grid>
 
