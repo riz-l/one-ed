@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Container, Heading, Item } from "./Urine.elements";
 
 // Import: Components
-import { Dropdown, InputCheckbox, ReportForm } from "../../../../components";
+import { Dropdown, Checkbox, ReportForm } from "../../../../components";
 
 // SubPage: Urine
 export default function Urine() {
@@ -35,13 +35,13 @@ export default function Urine() {
 
       <ReportForm>
         <Item>
-          <InputCheckbox
+          <Checkbox
             checked={isNadChecked}
             onChange={() => setIsNadChecked((isNadChecked) => !isNadChecked)}
-            name="nad"
-            value="nad"
-            id="nad"
             text="NAD"
+            value={isNadChecked}
+            name="nad"
+            id="nad"
           />
         </Item>
 

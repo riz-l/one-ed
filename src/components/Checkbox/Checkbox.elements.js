@@ -1,5 +1,5 @@
 // Import: Dependencies
-import styled from "styled-components/macro";
+import styled from "styled-components";
 
 // Element: Container
 export const Container = styled.div`
@@ -9,17 +9,30 @@ export const Container = styled.div`
   margin-bottom: 0.8rem;
 `;
 
-// Element: Label
-export const Label = styled.label`
-  margin-left: ${({ under }) => (under ? "0" : "0.8rem")};
-  margin-top: ${({ under }) => (under ? "0.4rem" : "0")};
+// Element: Wrapper
+export const Wrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: ${({ under }) => (under ? "column" : "row")};
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
 `;
 
-// Element: Input
-export const Input = styled.input`
+// Element: Label
+export const Label = styled.label``;
+
+// Element: InputCheckbox
+export const InputCheckbox = styled.input`
   display: none;
   opacity: 0;
   visibility: hidden;
+`;
+
+// Element: Text
+export const Text = styled.label`
+  margin-left: ${({ under }) => (under ? "0" : "0.8rem")};
+  margin-top: ${({ under }) => (under ? "0.4rem" : "0")};
 `;
 
 // Element: VisualBox
@@ -51,14 +64,4 @@ export const VisualBox = styled.div`
       transition: all 100ms linear;
     }
   }
-`;
-
-// Element: Wrapper
-export const Wrapper = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: ${({ under }) => (under ? "column" : "row")};
-  justify-content: space-between;
-  text-align: center;
-  width: 100%;
 `;

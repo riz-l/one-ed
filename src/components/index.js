@@ -1,11 +1,11 @@
+// Export: Checkbox
+export { default as Checkbox } from "./Checkbox/Checkbox.component";
+
 // Export: Dropdown
 export { default as Dropdown } from "./Dropdown/Dropdown.component";
 
 // Export: Header
 export { default as Header } from "./Header/Header.component";
-
-// Export: InputCheckbox
-export { default as InputCheckbox } from "./InputCheckbox/InputCheckbox.component";
 
 // Export: PatientList
 export { default as PatientList } from "./PatientList/PatientList.component";
@@ -39,9 +39,6 @@ export { default as ReportNavigationItem } from "./ReportNavigationItem/ReportNa
 
 // Export: ReportSection
 export { default as ReportSection } from "./ReportSection/ReportSection.component";
-
-// Export: TestCheckbox
-export { default as TestCheckbox } from "./TestCheckbox/TestCheckbox.component";
 
 // Export: Tile
 export { default as Tile } from "./Tile/Tile.component";

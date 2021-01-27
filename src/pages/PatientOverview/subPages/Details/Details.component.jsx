@@ -11,7 +11,7 @@ import {
   ReportForm,
   ReportInput,
   ReportLabel,
-  TestCheckbox,
+  Checkbox,
 } from "../../../../components";
 
 // SubPage: Details
@@ -373,17 +373,7 @@ export default function Details({ db }) {
 
         <Grid>
           <Column>
-            {/* <InputCheckbox
-              htmlFor="testCheckbox"
-              checked={detailsForm.testCheckbox}
-              onChange={handleCheckboxValues("testCheckbox")}
-              name="testCheckbox"
-              value={detailsForm.testCheckbox}
-              id="details-testCheckbox"
-              text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
-            /> */}
-
-            <TestCheckbox
+            <Checkbox
               checked={detailsForm.testCheckbox}
               onChange={handleCheckboxValues("testCheckbox")}
               text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
