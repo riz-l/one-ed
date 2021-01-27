@@ -7,10 +7,11 @@ import { Container, Heading, Grid, Column, Item } from "./Details.elements";
 
 // Import: Components
 import {
-  InputCheckbox,
+  // InputCheckbox,
   ReportForm,
   ReportInput,
   ReportLabel,
+  TestCheckbox,
 } from "../../../../components";
 
 // SubPage: Details
@@ -126,16 +127,24 @@ export default function Details({ db }) {
   }, [db]);
 
   // Sets the values in the store and in the state
-  const setFormValues = (id) => (value) => {
+  const setFormValues = (id) => (value, checked) => {
     // Update store
-    db.formData.put({ id, value });
+    db.formData.put({ id, value, checked });
 
     // Update state
-    setDetailsForm((prevFormValues) => ({ ...prevFormValues, [id]: value }));
+    setDetailsForm((prevFormValues) => ({
+      ...prevFormValues,
+      [id]: value,
+      checked,
+    }));
   };
 
   // Partial application to make on change handler easier to apply
+  // ... used for text inputs
   const handleSetFormValues = (id) => (e) => setFormValues(id)(e.target.value);
+  // ... used for checkbox inputs
+  const handleCheckboxValues = (id) => (e) =>
+    setFormValues(id)(e.target.checked ? true : false);
 
   // When detailsForm is submitted, prevent default action
   const handleSubmit = (e) => {
@@ -154,12 +163,12 @@ export default function Details({ db }) {
     setFormValues("contactTwo")("");
     setFormValues("contactThree")("");
     setFormValues("contactFour")("");
-    setFormValues("testCheckbox")(false);
+    setFormValues("testCheckbox")(true);
   };
 
   // Delete IndexedDB PODetailsDatabase database
   function pleaseDelete() {
-    indexedDB.deleteDatabase("PODetailsDatabase").onsuccess = function (e) {
+    indexedDB.deleteDatabase("PODetailsDatabase").onsuccess = function () {
       console.log("PODetailsDatabase Delete Successful");
     };
   }
@@ -364,25 +373,24 @@ export default function Details({ db }) {
 
         <Grid>
           <Column>
-            <InputCheckbox
+            {/* <InputCheckbox
               htmlFor="testCheckbox"
               checked={detailsForm.testCheckbox}
-              onChange={() =>
-                setFormValues("testCheckbox")(!detailsForm.testCheckbox)
-              }
-              onClick={() =>
-                setDetailsForm((detailsForm) => ({
-                  ...detailsForm,
-                  testCheckbox: !detailsForm.testCheckbox,
-                }))
-              }
+              onChange={handleCheckboxValues("testCheckbox")}
               name="testCheckbox"
-              value="testCheckbox"
-              id="testCheckbox"
-              text="testCheckbox"
-            />
+              value={detailsForm.testCheckbox}
+              id="details-testCheckbox"
+              text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
+            /> */}
 
-            <p>{detailsForm.testCheckbox === true ? "True" : "False"}</p>
+            <TestCheckbox
+              checked={detailsForm.testCheckbox}
+              onChange={handleCheckboxValues("testCheckbox")}
+              text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
+              value={detailsForm.testCheckbox}
+              name="testCheckbox"
+              id="details-testCheckbox"
+            />
           </Column>
         </Grid>
 

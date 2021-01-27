@@ -40,6 +40,9 @@ export { default as ReportNavigationItem } from "./ReportNavigationItem/ReportNa
 // Export: ReportSection
 export { default as ReportSection } from "./ReportSection/ReportSection.component";
 
+// Export: TestCheckbox
+export { default as TestCheckbox } from "./TestCheckbox/TestCheckbox.component";
+
 // Export: Tile
 export { default as Tile } from "./Tile/Tile.component";
 
