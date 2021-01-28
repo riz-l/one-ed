@@ -125,7 +125,7 @@ $ npm install
   };
   ```
 
-- Now create state for each form item that we'll need. In this example the `<Checkbox />` and `<ReportInput />` components will be used, so we'll need state for both components:
+- Now using `useState()` create state for each form item that we'll need. In this example the `<Checkbox />` and `<ReportInput />` components will be used, so we'll need state for both components:
 
   ```
   const [exampleRenderForm, setExampleRenderForm] = useState({
