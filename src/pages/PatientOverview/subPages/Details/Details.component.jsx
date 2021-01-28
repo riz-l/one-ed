@@ -122,7 +122,7 @@ export default function Details({ db }) {
     });
 
     // Close the database connection if Details is unmounted
-    // ... or the database connection changes
+    // ... or if the database connection changes
     return () => db.close();
   }, [db]);
 
@@ -176,9 +176,9 @@ export default function Details({ db }) {
   // Delete IndexedDB data on browser/tab close and/or refresh
   // ... prompts user that they are about to leave the page/lose data
   // window.addEventListener("beforeunload", () => pleaseDelete());
-  window.addEventListener("beforeunload", (ev) => {
-    ev.preventDefault();
-    ev.returnValue = "Are you sure you want to close?";
+  window.addEventListener("beforeunload", (e) => {
+    e.preventDefault();
+    e.returnValue = "Are you sure you want to close?";
     pleaseDelete();
   });
 
