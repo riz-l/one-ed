@@ -28,7 +28,7 @@
 
 ## Please note:
 
-If an Installed Dependency (see below) is added, removed or altered, you will need to repeat the above steps, starting with
+If an installed dependency (see below) is added, removed or altered, you will need to repeat the above steps, starting with
 
 ```
 $ npm install
