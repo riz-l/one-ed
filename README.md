@@ -115,7 +115,7 @@ $ npm install
   <ExampleRender db={db} />
   ```
 
-  where `db` had been declared previously with `dexie`.
+  where `db` had been declared previously with `dexie`
 
 - Onto the tricky part. Firstly, in the child component that is being used to render the form, destructure the `db` prop that we've just passed from the parent:
 
@@ -134,9 +134,9 @@ $ npm install
   });
   ```
 
-  Note that because a `<Checkbox />` is either on or off, this translates to having a value that is either true or false. So, as a result, the initial state for the `exampleCheckbox` is set to false (unless the `<Checkbox />` needs to be ticked (true) by default).
+  Note that because a `<Checkbox />` is either on or off, this translates to having a value that is either true or false. So, as a result, the initial state for the `exampleCheckbox` is set to false (unless the `<Checkbox />` needs to be ticked (true) by default)
 
-  Opposed to this, because a `<ReportInput />` accepts text, without any starting text the initial state for `exampleReportInput` is an empty string ("") (unless the `<ReportInput />` needs to be populated by a stringed value by default).
+  Opposed to this, because a `<ReportInput />` accepts text, without any starting text the initial state for `exampleReportInput` is an empty string ("") (unless the `<ReportInput />` needs to be populated by a stringed value by default)
 
 - Next, inside a `useEffect()` with the accepted prop of `db`, create the database store:
 
@@ -144,7 +144,7 @@ $ npm install
   db.version(1).stores({ formData: "id, value });
   ```
 
-- Using `db`, we need to perform a read/write transaction on the new database store, get all values from the database data, populate the values with default values if needed, use these values to alter/populate the initial state, catch any possible errors, and finally - allow closure of the database if the rendering component (in our case the `<ExampleRender />`) is unmounted.
+- Using `db`, we need to perform a read/write transaction on the new database store, get all values from the database data, populate the values with default values if needed, use these values to alter/populate the initial state, catch any possible errors, and finally - allow closure of the database if the rendering component (in our case the `<ExampleRender />`) is unmounted. _Aaaaaand breath._ It's a lot, but the comments below should help:
 
   ```
   // Read/write transaction on new database store
@@ -203,7 +203,7 @@ $ npm install
   const handleReportInputValues = (id) => (e) => setExampleRenderValues(id)(e.target.value);
   ```
 
-- Now we need a function to facilitate the deletion of the database that we established earlier. This function will be added to our Logout function and will also be used should a user refresh their browser, or open a new tab, or close their browser altogether.
+- Now we need a function to facilitate the deletion of the database that we established earlier. This function will be added to our Logout function and will also be used should a user refresh their browser, open a new tab, or close their browser altogether
 
   ```
   function pleaseDelete() {
@@ -213,7 +213,7 @@ $ npm install
   };
   ```
 
-- `pleaseDelete()` now needs to be added to an event listener, which will listen for the browser being refreshed, closed, or having the tab hosting OneED being closed. Additionally, this event listener will prompt the user, informing them that they are about to leave the page/lose data
+- `pleaseDelete()` now needs to be added to an event listener which will listen for the browser being refreshed, closed, or having the tab hosting OneED being closed. Additionally, this event listener will prompt the user, informing them that they are about to leave the page/lose data
 
   ```
   window.addEventListener("beforeunload", (e) => {
