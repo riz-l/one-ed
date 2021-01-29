@@ -8,10 +8,11 @@ import { Container, Heading, Grid, Column, Item } from "./Details.elements";
 // Import: Components
 import {
   // InputCheckbox,
+  Checkbox,
+  Dropdown,
   ReportForm,
   ReportInput,
   ReportLabel,
-  Checkbox,
 } from "../../../../components";
 
 // SubPage: Details
@@ -36,7 +37,23 @@ export default function Details({ db }) {
     contactThree: "",
     contactFour: "",
     testCheckbox: false,
+    testDropdown: "Drug A",
   });
+
+  // Dropdown Options
+  const dropdownOptions = [
+    "Drug A",
+    "Drug B",
+    "Drug C",
+    "Drug D",
+    "Drug E",
+    "Drug F",
+    "Drug G",
+    "Drug H",
+    "Drug I",
+    "Drug J",
+    "Drug K",
+  ];
 
   // Effect: Checks and updates inner window width
   // Effect: Set detailsForm values to === values.PODetailsDatabase
@@ -71,6 +88,7 @@ export default function Details({ db }) {
       const dbContactThree = await db.formData.get("contactThree");
       const dbContactFour = await db.formData.get("contactFour");
       const dbTestCheckbox = await db.formData.get("testCheckbox");
+      const dbTestDropdown = await db.formData.get("testDropdown");
 
       // If the detailsForm values have not been added, populate with ""
       if (!dbName) await db.formData.add({ id: "name", value: "" });
@@ -97,6 +115,8 @@ export default function Details({ db }) {
         await db.formData.add({ id: "contactFour", value: "" });
       if (!dbTestCheckbox)
         await db.formData.add({ id: "testCheckbox", value: false });
+      if (!dbTestDropdown)
+        await db.formData.add({ id: "testDropdown", value: false });
 
       // Set the initial values
       setDetailsForm({
@@ -115,6 +135,7 @@ export default function Details({ db }) {
         contactThree: dbContactThree ? dbContactThree.value : "",
         contactFour: dbContactFour ? dbContactFour.value : "",
         testCheckbox: dbTestCheckbox ? dbTestCheckbox.value : false,
+        testDropdown: dbTestDropdown ? dbTestDropdown.value : "Drug A",
       });
     }).catch((error) => {
       console.log(error.stack || error);
@@ -163,7 +184,8 @@ export default function Details({ db }) {
     setFormValues("contactTwo")("");
     setFormValues("contactThree")("");
     setFormValues("contactFour")("");
-    setFormValues("testCheckbox")(true);
+    setFormValues("testCheckbox")(false);
+    setFormValues("testDropdown")("");
   };
 
   // Delete IndexedDB PODetailsDatabase database
@@ -373,14 +395,28 @@ export default function Details({ db }) {
 
         <Grid>
           <Column>
-            <Checkbox
-              checked={detailsForm.testCheckbox}
-              onChange={handleCheckboxValues("testCheckbox")}
-              text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
-              value={detailsForm.testCheckbox}
-              name="testCheckbox"
-              id="details-testCheckbox"
-            />
+            <Item>
+              <Checkbox
+                checked={detailsForm.testCheckbox}
+                onChange={handleCheckboxValues("testCheckbox")}
+                text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
+                value={detailsForm.testCheckbox}
+                name="testCheckbox"
+                id="details-testCheckbox"
+              />
+            </Item>
+          </Column>
+
+          <Column>
+            <Item>
+              <Dropdown
+                htmlFor="testDropdown"
+                labelText={detailsForm.testDropdown}
+                onChange={handleSetFormValues("testDropdown")}
+                options={dropdownOptions}
+                value={detailsForm.testDropdown}
+              />
+            </Item>
           </Column>
         </Grid>
 

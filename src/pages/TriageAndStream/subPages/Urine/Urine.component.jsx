@@ -11,6 +11,7 @@ import { Dropdown, Checkbox, ReportForm } from "../../../../components";
 export default function Urine() {
   // State: isNadChecked
   const [isNadChecked, setIsNadChecked] = useState(false);
+  const [dropdownValue, setDropdownValue] = useState("Drug A");
 
   // Dropdown Options
   const dropdownOptions = [
@@ -26,6 +27,11 @@ export default function Urine() {
     "Drug J",
     "Drug K",
   ];
+
+  // ... used for checkbox inputs
+  const handleDropdownValues = (e) => {
+    setDropdownValue(e.target.value);
+  };
 
   return (
     <Container>
@@ -45,17 +51,14 @@ export default function Urine() {
           />
         </Item>
 
-        <Item style={{ marginTop: "4rem" }}>
+        <Item>
           <Dropdown
             htmlFor="pro"
-            left
             labelText="Pro"
+            onChange={handleDropdownValues}
             options={dropdownOptions}
+            value={dropdownValue}
           />
-        </Item>
-
-        <Item style={{ marginTop: "4rem" }}>
-          <Dropdown htmlFor="pro" labelText="Pro" options={dropdownOptions} />
         </Item>
       </ReportForm>
     </Container>
