@@ -125,18 +125,19 @@ $ npm install
   };
   ```
 
-- Now using `useState()` create state for each form item that we'll need. In this example the `<Checkbox />` and `<ReportInput />` components will be used, so we'll need state for both components:
+- Now using `useState()` create state for each form item that we'll need. In this example the `<Checkbox />`, `<ReportInput />` and `<Dropdown />` components will be used, so we'll need state for each of these components:
 
   ```
   const [exampleRenderForm, setExampleRenderForm] = useState({
     exampleCheckbox: false,
     exampleReportInput: "",
+    exampleDropdown: "Drug A",
   });
   ```
 
   Note that because a `<Checkbox />` is either on or off, this translates to having a value that is either true or false. So, as a result, the initial state for the `exampleCheckbox` is set to false (unless the `<Checkbox />` needs to be ticked (true) by default)
 
-  Opposed to this, because a `<ReportInput />` accepts text, without any starting text the initial state for `exampleReportInput` is an empty string ("") (unless the `<ReportInput />` needs to be populated by a stringed value by default)
+  Opposed to this, because the `<ReportInput />` and the `<Dropdown />` components accepts strings, without any starting string text the initial state for the `exampleReportInput` and `exampleDropdown` is an empty string (`""`) (unless either the `<ReportInput />` or `<Dropdown />` needs to be populated by a stringed value by default). As you can see by the above example, `exampleDropdown` has an initial state of `"Drug A"`, whereas `exampleReportInput` has an initial state of `""`.
 
 - Next, inside a `useEffect()` with the accepted prop of `db`, create the database store:
 
@@ -155,15 +156,18 @@ $ npm install
       // Get all exampleRenderForm values from database data
       const dbExampleCheckbox = await db.formData.get("exampleCheckbox");
       const dbExampleReportInput = await db.formData.get("exampleReportInput");
+      const dbExampleDropdown = await db.formData.get("exampleDropdown");
 
       // If the exampleRenderForm values have not been added, populate with false or ""
       if (!dbExampleCheckbox) await db.formData.add({ id: "exampleCheckbox", value: false });
       if (!dbExampleReportInput) await db.formData.add({ id: "exampleReportInput", value: "" });
+      if (!dbExampleDropdown) await db.formData.add({ id: "exampleDropdown", value: "Drug A" });
 
       // Set the initial values
       setExampleRenderForm({
         exampleCheckbox: dbExampleCheckbox ? db.ExampleCheckbox.value : false,
         exampleReportInput: dbExampleReportInput ? db.dbExampleReportInput.value : "",
+        exampleDropdown: dbExampleDropdown ? db.dbExampleDropdown.value : "Drug A",
       });
     }).catch((error) => {
       console.log(error.stack || error);
@@ -199,7 +203,7 @@ $ npm install
   const handleCheckboxValues = (id) => (e) =>
     setExampleRenderValues(id)(e.target.checked ? true : false);
 
-  // ... used for text inputs
+  // ... used for stringed text inputs
   const handleReportInputValues = (id) => (e) => setExampleRenderValues(id)(e.target.value);
   ```
 
@@ -245,5 +249,17 @@ $ npm install
     value={exampleRenderForm.exampleReportInput}
     name="exampleCheckbox"
     id="exampleRender-exampleReportInput"
+  />
+  ```
+
+- For a `<Dropdown />` component, our implementation will be as follows:
+  
+  ```
+  <Dropdown
+    htmlFor="testDropdown"
+    onChange={handleSetFormValues("testDropdown")}
+    labelText={detailsForm.testDropdown}
+    value={detailsForm.testDropdown}
+    options={dropdownOptions}
   />
   ```

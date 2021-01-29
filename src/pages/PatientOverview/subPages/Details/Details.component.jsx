@@ -116,7 +116,7 @@ export default function Details({ db }) {
       if (!dbTestCheckbox)
         await db.formData.add({ id: "testCheckbox", value: false });
       if (!dbTestDropdown)
-        await db.formData.add({ id: "testDropdown", value: false });
+        await db.formData.add({ id: "testDropdown", value: "Drug A" });
 
       // Set the initial values
       setDetailsForm({
@@ -185,7 +185,7 @@ export default function Details({ db }) {
     setFormValues("contactThree")("");
     setFormValues("contactFour")("");
     setFormValues("testCheckbox")(false);
-    setFormValues("testDropdown")("");
+    setFormValues("testDropdown")("Drug A");
   };
 
   // Delete IndexedDB PODetailsDatabase database
