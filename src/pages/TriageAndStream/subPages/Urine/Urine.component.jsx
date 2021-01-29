@@ -11,7 +11,7 @@ import { Dropdown, Checkbox, ReportForm } from "../../../../components";
 export default function Urine() {
   // State: isNadChecked
   const [isNadChecked, setIsNadChecked] = useState(false);
-  const [dropdownValue, setDropdownValue] = useState("Drug A");
+  const [dropdownValue, setDropdownValue] = useState("");
 
   // Dropdown Options
   const dropdownOptions = [
