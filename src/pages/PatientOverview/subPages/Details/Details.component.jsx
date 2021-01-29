@@ -37,7 +37,7 @@ export default function Details({ db }) {
     contactThree: "",
     contactFour: "",
     testCheckbox: false,
-    testDropdown: "Drug A",
+    testDropdown: "",
   });
 
   // Dropdown Options
@@ -116,7 +116,7 @@ export default function Details({ db }) {
       if (!dbTestCheckbox)
         await db.formData.add({ id: "testCheckbox", value: false });
       if (!dbTestDropdown)
-        await db.formData.add({ id: "testDropdown", value: "Drug A" });
+        await db.formData.add({ id: "testDropdown", value: "" });
 
       // Set the initial values
       setDetailsForm({
@@ -135,7 +135,7 @@ export default function Details({ db }) {
         contactThree: dbContactThree ? dbContactThree.value : "",
         contactFour: dbContactFour ? dbContactFour.value : "",
         testCheckbox: dbTestCheckbox ? dbTestCheckbox.value : false,
-        testDropdown: dbTestDropdown ? dbTestDropdown.value : "Drug A",
+        testDropdown: dbTestDropdown ? dbTestDropdown.value : "",
       });
     }).catch((error) => {
       console.log(error.stack || error);
@@ -185,7 +185,7 @@ export default function Details({ db }) {
     setFormValues("contactThree")("");
     setFormValues("contactFour")("");
     setFormValues("testCheckbox")(false);
-    setFormValues("testDropdown")("Drug A");
+    setFormValues("testDropdown")("");
   };
 
   // Delete IndexedDB PODetailsDatabase database

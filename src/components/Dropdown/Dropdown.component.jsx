@@ -20,6 +20,9 @@ export default function Dropdown({
       </Label>
 
       <Select name={htmlFor} id={htmlFor} onChange={onChange} value={value}>
+        <Option value="" selected disabled hidden>
+          Select...
+        </Option>
         {options.map((option, index) => (
           <Option key={index} value={option}>
             {option}
