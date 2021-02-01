@@ -11,7 +11,7 @@ export default function Dropdown({
   onChange,
   options,
   left,
-  value,
+  width,
 }) {
   return (
     <Container left={left}>
@@ -19,8 +19,14 @@ export default function Dropdown({
         {labelText}
       </Label>
 
-      <Select name={htmlFor} id={htmlFor} onChange={onChange} value={value}>
-        <Option value="" selected disabled hidden>
+      <Select
+        name={htmlFor}
+        id={htmlFor}
+        onChange={onChange}
+        defaultValue="select"
+        style={{ width: `${width}` }}
+      >
+        <Option value="select" disabled hidden>
           Select...
         </Option>
         {options.map((option, index) => (

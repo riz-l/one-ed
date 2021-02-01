@@ -7,6 +7,9 @@ export { default as Dropdown } from "./Dropdown/Dropdown.component";
 // Export: Header
 export { default as Header } from "./Header/Header.component";
 
+// Export: Input
+export { default as Input } from "./Input/Input.component";
+
 // Export: PatientList
 export { default as PatientList } from "./PatientList/PatientList.component";
 

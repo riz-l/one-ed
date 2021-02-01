@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // Import: Elements
-import { Container, Heading, Item } from "./Urine.elements";
+import { Column, Container, Grid, Heading, Item } from "./Urine.elements";
 
 // Import: Components
 import { Dropdown, Checkbox, ReportForm } from "../../../../components";
@@ -40,26 +40,94 @@ export default function Urine() {
       </Heading>
 
       <ReportForm>
-        <Item>
-          <Checkbox
-            checked={isNadChecked}
-            onChange={() => setIsNadChecked((isNadChecked) => !isNadChecked)}
-            text="NAD"
-            value={isNadChecked}
-            name="nad"
-            id="nad"
-          />
-        </Item>
+        <Grid>
+          <Column>
+            <Item>
+              <Checkbox
+                checked={isNadChecked}
+                onChange={() =>
+                  setIsNadChecked((isNadChecked) => !isNadChecked)
+                }
+                text="NAD"
+                value={isNadChecked}
+                name="nad"
+                id="nad"
+              />
+            </Item>
+          </Column>
+        </Grid>
 
-        <Item>
-          <Dropdown
-            htmlFor="pro"
-            labelText="Pro"
-            onChange={handleDropdownValues}
-            options={dropdownOptions}
-            value={dropdownValue}
-          />
-        </Item>
+        <Grid>
+          <Column>
+            <Item>
+              <Dropdown
+                htmlFor="pro"
+                labelText="Pro"
+                onChange={handleDropdownValues}
+                options={dropdownOptions}
+                value={dropdownValue}
+                width="250px"
+              />
+            </Item>
+
+            <Item>
+              <Dropdown
+                htmlFor="bld"
+                labelText="Bld"
+                onChange={handleDropdownValues}
+                options={dropdownOptions}
+                value={dropdownValue}
+                width="250px"
+              />
+            </Item>
+
+            <Item>
+              <Dropdown
+                htmlFor="glu"
+                labelText="Glu"
+                onChange={handleDropdownValues}
+                options={dropdownOptions}
+                value={dropdownValue}
+                width="250px"
+              />
+            </Item>
+          </Column>
+
+          <Column>
+            <Item>
+              <Dropdown
+                htmlFor="leu"
+                labelText="Leu"
+                onChange={handleDropdownValues}
+                options={dropdownOptions}
+                value={dropdownValue}
+                width="250px"
+              />
+            </Item>
+
+            <Item>
+              <Dropdown
+                htmlFor="nit"
+                labelText="Nit"
+                onChange={handleDropdownValues}
+                options={dropdownOptions}
+                value={dropdownValue}
+                width="250px"
+              />
+            </Item>
+
+            <Item>
+              <Dropdown
+                htmlFor="ket"
+                labelText="Ket"
+                onChange={handleDropdownValues}
+                options={dropdownOptions}
+                value={dropdownValue}
+                width="250px"
+              />
+            </Item>
+          </Column>
+        </Grid>
       </ReportForm>
     </Container>
   );

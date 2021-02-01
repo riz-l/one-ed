@@ -1,5 +1,5 @@
 // Import: Dependencies
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: ${({ left }) => (left ? "row" : "column")};
   justify-content: center;
+  margin-bottom: 0.8rem;
 `;
 
 // Element: Label

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Offline, Online } from "react-detect-offline";
 
 // Import: Elements
-import { Container, Heading, Grid, Column, Item } from "./Details.elements";
+import { Column, Container, Grid, Heading, Item } from "./Details.elements";
 
 // Import: Components
 import {
@@ -414,7 +414,6 @@ export default function Details({ db }) {
                 labelText={detailsForm.testDropdown}
                 onChange={handleSetFormValues("testDropdown")}
                 options={dropdownOptions}
-                value={detailsForm.testDropdown}
               />
             </Item>
           </Column>
