@@ -12,7 +12,6 @@ import {
   Input,
   ReportForm,
   ReportInput,
-  ReportLabel,
 } from "../../../../components";
 
 // SubPage: Details
@@ -330,26 +329,24 @@ export default function Details({ db }) {
           <Column>
             <Item>
               <Item>
-                <ReportLabel htmlFor="details-contactOne" text="Contact 1" />
-                <ReportInput
-                  type="text"
-                  name="contactOne"
-                  width="250px"
-                  value={detailsForm.contactOne}
-                  id="details-contactOne"
+                <Input
+                  htmlFor="contactOne"
                   onChange={handleSetFormValues("contactOne")}
+                  labelText="Contact 1"
+                  type="text"
+                  value={detailsForm.contactOne}
+                  width="250px"
                 />
               </Item>
 
               <Item>
-                <ReportLabel htmlFor="details-contactTwo" text="Contact 2" />
-                <ReportInput
-                  type="text"
-                  name="contactTwo"
-                  width="250px"
-                  value={detailsForm.contactTwo}
-                  id="details-contactTwo"
+                <Input
+                  htmlFor="contactTwo"
                   onChange={handleSetFormValues("contactTwo")}
+                  labelText="Contact 2"
+                  type="text"
+                  value={detailsForm.contactTwo}
+                  width="250px"
                 />
               </Item>
             </Item>
@@ -358,26 +355,24 @@ export default function Details({ db }) {
           <Column>
             <Item>
               <Item>
-                <ReportLabel htmlFor="details-contactThree" text="Contact 3" />
-                <ReportInput
-                  type="text"
-                  name="contactThree"
-                  width="250px"
-                  value={detailsForm.contactThree}
-                  id="details-contactThree"
+                <Input
+                  htmlFor="contactThree"
                   onChange={handleSetFormValues("contactThree")}
+                  labelText="Contact 3"
+                  type="text"
+                  value={detailsForm.contactThree}
+                  width="250px"
                 />
               </Item>
 
               <Item>
-                <ReportLabel htmlFor="details-contactFour" text="Contact 4" />
-                <ReportInput
-                  type="text"
-                  name="contactFour"
-                  width="250px"
-                  value={detailsForm.contactFour}
-                  id="details-contactFour"
+                <Input
+                  htmlFor="contactFour"
                   onChange={handleSetFormValues("contactFour")}
+                  labelText="Contact 4"
+                  type="text"
+                  value={detailsForm.contactFour}
+                  width="250px"
                 />
               </Item>
             </Item>
