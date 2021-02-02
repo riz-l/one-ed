@@ -2,13 +2,35 @@
 import React from "react";
 
 // Import: Elements
-import { Container } from "./Input.elements";
+import { Container, InputField, Label } from "./Input.elements";
 
 // Component: Input
-export default function Input() {
+export default function Input({
+  htmlFor,
+  labelText,
+  left,
+  onChange,
+  type,
+  value,
+  width,
+}) {
   return (
-    <Container>
-      <h1>Input</h1>
+    <Container left={left}>
+      {labelText && (
+        <Label htmlfor={htmlFor} left={left}>
+          {labelText}
+        </Label>
+      )}
+
+      <InputField
+        id={htmlFor}
+        left={left}
+        name={htmlFor}
+        onChange={onChange}
+        style={{ width: `${width}` }}
+        type={type}
+        value={value}
+      />
     </Container>
   );
 }

@@ -7,7 +7,7 @@ import { Column, Container, Grid, Heading, Item } from "./Ced.elements";
 // Import: Components
 import {
   Dropdown,
-  Checkbox,
+  Input,
   ReportForm,
   ReportInput,
   ReportLabel,
@@ -44,14 +44,13 @@ export default function Ced() {
                 htmlFor="pain-score"
                 labelText="Pain Score"
                 options={dropdownOptions}
-                left
                 width="200px"
+                left
               />
             </Item>
 
             <Item>
-              <ReportLabel htmlFor="ced-weight" text="Weight (kg)" />
-              <ReportInput type="text" name="weight" id="ced-weight" />
+              <Input htmlFor="test-input" labelText="Pulse Rate" left />
             </Item>
           </Column>
 

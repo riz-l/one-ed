@@ -7,9 +7,9 @@ import { Column, Container, Grid, Heading, Item } from "./Details.elements";
 
 // Import: Components
 import {
-  // InputCheckbox,
   Checkbox,
   Dropdown,
+  Input,
   ReportForm,
   ReportInput,
   ReportLabel,
@@ -215,43 +215,37 @@ export default function Details({ db }) {
           <Column>
             <Item>
               <Item>
-                <ReportLabel htmlFor="details-name" text="Name" />
-                <ReportInput
-                  type="text"
-                  name="name"
-                  width="250px"
-                  value={detailsForm.name}
-                  id="details-name"
+                <Input
+                  htmlFor="name"
+                  labelText="Name"
                   onChange={handleSetFormValues("name")}
+                  type="text"
+                  value={detailsForm.name}
+                  width="250px"
                 />
               </Item>
 
               <Item>
-                <ReportLabel
-                  htmlFor="details-dateOfBirth"
-                  text="Date of Birth"
-                />
-                <ReportInput
-                  type="text"
-                  name="dateOfBirth"
-                  width="250px"
-                  value={detailsForm.dateOfBirth}
-                  id="details-dateOfBirth"
+                <Input
+                  htmlFor="dateOfBirth"
+                  labelText="Date of Birth"
                   onChange={handleSetFormValues("dateOfBirth")}
+                  type="text"
+                  value={detailsForm.dateOfBirth}
+                  width="250px"
                 />
               </Item>
 
               <Grid>
                 <Column>
                   <Item>
-                    <ReportLabel htmlFor="details-age" text="Age (Years)" />
-                    <ReportInput
-                      type="text"
-                      name="age"
-                      width="80px"
-                      value={detailsForm.age}
-                      id="details-age"
+                    <Input
+                      htmlFor="age"
+                      labelText="Age (Years)"
                       onChange={handleSetFormValues("age")}
+                      type="text"
+                      value={detailsForm.age}
+                      width="80px"
                     />
                   </Item>
                 </Column>
@@ -260,28 +254,26 @@ export default function Details({ db }) {
                   style={windowWidth > 1378 ? { marginLeft: "1rem" } : null}
                 >
                   <Item>
-                    <ReportLabel htmlFor="details-gender" text="Gender" />
-                    <ReportInput
-                      type="text"
-                      name="gender"
-                      width="150px"
-                      value={detailsForm.gender}
-                      id="details-gender"
+                    <Input
+                      htmlFor="gender"
+                      labelText="Gender"
                       onChange={handleSetFormValues("gender")}
+                      type="text"
+                      value={detailsForm.gender}
+                      width="150px"
                     />
                   </Item>
                 </Column>
               </Grid>
 
               <Item>
-                <ReportLabel htmlFor="details-nhsNo" text="NHS No" />
-                <ReportInput
-                  type="text"
-                  name="nhsNo"
-                  width="250px"
-                  value={detailsForm.nhsNo}
-                  id="details-nhsNo"
+                <Input
+                  htmlFor="nhsNo"
+                  labelText="NHS No"
                   onChange={handleSetFormValues("nhsNo")}
+                  type="text"
+                  value={detailsForm.nhsNo}
+                  width="250px"
                 />
               </Item>
             </Item>
@@ -289,47 +281,46 @@ export default function Details({ db }) {
 
           <Column>
             <Item>
-              <ReportLabel htmlFor="details-addressLineOne" text="Address" />
-              <ReportInput
-                type="text"
-                name="addressLineOne"
-                width="250px"
-                value={detailsForm.addressLineOne}
-                id="details-addressLineOne"
+              <Input
+                htmlFor="addressLineOne"
+                labelText="Address"
                 onChange={handleSetFormValues("addressLineOne")}
-              />
-              <ReportInput
                 type="text"
-                name="addressLineTwo"
+                value={detailsForm.addressLineOne}
                 width="250px"
-                value={detailsForm.addressLineTwo}
-                id="details-addressLineTwo"
+              />
+
+              <Input
+                htmlFor="addressLineTwo"
                 onChange={handleSetFormValues("addressLineTwo")}
-              />
-              <ReportInput
                 type="text"
-                name="addressLineThree"
+                value={detailsForm.addressLineTwo}
                 width="250px"
-                value={detailsForm.addressLineThree}
-                id="details-addressLineThree"
+              />
+
+              <Input
+                htmlFor="addressLineThree"
                 onChange={handleSetFormValues("addressLineThree")}
-              />
-              <ReportInput
                 type="text"
-                name="addressLineFour"
+                value={detailsForm.addressLineThree}
                 width="250px"
-                value={detailsForm.addressLineFour}
-                id="details-addressLineFour"
+              />
+
+              <Input
+                htmlFor="addressLineFour"
                 onChange={handleSetFormValues("addressLineFour")}
-              />
-              <ReportLabel htmlFor="details-addressPostcode" text="Post Code" />
-              <ReportInput
                 type="text"
-                name="addressPostcode"
+                value={detailsForm.addressLineFour}
                 width="250px"
-                value={detailsForm.addressPostcode}
-                id="details-addressPostcode"
+              />
+
+              <Input
+                htmlFor="addressPostcode"
                 onChange={handleSetFormValues("addressPostcode")}
+                labelText="Postcode"
+                type="text"
+                value={detailsForm.addressPostcode}
+                width="250px"
               />
             </Item>
           </Column>

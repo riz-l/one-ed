@@ -1,5 +1,5 @@
 // Import: Dependencies
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 
 // Element: Container
 export const Container = styled.div`
@@ -13,8 +13,14 @@ export const Container = styled.div`
 // Element: Label
 export const Label = styled.label`
   font-size: 1rem;
-  margin-bottom: ${({ left }) => (left ? "0" : "8px")};
-  margin-right: ${({ left }) => (left ? "0.8rem" : "0")};
+  ${({ left }) =>
+    left
+      ? css`
+          margin-right: 1rem;
+        `
+      : css`
+          margin-bottom: 8px;
+        `}
 `;
 
 // Element: Select
@@ -22,7 +28,7 @@ export const Select = styled.select`
   border: 2px solid #dfdfe2;
   cursor: pointer;
   font-size: 1rem;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.8rem;
   transition: all 100ms linear;
 
   &:hover {
