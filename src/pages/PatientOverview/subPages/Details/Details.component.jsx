@@ -1,18 +1,11 @@
 // Import: Dependencies
 import React, { useState, useEffect } from "react";
-import { Offline, Online } from "react-detect-offline";
 
 // Import: Elements
 import { Column, Container, Grid, Heading, Item } from "./Details.elements";
 
 // Import: Components
-import {
-  Checkbox,
-  Dropdown,
-  Input,
-  ReportForm,
-  ReportInput,
-} from "../../../../components";
+import { Input, ReportForm, ReportInput } from "../../../../components";
 
 // SubPage: Details
 export default function Details({ db }) {
@@ -35,24 +28,7 @@ export default function Details({ db }) {
     contactTwo: "",
     contactThree: "",
     contactFour: "",
-    testCheckbox: false,
-    testDropdown: "",
   });
-
-  // Dropdown Options
-  const dropdownOptions = [
-    "Drug A",
-    "Drug B",
-    "Drug C",
-    "Drug D",
-    "Drug E",
-    "Drug F",
-    "Drug G",
-    "Drug H",
-    "Drug I",
-    "Drug J",
-    "Drug K",
-  ];
 
   // Effect: Checks and updates inner window width
   // Effect: Set detailsForm values to === values.PODetailsDatabase
@@ -86,8 +62,6 @@ export default function Details({ db }) {
       const dbContactTwo = await db.formData.get("contactTwo");
       const dbContactThree = await db.formData.get("contactThree");
       const dbContactFour = await db.formData.get("contactFour");
-      const dbTestCheckbox = await db.formData.get("testCheckbox");
-      const dbTestDropdown = await db.formData.get("testDropdown");
 
       // If the detailsForm values have not been added, populate with ""
       if (!dbName) await db.formData.add({ id: "name", value: "" });
@@ -112,10 +86,6 @@ export default function Details({ db }) {
         await db.formData.add({ id: "contactThree", value: "" });
       if (!dbContactFour)
         await db.formData.add({ id: "contactFour", value: "" });
-      if (!dbTestCheckbox)
-        await db.formData.add({ id: "testCheckbox", value: false });
-      if (!dbTestDropdown)
-        await db.formData.add({ id: "testDropdown", value: "" });
 
       // Set the initial values
       setDetailsForm({
@@ -133,8 +103,6 @@ export default function Details({ db }) {
         contactTwo: dbContactTwo ? dbContactTwo.value : "",
         contactThree: dbContactThree ? dbContactThree.value : "",
         contactFour: dbContactFour ? dbContactFour.value : "",
-        testCheckbox: dbTestCheckbox ? dbTestCheckbox.value : false,
-        testDropdown: dbTestDropdown ? dbTestDropdown.value : "",
       });
     }).catch((error) => {
       console.log(error.stack || error);
@@ -162,9 +130,6 @@ export default function Details({ db }) {
   // Partial application to make on change handler easier to apply
   // ... used for text inputs
   const handleSetFormValues = (id) => (e) => setFormValues(id)(e.target.value);
-  // ... used for checkbox inputs
-  const handleCheckboxValues = (id) => (e) =>
-    setFormValues(id)(e.target.checked ? true : false);
 
   // When detailsForm is submitted, prevent default action
   const handleSubmit = (e) => {
@@ -183,8 +148,6 @@ export default function Details({ db }) {
     setFormValues("contactTwo")("");
     setFormValues("contactThree")("");
     setFormValues("contactFour")("");
-    setFormValues("testCheckbox")(false);
-    setFormValues("testDropdown")("");
   };
 
   // Delete IndexedDB PODetailsDatabase database
@@ -379,51 +342,8 @@ export default function Details({ db }) {
           </Column>
         </Grid>
 
-        <Grid>
-          <Column>
-            <Item>
-              <Checkbox
-                checked={detailsForm.testCheckbox}
-                onChange={handleCheckboxValues("testCheckbox")}
-                text={detailsForm.testCheckbox === true ? "TRUE" : "FALSE"}
-                value={detailsForm.testCheckbox}
-                name="testCheckbox"
-                id="details-testCheckbox"
-              />
-            </Item>
-          </Column>
-
-          <Column>
-            <Item>
-              <Dropdown
-                htmlFor="testDropdown"
-                labelText={detailsForm.testDropdown}
-                onChange={handleSetFormValues("testDropdown")}
-                options={dropdownOptions}
-              />
-            </Item>
-          </Column>
-        </Grid>
-
         <Item>
-          <Online>
-            <Item>
-              <ReportInput type="submit" value="Submit" />
-            </Item>
-
-            <Item>
-              <button onClick={pleaseDelete}>DELETE DATA</button>
-            </Item>
-          </Online>
-
-          <Offline>
-            <Item>
-              <p>
-                You are currently offline, please re-establish your internet
-                connection
-              </p>
-            </Item>
-          </Offline>
+          <button onClick={pleaseDelete}>PLACEHOLDER: Delete Data</button>
         </Item>
       </ReportForm>
     </Container>
