@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Column, Container, Grid, Heading, Item } from "./Details.elements";
 
 // Import: Components
-import { Input, ReportForm, ReportInput } from "../../../../components";
+import { Input, ReportForm } from "../../../../components";
 
 // SubPage: Details
 export default function Details({ db }) {
