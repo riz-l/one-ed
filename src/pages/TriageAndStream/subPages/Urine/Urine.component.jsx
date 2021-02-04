@@ -9,7 +9,7 @@ import { Dropdown, Checkbox, ReportForm } from "../../../../components";
 
 // SubPage: Urine
 export default function Urine() {
-  // State: isNadChecked
+  // State: isNadChecked, dropdownValue
   const [isNadChecked, setIsNadChecked] = useState(false);
   const [dropdownValue, setDropdownValue] = useState("");
 

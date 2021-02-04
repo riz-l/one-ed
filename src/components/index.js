@@ -43,6 +43,9 @@ export { default as ReportNavigationItem } from "./ReportNavigationItem/ReportNa
 // Export: ReportSection
 export { default as ReportSection } from "./ReportSection/ReportSection.component";
 
+// Export: Text
+export { default as Text } from "./Text/Text.component";
+
 // Export: Tile
 export { default as Tile } from "./Tile/Tile.component";
 
