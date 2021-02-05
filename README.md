@@ -235,25 +235,24 @@ $ npm install
     onChange={handleCheckboxValues("testCheckbox")}
     text="This is an example checkbox"
     value={exampleRenderForm.exampleCheckbox}
-    name="exampleCheckbox"
-    id="exampleRender-exampleCheckbox"
+    htmlFor="exampleCheckbox"
    />
   ```
 
-- For a `<ReportInput />` component, our implementation will be as follows:
+- For a `<Input />` component, our implementation will be as follows:
 
   ```
-  <ReportInput
+  <Input
     type="text"
+    labelText="This is an example Input"
     onChange={handleReportInputValues("exampleReportInput")}
     value={exampleRenderForm.exampleReportInput}
-    name="exampleCheckbox"
-    id="exampleRender-exampleReportInput"
+    htmlFor="exampleInput"
   />
   ```
 
 - For a `<Dropdown />` component, our implementation will be as follows:
-  
+
   ```
   <Dropdown
     htmlFor="testDropdown"

@@ -5,14 +5,16 @@ import React from "react";
 import { Container, Heading, Item } from "../../../../globalComponents";
 
 // Import: Components
-import { ReportEntry } from "../../../../components";
+import { ReportEntry, Text } from "../../../../components";
 
 // SubPage: Presenting
 export default function Presenting({ isEntrySlideOpen, setIsEntrySlideOpen }) {
   return (
     <Container>
       <Heading>
-        <h2>Presenting Complaint</h2>
+        <Text as="h2" heading>
+          Presenting Complaint
+        </Text>
       </Heading>
 
       <Item>

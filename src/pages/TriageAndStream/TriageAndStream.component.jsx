@@ -1,5 +1,6 @@
 // Import: Dependencies
 import React, { useState, useEffect } from "react";
+import Dexie from "dexie";
 
 // Import: Assets
 import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
@@ -42,6 +43,9 @@ export default function TriageAndStream() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Dexie: database = POPSUrineDatabase
+  const urineDb = new Dexie("POPSUrineDatabase");
 
   // onClick: Open/close Triage Nav
   function toggleTriageNav() {
@@ -201,7 +205,7 @@ export default function TriageAndStream() {
               ) : showNeuro ? (
                 <Neuro />
               ) : showUrine ? (
-                <Urine />
+                <Urine db={urineDb} />
               ) : null
             }
             navStatus={isPopsNavOpen}

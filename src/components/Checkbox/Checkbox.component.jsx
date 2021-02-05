@@ -15,15 +15,25 @@ import {
 } from "./Checkbox.elements";
 
 // Component: Checkbox
-export default function Checkbox({ checked, onChange, under, text }) {
+export default function Checkbox({
+  checked,
+  onChange,
+  under,
+  text,
+  htmlFor,
+  value,
+}) {
   return (
     <Container>
-      <Label>
+      <Label htmlFor={htmlFor}>
         <Wrapper under={under}>
           <InputCheckbox
             type="checkbox"
             checked={checked}
             onChange={onChange}
+            name={htmlFor}
+            id={htmlFor}
+            value={value}
           />
 
           <VisualBox checked={checked}>

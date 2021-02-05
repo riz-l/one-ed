@@ -341,10 +341,6 @@ export default function Details({ db }) {
             </Item>
           </Column>
         </Grid>
-
-        <Item>
-          <button onClick={pleaseDelete}>PLACEHOLDER: Delete Data</button>
-        </Item>
       </ReportForm>
     </Container>
   );
