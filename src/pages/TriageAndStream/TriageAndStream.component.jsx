@@ -44,8 +44,9 @@ export default function TriageAndStream() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Dexie: database = POPSUrineDatabase
+  // Dexie: database = POPSUrineDatabase, POPSNeuroDatabase
   const urineDb = new Dexie("POPSUrineDatabase");
+  const neuroDb = new Dexie("POPSNeuroDatabase");
 
   // onClick: Open/close Triage Nav
   function toggleTriageNav() {
@@ -203,7 +204,7 @@ export default function TriageAndStream() {
               showCed ? (
                 <Ced />
               ) : showNeuro ? (
-                <Neuro />
+                <Neuro db={neuroDb} />
               ) : showUrine ? (
                 <Urine db={urineDb} />
               ) : null

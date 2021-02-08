@@ -27,7 +27,7 @@ export default function Dropdown({
         value={value}
         style={{ width: `${width}` }}
       >
-        <Option selected="selected">Select...</Option>
+        <Option value="select">Select...</Option>
         {options.map((option, index) => (
           <Option key={index} value={option}>
             {option}

@@ -1,5 +1,5 @@
 // Import: Dependencies
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Import: Elements
 import { Column, Container, Grid, Heading, Item } from "./Neuro.elements";
@@ -8,10 +8,23 @@ import { Column, Container, Grid, Heading, Item } from "./Neuro.elements";
 import { Checkbox, Dropdown, ReportForm, Text } from "../../../../components";
 
 // SubPage: Neuro
-export default function Neuro() {
-  // State: checkboxValue, dropdownValue
-  const [checkboxValue, setCheckboxValue] = useState(false);
-  const [dropdownValue, setDropdownValue] = useState("");
+export default function Neuro({ db }) {
+  // State: neuroForm
+  const [neuroForm, setNeuroForm] = useState({
+    eyes: "",
+    verbal: "",
+    motor: "",
+    equal: false,
+    unequal: false,
+    leftPupilSize: "",
+    leftPupilReaction: "",
+    rightPupilSize: "",
+    rightPupilReaction: "",
+    leftArm: "",
+    leftLeg: "",
+    rightArm: "",
+    rightLeg: "",
+  });
 
   // Dropdown Options
   const dropdownOptions = [
@@ -28,10 +41,112 @@ export default function Neuro() {
     "Drug K",
   ];
 
-  // ... used for checkbox inputs
-  const handleDropdownValues = (e) => {
-    setDropdownValue(e.target.value);
+  // Effect: Set neuroForm values to === values.POPSNeuroDatabase
+  // ... if no values are in the database, set values === ""
+  useEffect(() => {
+    // Create database store
+    db.version(1).stores({ formData: "id, value" });
+
+    // Read/write transaction on new database store
+    db.transaction("rw", db.formData, async () => {
+      // Get all neuroForm values from database data
+      const dbEyes = await db.formData.get("eyes");
+      const dbVerbal = await db.formData.get("verbal");
+      const dbMotor = await db.formData.get("motor");
+      const dbEqual = await db.formData.get("equal");
+      const dbUnequal = await db.formData.get("unequal");
+      const dbLeftPupilSize = await db.formData.get("leftPupilSize");
+      const dbLeftPupilReaction = await db.formData.get("leftPupilReaction");
+      const dbRightPupilSize = await db.formData.get("rightPupilSize");
+      const dbRightPupilReaction = await db.formData.get("rightPupilReaction");
+      const dbLeftArm = await db.formData.get("leftArm");
+      const dbLeftLeg = await db.formData.get("leftLeg");
+      const dbRightArm = await db.formData.get("rightArm");
+      const dbRightLeg = await db.formData.get("rightLeg");
+
+      // If the neuroForm values have not been added, populate with false || ""
+      if (!dbEyes) await db.formData.add({ id: "eyes", value: "" });
+      if (!dbVerbal) await db.formData.add({ id: "verbal", value: "" });
+      if (!dbMotor) await db.formData.add({ id: "motor", value: "" });
+      if (!dbEqual) await db.formData.add({ id: "equal", value: false });
+      if (!dbUnequal) await db.formData.add({ id: "unequal", value: false });
+      if (!dbLeftPupilSize)
+        await db.formData.add({ id: "leftPupilSize", value: "" });
+      if (!dbLeftPupilReaction)
+        await db.formData.add({ id: "leftPupilReaction", value: "" });
+      if (!dbRightPupilSize)
+        await db.formData.add({ id: "rightPupilSize", value: "" });
+      if (!dbRightPupilReaction)
+        await db.formData.add({ id: "rightPupilReaction", value: "" });
+      if (!dbLeftArm) await db.formData.add({ id: "leftArm", value: "" });
+      if (!dbLeftLeg) await db.formData.add({ id: "leftLeg", value: "" });
+      if (!dbRightArm) await db.formData.add({ id: "rightArm", value: "" });
+      if (!dbRightLeg) await db.formData.add({ id: "rightLeg", value: "" });
+
+      // Set the initial values
+      setNeuroForm({
+        eyes: dbEyes ? dbEyes.value : "",
+        verbal: dbVerbal ? dbVerbal.value : "",
+        motor: dbMotor ? dbMotor.value : "",
+        equal: dbEqual ? dbEqual.value : false,
+        unequal: dbUnequal ? dbUnequal.value : false,
+        leftPupilSize: dbLeftPupilSize ? dbLeftPupilSize.value : "",
+        leftPupilReaction: dbLeftPupilReaction ? dbLeftPupilReaction.value : "",
+        rightPupilSize: dbRightPupilSize ? dbRightPupilSize.value : "",
+        rightPupilReaction: dbRightPupilReaction
+          ? dbRightPupilReaction.value
+          : "",
+        leftArm: dbLeftArm ? dbLeftArm.value : "",
+        leftLeg: dbLeftLeg ? dbLeftLeg.value : "",
+        rightArm: dbRightArm ? dbRightArm.value : "",
+        rightLeg: dbRightLeg ? dbRightLeg.value : "",
+      });
+    }).catch((error) => {
+      console.log(error.stack || error);
+      throw new Error(error.stack || error);
+    });
+
+    // Close the database connection if Neuro is unmounted
+    // ... or if the database connection changes
+    return () => db.close();
+  }, [db]);
+
+  // Sets the values in the store and in the state
+  const setFormValues = (id) => (value, checked) => {
+    // Update store
+    db.formData.put({ id, value, checked });
+
+    // Update state
+    setNeuroForm((prevFormValues) => ({
+      ...prevFormValues,
+      [id]: value,
+      checked,
+    }));
   };
+
+  // Partial application to make on change handler easier to apply
+  // ... used for checkbox inputs
+  const handleCheckboxValues = (id) => (e) =>
+    setFormValues(id)(e.target.checked ? true : false);
+
+  // ... used for stringed text inputs
+  const handleInputValues = (id) => (e) => setFormValues(id)(e.target.value);
+
+  // Delete IndexedDB POPSNeuroDatabase database
+  function pleaseDelete() {
+    indexedDB.deleteDatabase("POPSNeuroDatabase").onsuccess = function () {
+      console.log("POPSNeuroDatabase Delete Successful");
+    };
+  }
+
+  // Delete IndexedDB data on browser/tab close and/or refresh
+  // ... prompts user that they are about to leave the page/lose data
+  // window.addEventListener("beforeunload", () => pleaseDelete());
+  window.addEventListener("beforeunload", (e) => {
+    e.preventDefault();
+    e.returnValue = "Are you sure you want to close?";
+    pleaseDelete();
+  });
 
   return (
     <Container>
@@ -52,9 +167,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="eyes"
                 labelText="Eyes"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("eyes")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.eyes}
                 width="250px"
               />
             </Item>
@@ -63,9 +178,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="verbal"
                 labelText="Verbal"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("verbal")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.verbal}
                 width="250px"
               />
             </Item>
@@ -74,9 +189,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="motor"
                 labelText="Motor"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("motor")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.motor}
                 width="250px"
               />
             </Item>
@@ -101,12 +216,10 @@ export default function Neuro() {
               <Column>
                 <Item>
                   <Checkbox
-                    checked={checkboxValue}
-                    onChange={() =>
-                      setCheckboxValue((checkboxValue) => !checkboxValue)
-                    }
+                    checked={neuroForm.equal}
+                    onChange={handleCheckboxValues("equal")}
                     text="Equal"
-                    value={checkboxValue}
+                    value={neuroForm.equal}
                     name="equal"
                     id="equal"
                   />
@@ -116,12 +229,10 @@ export default function Neuro() {
               <Column>
                 <Item>
                   <Checkbox
-                    checked={checkboxValue}
-                    onChange={() =>
-                      setCheckboxValue((checkboxValue) => !checkboxValue)
-                    }
+                    checked={neuroForm.unequal}
+                    onChange={handleCheckboxValues("unequal")}
                     text="Unequal"
-                    value={checkboxValue}
+                    value={neuroForm.unequal}
                     name="unequal"
                     id="unequal"
                   />
@@ -141,9 +252,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="leftPupilSize"
                 labelText="Left Pupil Size (mm)"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("leftPupilSize")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.leftPupilSize}
                 width="250px"
               />
             </Item>
@@ -152,9 +263,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="leftPupilReaction"
                 labelText="Left Pupil Reaction"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("leftPupilReaction")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.leftPupilReaction}
                 width="250px"
               />
             </Item>
@@ -165,9 +276,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="rightPupilSize"
                 labelText="Right Pupil Size (mm)"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("rightPupilSize")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.rightPupilSize}
                 width="250px"
               />
             </Item>
@@ -176,9 +287,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="rightPupilReaction"
                 labelText="Right Pupil Reaction"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("rightPupilReaction")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.rightPupilReaction}
                 width="250px"
               />
             </Item>
@@ -195,9 +306,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="leftArm"
                 labelText="Left Arm"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("leftArm")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.leftArm}
                 width="250px"
               />
             </Item>
@@ -206,9 +317,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="leftLeg"
                 labelText="Left Leg"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("leftLeg")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.leftLeg}
                 width="250px"
               />
             </Item>
@@ -219,9 +330,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="rightArm"
                 labelText="Right Arm"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("rightArm")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.rightArm}
                 width="250px"
               />
             </Item>
@@ -230,9 +341,9 @@ export default function Neuro() {
               <Dropdown
                 htmlFor="rightLeg"
                 labelText="Right Leg"
-                onChange={handleDropdownValues}
+                onChange={handleInputValues("rightLeg")}
                 options={dropdownOptions}
-                value={dropdownValue}
+                value={neuroForm.rightLeg}
                 width="250px"
               />
             </Item>

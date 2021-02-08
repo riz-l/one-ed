@@ -57,89 +57,89 @@ export default function Ced() {
         <Grid>
           <Column>
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="painScore"
                 labelText="Pain Score"
                 options={dropdownOptions}
                 value={cedForm.painScore}
                 width="250px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Input
+              {/* <Input
                 htmlFor="pulseRate"
                 labelText="Pulse Rate"
                 type="text"
                 value={cedForm.pulseRate}
                 width="100px"
-              />
+              /> */}
             </Item>
 
             <Grid>
               <Column>
                 <Item>
-                  <Input
+                  {/* <Input
                     htmlFor="bpSystolicFirst"
                     labelText="BP Systolic"
                     type="text"
                     value={cedForm.bpSystolicFirst}
                     width="100px"
-                  />
+                  /> */}
                 </Item>
               </Column>
 
               <Column>
                 <Item>
-                  <Input
+                  {/* <Input
                     htmlFor="bpSystolicSecond"
                     labelText="BP Systolic"
                     type="text"
                     value={cedForm.bpSystolicSecond}
                     width="100px"
-                  />
+                  /> */}
                 </Item>
               </Column>
             </Grid>
 
             <Item>
-              <Input
+              {/* <Input
                 htmlFor="respRate"
                 labelText="Resp Rate"
                 type="text"
                 value={cedForm.respRate}
                 width="100px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Input
+              {/* <Input
                 htmlFor="oxygenSats"
                 labelText="Oxygen SATS"
                 type="text"
                 value={cedForm.oxygenSats}
                 width="100px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="supplementalO2"
                 labelText="Supplemental O2"
                 options={dropdownOptions}
                 value={cedForm.supplementalO2}
                 width="250px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Input
+              {/* <Input
                 htmlFor="temp"
                 labelText="Temp"
                 type="text"
                 value={cedForm.temp}
                 width="100px"
-              />
+              /> */}
             </Item>
           </Column>
 
@@ -147,25 +147,25 @@ export default function Ced() {
             <Grid>
               <Column>
                 <Item>
-                  <Input
+                  {/* <Input
                     htmlFor="weight"
                     labelText="Weight (kg)"
                     type="text"
                     value={cedForm.weight}
                     width="180px"
-                  />
+                  /> */}
                 </Item>
               </Column>
 
               <Column>
                 <Item>
-                  <Input
+                  {/* <Input
                     htmlFor="height"
                     labelText="Height (cm)"
                     type="text"
                     value={cedForm.height}
                     width="180px"
-                  />
+                  /> */}
                 </Item>
               </Column>
             </Grid>
@@ -173,37 +173,37 @@ export default function Ced() {
             <Grid>
               <Column>
                 <Item>
-                  <Input
+                  {/* <Input
                     htmlFor="bloodSugar"
                     labelText="Blood Sugar (mmol/l)"
                     type="text"
                     value={cedForm.bloodSugar}
                     width="180px"
-                  />
+                  /> */}
                 </Item>
               </Column>
 
               <Column>
                 <Item>
-                  <Input
+                  {/* <Input
                     htmlFor="pefr"
                     labelText="PEFR (l/min)"
                     type="text"
                     value={cedForm.pefr}
                     width="180px"
-                  />
+                  /> */}
                 </Item>
               </Column>
             </Grid>
 
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="capillaryRefill"
                 labelText="Capillary Refill"
                 options={dropdownOptions}
                 value={cedForm.capillaryRefill}
                 width="180px"
-              />
+              /> */}
             </Item>
           </Column>
         </Grid>
@@ -211,43 +211,43 @@ export default function Ced() {
         <Grid>
           <Column>
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="popsOther"
                 labelText="POPS Other"
                 options={dropdownOptions}
                 value={cedForm.popsOther}
                 width="580px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="popsGutFeeling"
                 labelText="POPS Gut Feeling"
                 options={dropdownOptions}
                 value={cedForm.popsGutFeeling}
                 width="580px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="popsBreathing"
                 labelText="POPS Breathing"
                 options={dropdownOptions}
                 value={cedForm.popsBreathing}
                 width="580px"
-              />
+              /> */}
             </Item>
 
             <Item>
-              <Dropdown
+              {/* <Dropdown
                 htmlFor="avpu"
                 labelText="AVPU"
                 options={dropdownOptions}
                 value={cedForm.avpu}
                 width="580px"
-              />
+              /> */}
             </Item>
 
             <Text as="h2" heading margin="2rem 0 0 0">

@@ -102,7 +102,7 @@ export default function Urine({ db }) {
   // ... used for stringed text inputs
   const handleInputValues = (id) => (e) => setFormValues(id)(e.target.value);
 
-  // Delete IndexedDB PODetailsDatabase database
+  // Delete IndexedDB POPSUrineDatabase database
   function pleaseDelete() {
     indexedDB.deleteDatabase("POPSUrineDatabase").onsuccess = function () {
       console.log("POPSUrineDatabase Delete Successful");
