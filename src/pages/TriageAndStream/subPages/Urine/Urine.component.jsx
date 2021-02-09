@@ -35,7 +35,7 @@ export default function Urine({ db }) {
     "Drug K",
   ];
 
-  // Effect: Set urineForm values to === values.POPSUrineDatabase
+  // Effect: Set urineForm values to === values.TASUrine
   // ... if no values are in the database, set values === ""
   useEffect(() => {
     // Create database store
@@ -102,10 +102,10 @@ export default function Urine({ db }) {
   // ... used for stringed text inputs
   const handleInputValues = (id) => (e) => setFormValues(id)(e.target.value);
 
-  // Delete IndexedDB POPSUrineDatabase database
+  // Delete IndexedDB TASUrine database
   function pleaseDelete() {
-    indexedDB.deleteDatabase("POPSUrineDatabase").onsuccess = function () {
-      console.log("POPSUrineDatabase Delete Successful");
+    indexedDB.deleteDatabase("TASUrine").onsuccess = function () {
+      console.log("TASUrine Delete Successful");
     };
   }
 

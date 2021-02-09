@@ -27,9 +27,9 @@ export default function Input({
         left={left}
         name={htmlFor}
         onChange={onChange}
-        style={{ width: `${width}` }}
         type={type}
         value={value}
+        width={width}
       />
     </Container>
   );

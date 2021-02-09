@@ -30,6 +30,11 @@ export const Select = styled.select`
   font-size: 1rem;
   padding: 0.3rem 0.8rem;
   transition: all 100ms linear;
+  width: ${({ width }) => width ?? width};
+
+  @media screen and (max-width: 848px) {
+    width: 180px;
+  }
 
   &:hover {
     box-shadow: 0 0 5px #7cf0f4;

@@ -31,7 +31,7 @@ export default function Details({ db }) {
   });
 
   // Effect: Checks and updates inner window width
-  // Effect: Set detailsForm values to === values.PODetailsDatabase
+  // Effect: Set detailsForm values to === values.PODetails
   // ... if no values are in the database, set values === ""
   useEffect(() => {
     // Check current windowWidth assigns current windowWidth to state
@@ -150,10 +150,10 @@ export default function Details({ db }) {
     setFormValues("contactFour")("");
   };
 
-  // Delete IndexedDB PODetailsDatabase database
+  // Delete IndexedDB PODetails database
   function pleaseDelete() {
-    indexedDB.deleteDatabase("PODetailsDatabase").onsuccess = function () {
-      console.log("PODetailsDatabase Delete Successful");
+    indexedDB.deleteDatabase("PODetails").onsuccess = function () {
+      console.log("PODetails Delete Successful");
     };
   }
 

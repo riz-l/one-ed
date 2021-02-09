@@ -25,7 +25,7 @@ export default function Dropdown({
         id={htmlFor}
         onChange={onChange}
         value={value}
-        style={{ width: `${width}` }}
+        width={width}
       >
         <Option value="null">Select...</Option>
         {options.map((option, index) => (

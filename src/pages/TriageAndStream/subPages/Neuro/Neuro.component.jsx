@@ -41,7 +41,7 @@ export default function Neuro({ db }) {
     "Drug K",
   ];
 
-  // Effect: Set neuroForm values to === values.POPSNeuroDatabase
+  // Effect: Set neuroForm values to === values.TASNeuro
   // ... if no values are in the database, set values === ""
   useEffect(() => {
     // Create database store
@@ -132,10 +132,10 @@ export default function Neuro({ db }) {
   // ... used for stringed text inputs
   const handleInputValues = (id) => (e) => setFormValues(id)(e.target.value);
 
-  // Delete IndexedDB POPSNeuroDatabase database
+  // Delete IndexedDB TASNeuro database
   function pleaseDelete() {
-    indexedDB.deleteDatabase("POPSNeuroDatabase").onsuccess = function () {
-      console.log("POPSNeuroDatabase Delete Successful");
+    indexedDB.deleteDatabase("TASNeuro").onsuccess = function () {
+      console.log("TASNeuro Delete Successful");
     };
   }
 
