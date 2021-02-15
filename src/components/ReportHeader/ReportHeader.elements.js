@@ -100,17 +100,17 @@ export const NavToggle = styled.div`
   }
 
   &:hover {
-    background: #9e9ea9;
+    background: #9e9ea9 !important;
     transition: all 100ms linear;
 
     & svg {
-      fill: #2a2a2e;
+      fill: #2a2a2e !important;
       transition: all 100ms linear;
     }
   }
 
   & svg {
-    fill: #3a3a40;
+    fill: #3a3a40 !important;
     height: 25px;
     transition: all 100ms linear;
     width: 25px;

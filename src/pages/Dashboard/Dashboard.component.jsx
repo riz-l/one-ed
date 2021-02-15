@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // Import: Assets
 import WardEDIcon from "../../assets/img/icon/ward-ed.svg";
-import PatientOverviewIcon from "../../assets/img/icon/patient-overview.svg";
+import PatientOverviewIcon from "../../assets/img/icon/patient-patient.svg";
 import PatientCASIcon from "../../assets/img/icon/patient-cas.svg";
 import PatientSaveIcon from "../../assets/img/icon/patient-save.svg";
 import PatientCancelIcon from "../../assets/img/icon/patient-cancel.svg";

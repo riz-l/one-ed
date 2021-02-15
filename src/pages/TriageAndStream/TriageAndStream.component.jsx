@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 import Dexie from "dexie";
 
 // Import: Assets
-import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
 import { ReactComponent as AlertsIcon } from "../../assets/img/icon/alerts.svg";
 import { ReactComponent as AllergiesIcon } from "../../assets/img/icon/allergies.svg";
+import { ReactComponent as CedIcon } from "../../assets/img/icon/assessments-ced.svg";
+import { ReactComponent as NeuroIcon } from "../../assets/img/icon/assessments-neuro.svg";
 import { ReactComponent as PopsIcon } from "../../assets/img/icon/patient-cas.svg";
+import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
+import { ReactComponent as UrineIcon } from "../../assets/img/icon/assessments-urine.svg";
 
 // Import: Elements
 import { Container, Wrapper, ItemWrapper } from "./TriageAndStream.elements";
@@ -182,21 +185,21 @@ export default function TriageAndStream() {
               <ReportNavigation navStatus={isPopsNavOpen}>
                 <ItemWrapper onClick={cedRender}>
                   <ReportNavigationItem isActive={showCed ? true : false}>
-                    <TriageIcon />
+                    <CedIcon />
                     <span>CED Obs</span>
                   </ReportNavigationItem>
                 </ItemWrapper>
 
                 <ItemWrapper onClick={neuroRender}>
                   <ReportNavigationItem isActive={showNeuro ? true : false}>
-                    <AlertsIcon />
+                    <NeuroIcon />
                     <span>Neuro Obs</span>
                   </ReportNavigationItem>
                 </ItemWrapper>
 
                 <ItemWrapper onClick={urineRender}>
                   <ReportNavigationItem isActive={showUrine ? true : false}>
-                    <AllergiesIcon />
+                    <UrineIcon />
                     <span>Urine Obs</span>
                   </ReportNavigationItem>
                 </ItemWrapper>
