@@ -197,6 +197,7 @@ export default function PatientOverview() {
               subtext="Demographics and contact information"
               navToggle={toggleDetailsNav}
               navStatus={isDetailsNavOpen}
+              notes
             />
           }
           nav={

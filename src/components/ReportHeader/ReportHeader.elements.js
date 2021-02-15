@@ -1,6 +1,11 @@
 // Import: Dependencies
 import styled from "styled-components/macro";
 
+// Import: Assets
+import patientImage from "../../assets/img/header/patient.jpg";
+import emergencyImage from "../../assets/img/header/emergency.jpg";
+import notesImage from "../../assets/img/header/notepad.jpg";
+
 // Element: Container
 export const Container = styled.div`
   align-items: center;
@@ -16,6 +21,18 @@ export const Container = styled.div`
 export const PrimaryHeader = styled.div`
   align-items: center;
   background: #3a3a40;
+  background-image: ${({ patient, emergency, notes }) =>
+    patient
+      ? `url("${patientImage}")`
+      : emergency
+      ? `url("${emergencyImage}")`
+      : notes
+      ? `url("${notesImage}")`
+      : `url("${patientImage}")`};
+  background-position-x: center;
+  background-position-y: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   height: 65px;
   justify-content: flex-start;

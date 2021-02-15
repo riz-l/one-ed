@@ -5,8 +5,6 @@ import React, { useState, useEffect } from "react";
 import { RiMenuUnfoldFill as OpenNavIcon } from "react-icons/ri";
 import { RiMenuFoldFill as CloseNavIcon } from "react-icons/ri";
 
-import backgroundImg from "../../assets/img/header/patient.jpg";
-
 // Import: Elements
 import {
   Container,
@@ -26,6 +24,9 @@ export default function ReportHeader({
   subtext,
   navToggle,
   navStatus,
+  patient,
+  emergency,
+  notes,
 }) {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -43,12 +44,12 @@ export default function ReportHeader({
   return (
     <Container>
       <PrimaryHeader
-        style={{
-          backgroundImage: `url(${backgroundImg})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
+        patient={patient}
+        emergency={emergency}
+        notes={notes}
+        // style={{
+        //   backgroundImage: `url(${backgroundImg})`,
+        // }}
       >
         {windowWidth > 706 ? (
           <BigIcon>{icon}</BigIcon>

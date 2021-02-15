@@ -45,6 +45,7 @@ export default function EDOverview() {
               subtext="Patient details, status and breach info"
               navToggle={toggleOverviewNav}
               navStatus={isOverviewNavOpen}
+              emergency
             />
           }
           nav={

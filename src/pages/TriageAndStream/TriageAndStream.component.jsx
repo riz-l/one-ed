@@ -122,6 +122,7 @@ export default function TriageAndStream() {
                 subtext="Chief complaint, obs and prioritisation"
                 navToggle={toggleTriageNav}
                 navStatus={isTriageNavOpen}
+                emergency
               />
             }
             nav={
