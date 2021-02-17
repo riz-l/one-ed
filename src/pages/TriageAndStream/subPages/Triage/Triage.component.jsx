@@ -5,7 +5,12 @@ import React, { useEffect } from "react";
 import { Container, Heading, Grid, Column, Item } from "./Triage.elements";
 
 // Import: Components
-import { ReportForm, ReportInput, ReportLabel } from "../../../../components";
+import {
+  ReportForm,
+  ReportInput,
+  ReportLabel,
+  Text,
+} from "../../../../components";
 
 // SubPage: Triage
 export default function Triage() {
@@ -17,7 +22,9 @@ export default function Triage() {
   return (
     <Container>
       <Heading>
-        <h2>Triage</h2>
+        <Text as="h2" heading>
+          Triage
+        </Text>
       </Heading>
 
       <ReportForm>

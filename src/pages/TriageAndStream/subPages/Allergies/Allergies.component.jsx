@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { Container, Heading, Item } from "../../../../globalComponents";
 
 // Import: Components
-import { ReportEntry } from "../../../../components";
+import { ReportEntry, Text } from "../../../../components";
 
 // SubPage: Allergies
 export default function Allergies({ isEntrySlideOpen, setIsEntrySlideOpen }) {
@@ -17,7 +17,9 @@ export default function Allergies({ isEntrySlideOpen, setIsEntrySlideOpen }) {
   return (
     <Container>
       <Heading>
-        <h2>Allergies</h2>
+        <Text as="h2" heading>
+          Allergies
+        </Text>
       </Heading>
 
       <Item>

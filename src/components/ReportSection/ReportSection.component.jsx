@@ -26,8 +26,10 @@ export default function ReportSection({
         <Report background={background}>
           <Header>{header}</Header>
 
-          <ContentWrapper navStatus={navStatus}>
-            <Navigation navStatus={navStatus}>{nav}</Navigation>
+          <ContentWrapper nav={nav} navStatus={navStatus}>
+            <Navigation nav={nav} navStatus={navStatus}>
+              {nav}
+            </Navigation>
             <Content>{content}</Content>
           </ContentWrapper>
         </Report>

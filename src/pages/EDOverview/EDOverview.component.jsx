@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 
 // Import: Assets
 import { ReactComponent as EDIcon } from "../../assets/img/icon/ward-ed.svg";
-import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
+import { ReactComponent as PatientsIcon } from "../../assets/img/icon/patient-overview.svg";
 import { ReactComponent as SeenIcon } from "../../assets/img/icon/assessments-seen.svg";
+import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
 
 // Import: Elements
 import { Container, Wrapper, ItemWrapper } from "./EDOverview.elements";
@@ -45,13 +46,14 @@ export default function EDOverview() {
               subtext="Patient details, status and breach info"
               navToggle={toggleOverviewNav}
               navStatus={isOverviewNavOpen}
+              emergency
             />
           }
           nav={
             <ReportNavigation navStatus={isOverviewNavOpen}>
               <ItemWrapper>
                 <ReportNavigationItem isActive>
-                  <EDIcon />
+                  <PatientsIcon />
                   <span>All Patients</span>
                 </ReportNavigationItem>
               </ItemWrapper>

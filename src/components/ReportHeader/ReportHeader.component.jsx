@@ -24,6 +24,9 @@ export default function ReportHeader({
   subtext,
   navToggle,
   navStatus,
+  patient,
+  emergency,
+  notes,
 }) {
   // State: windowWidth
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -40,7 +43,14 @@ export default function ReportHeader({
 
   return (
     <Container>
-      <PrimaryHeader>
+      <PrimaryHeader
+        patient={patient}
+        emergency={emergency}
+        notes={notes}
+        // style={{
+        //   backgroundImage: `url(${backgroundImg})`,
+        // }}
+      >
         {windowWidth > 706 ? (
           <BigIcon>{icon}</BigIcon>
         ) : (
@@ -55,7 +65,7 @@ export default function ReportHeader({
 
       <SecondaryHeader>
         <NavToggleWrapper>
-          <NavToggle onClick={navToggle}>
+          <NavToggle navToggle={navToggle} onClick={navToggle}>
             {navStatus ? <CloseNavIcon /> : <OpenNavIcon />}
           </NavToggle>
         </NavToggleWrapper>

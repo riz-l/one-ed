@@ -5,7 +5,7 @@ import React from "react";
 import { Container, Heading, Item } from "../../../../globalComponents";
 
 // Import: Components
-import { ReportEntry } from "../../../../components";
+import { ReportEntry, Text } from "../../../../components";
 
 // SubPage: Complications
 export default function Complications({
@@ -15,7 +15,9 @@ export default function Complications({
   return (
     <Container>
       <Heading>
-        <h2>Complications</h2>
+        <Text as="h2" heading>
+          Complications
+        </Text>
       </Heading>
 
       <Item>

@@ -55,8 +55,7 @@ export default function PatientOverview() {
   const [showProcedures, setShowProcedures] = useState(false);
   const [showSymptoms, setShowSymptoms] = useState(false);
 
-  // Upon navigation to Home, moves DOM to top of window
-  // Sets Header text as current page
+  // Effect: Upon navigation to PatientOverview, moves DOM to top of window
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -183,8 +182,8 @@ export default function PatientOverview() {
     setSlideName("Symptoms");
   }
 
-  // Dexie: database = PODetailsDatabase
-  const db = new Dexie("PODetailsDatabase");
+  // Dexie: database = PODetails
+  const detailsDb = new Dexie("PODetails");
 
   return (
     <Container>
@@ -198,6 +197,7 @@ export default function PatientOverview() {
               subtext="Demographics and contact information"
               navToggle={toggleDetailsNav}
               navStatus={isDetailsNavOpen}
+              notes
             />
           }
           nav={
@@ -208,7 +208,7 @@ export default function PatientOverview() {
               </ReportNavigationItem>
             </ReportNavigation>
           }
-          content={<Details db={db} />}
+          content={<Details db={detailsDb} />}
           navStatus={isDetailsNavOpen}
         />
 

@@ -1,12 +1,11 @@
 // Import: Dependencies
 import React, { useState, useEffect } from "react";
-import { Offline, Online } from "react-detect-offline";
 
 // Import: Elements
-import { Container, Heading, Grid, Column, Item } from "./Details.elements";
+import { Column, Container, Grid, Heading, Item } from "./Details.elements";
 
 // Import: Components
-import { ReportForm, ReportInput, ReportLabel } from "../../../../components";
+import { Input, ReportForm } from "../../../../components";
 
 // SubPage: Details
 export default function Details({ db }) {
@@ -32,7 +31,7 @@ export default function Details({ db }) {
   });
 
   // Effect: Checks and updates inner window width
-  // Effect: Set detailsForm values to === values.PODetailsDatabase
+  // Effect: Set detailsForm values to === values.PODetails
   // ... if no values are in the database, set values === ""
   useEffect(() => {
     // Check current windowWidth assigns current windowWidth to state
@@ -111,20 +110,25 @@ export default function Details({ db }) {
     });
 
     // Close the database connection if Details is unmounted
-    // ... or the database connection changes
+    // ... or if the database connection changes
     return () => db.close();
   }, [db]);
 
   // Sets the values in the store and in the state
-  const setFormValues = (id) => (value) => {
+  const setFormValues = (id) => (value, checked) => {
     // Update store
-    db.formData.put({ id, value });
+    db.formData.put({ id, value, checked });
 
     // Update state
-    setDetailsForm((prevFormValues) => ({ ...prevFormValues, [id]: value }));
+    setDetailsForm((prevFormValues) => ({
+      ...prevFormValues,
+      [id]: value,
+      checked,
+    }));
   };
 
   // Partial application to make on change handler easier to apply
+  // ... used for text inputs
   const handleSetFormValues = (id) => (e) => setFormValues(id)(e.target.value);
 
   // When detailsForm is submitted, prevent default action
@@ -146,6 +150,22 @@ export default function Details({ db }) {
     setFormValues("contactFour")("");
   };
 
+  // Delete IndexedDB PODetails database
+  function pleaseDelete() {
+    indexedDB.deleteDatabase("PODetails").onsuccess = function () {
+      console.log("PODetails Delete Successful");
+    };
+  }
+
+  // Delete IndexedDB data on browser/tab close and/or refresh
+  // ... prompts user that they are about to leave the page/lose data
+  // window.addEventListener("beforeunload", () => pleaseDelete());
+  window.addEventListener("beforeunload", (e) => {
+    e.preventDefault();
+    e.returnValue = "Are you sure you want to close?";
+    pleaseDelete();
+  });
+
   return (
     <Container>
       <Heading>
@@ -157,43 +177,37 @@ export default function Details({ db }) {
           <Column>
             <Item>
               <Item>
-                <ReportLabel htmlFor="details-name" text="Name" />
-                <ReportInput
-                  type="text"
-                  name="name"
-                  width="250px"
-                  value={detailsForm.name}
-                  id="details-name"
+                <Input
+                  htmlFor="name"
+                  labelText="Name"
                   onChange={handleSetFormValues("name")}
+                  type="text"
+                  value={detailsForm.name}
+                  width="250px"
                 />
               </Item>
 
               <Item>
-                <ReportLabel
-                  htmlFor="details-dateOfBirth"
-                  text="Date of Birth"
-                />
-                <ReportInput
-                  type="text"
-                  name="dateOfBirth"
-                  width="250px"
-                  value={detailsForm.dateOfBirth}
-                  id="details-dateOfBirth"
+                <Input
+                  htmlFor="dateOfBirth"
+                  labelText="Date of Birth"
                   onChange={handleSetFormValues("dateOfBirth")}
+                  type="text"
+                  value={detailsForm.dateOfBirth}
+                  width="250px"
                 />
               </Item>
 
               <Grid>
                 <Column>
                   <Item>
-                    <ReportLabel htmlFor="details-age" text="Age (Years)" />
-                    <ReportInput
-                      type="text"
-                      name="age"
-                      width="80px"
-                      value={detailsForm.age}
-                      id="details-age"
+                    <Input
+                      htmlFor="age"
+                      labelText="Age (Years)"
                       onChange={handleSetFormValues("age")}
+                      type="text"
+                      value={detailsForm.age}
+                      width="80px"
                     />
                   </Item>
                 </Column>
@@ -202,28 +216,26 @@ export default function Details({ db }) {
                   style={windowWidth > 1378 ? { marginLeft: "1rem" } : null}
                 >
                   <Item>
-                    <ReportLabel htmlFor="details-gender" text="Gender" />
-                    <ReportInput
-                      type="text"
-                      name="gender"
-                      width="150px"
-                      value={detailsForm.gender}
-                      id="details-gender"
+                    <Input
+                      htmlFor="gender"
+                      labelText="Gender"
                       onChange={handleSetFormValues("gender")}
+                      type="text"
+                      value={detailsForm.gender}
+                      width="150px"
                     />
                   </Item>
                 </Column>
               </Grid>
 
               <Item>
-                <ReportLabel htmlFor="details-nhsNo" text="NHS No" />
-                <ReportInput
-                  type="text"
-                  name="nhsNo"
-                  width="250px"
-                  value={detailsForm.nhsNo}
-                  id="details-nhsNo"
+                <Input
+                  htmlFor="nhsNo"
+                  labelText="NHS No"
                   onChange={handleSetFormValues("nhsNo")}
+                  type="text"
+                  value={detailsForm.nhsNo}
+                  width="250px"
                 />
               </Item>
             </Item>
@@ -231,47 +243,46 @@ export default function Details({ db }) {
 
           <Column>
             <Item>
-              <ReportLabel htmlFor="details-addressLineOne" text="Address" />
-              <ReportInput
-                type="text"
-                name="addressLineOne"
-                width="250px"
-                value={detailsForm.addressLineOne}
-                id="details-addressLineOne"
+              <Input
+                htmlFor="addressLineOne"
+                labelText="Address"
                 onChange={handleSetFormValues("addressLineOne")}
-              />
-              <ReportInput
                 type="text"
-                name="addressLineTwo"
+                value={detailsForm.addressLineOne}
                 width="250px"
-                value={detailsForm.addressLineTwo}
-                id="details-addressLineTwo"
+              />
+
+              <Input
+                htmlFor="addressLineTwo"
                 onChange={handleSetFormValues("addressLineTwo")}
-              />
-              <ReportInput
                 type="text"
-                name="addressLineThree"
+                value={detailsForm.addressLineTwo}
                 width="250px"
-                value={detailsForm.addressLineThree}
-                id="details-addressLineThree"
+              />
+
+              <Input
+                htmlFor="addressLineThree"
                 onChange={handleSetFormValues("addressLineThree")}
-              />
-              <ReportInput
                 type="text"
-                name="addressLineFour"
+                value={detailsForm.addressLineThree}
                 width="250px"
-                value={detailsForm.addressLineFour}
-                id="details-addressLineFour"
+              />
+
+              <Input
+                htmlFor="addressLineFour"
                 onChange={handleSetFormValues("addressLineFour")}
-              />
-              <ReportLabel htmlFor="details-addressPostcode" text="Post Code" />
-              <ReportInput
                 type="text"
-                name="addressPostcode"
+                value={detailsForm.addressLineFour}
                 width="250px"
-                value={detailsForm.addressPostcode}
-                id="details-addressPostcode"
+              />
+
+              <Input
+                htmlFor="addressPostcode"
                 onChange={handleSetFormValues("addressPostcode")}
+                labelText="Postcode"
+                type="text"
+                value={detailsForm.addressPostcode}
+                width="250px"
               />
             </Item>
           </Column>
@@ -281,26 +292,24 @@ export default function Details({ db }) {
           <Column>
             <Item>
               <Item>
-                <ReportLabel htmlFor="details-contactOne" text="Contact 1" />
-                <ReportInput
-                  type="text"
-                  name="contactOne"
-                  width="250px"
-                  value={detailsForm.contactOne}
-                  id="details-contactOne"
+                <Input
+                  htmlFor="contactOne"
                   onChange={handleSetFormValues("contactOne")}
+                  labelText="Contact 1"
+                  type="text"
+                  value={detailsForm.contactOne}
+                  width="250px"
                 />
               </Item>
 
               <Item>
-                <ReportLabel htmlFor="details-contactTwo" text="Contact 2" />
-                <ReportInput
-                  type="text"
-                  name="contactTwo"
-                  width="250px"
-                  value={detailsForm.contactTwo}
-                  id="details-contactTwo"
+                <Input
+                  htmlFor="contactTwo"
                   onChange={handleSetFormValues("contactTwo")}
+                  labelText="Contact 2"
+                  type="text"
+                  value={detailsForm.contactTwo}
+                  width="250px"
                 />
               </Item>
             </Item>
@@ -309,48 +318,29 @@ export default function Details({ db }) {
           <Column>
             <Item>
               <Item>
-                <ReportLabel htmlFor="details-contactThree" text="Contact 3" />
-                <ReportInput
-                  type="text"
-                  name="contactThree"
-                  width="250px"
-                  value={detailsForm.contactThree}
-                  id="details-contactThree"
+                <Input
+                  htmlFor="contactThree"
                   onChange={handleSetFormValues("contactThree")}
+                  labelText="Contact 3"
+                  type="text"
+                  value={detailsForm.contactThree}
+                  width="250px"
                 />
               </Item>
 
               <Item>
-                <ReportLabel htmlFor="details-contactFour" text="Contact 4" />
-                <ReportInput
-                  type="text"
-                  name="contactFour"
-                  width="250px"
-                  value={detailsForm.contactFour}
-                  id="details-contactFour"
+                <Input
+                  htmlFor="contactFour"
                   onChange={handleSetFormValues("contactFour")}
+                  labelText="Contact 4"
+                  type="text"
+                  value={detailsForm.contactFour}
+                  width="250px"
                 />
               </Item>
             </Item>
           </Column>
         </Grid>
-
-        <Item>
-          <Online>
-            <Item>
-              <ReportInput type="submit" value="Submit" />
-            </Item>
-          </Online>
-
-          <Offline>
-            <Item>
-              <p>
-                You are currently offline, please re-establish your internet
-                connection
-              </p>
-            </Item>
-          </Offline>
-        </Item>
       </ReportForm>
     </Container>
   );

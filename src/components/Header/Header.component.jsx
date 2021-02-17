@@ -9,7 +9,8 @@ import LogoWhite from "../../assets/img/logo/logo-white.png";
 // Import: Icons
 import { FaUserCircle as UserIcon } from "react-icons/fa";
 import { HiUsers as AddIcon } from "react-icons/hi";
-import { MdChat as MessageIcon } from "react-icons/md";
+// import { MdChat as MessageIcon } from "react-icons/md";
+import { ReactComponent as MessageIcon } from "../../assets/img/icon/argument.svg";
 import { GoFile as DocumentIcon } from "react-icons/go";
 import { RiLogoutBoxRLine as LogoutIcon } from "react-icons/ri";
 
