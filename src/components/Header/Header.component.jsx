@@ -28,12 +28,12 @@ import {
 } from "./Header.elements";
 
 // Component: Header
-export default function Header({ setIsPatientListOpen }) {
+export default function Header({ setIsPatientListOpen, handleLogout }) {
   // History: Gets URL path history
   const history = useHistory();
 
   // State: urlPath
-  const [urlPath, setUrlPath] = useState(history.location.pathname);
+  const [urlPath, setUrlPath] = useState("");
 
   // Effect: Changes value of urlPath depending on current URL location
   useEffect(() => {
@@ -46,9 +46,9 @@ export default function Header({ setIsPatientListOpen }) {
     <Container>
       <PrimaryContainer>
         <Wrapper>
-          <Link to="/">
+          <Link to="/dashboard">
             <Logo>
-              {urlPath !== "" && urlPath !== "/" ? (
+              {urlPath !== "" && urlPath !== "/dashboard" ? (
                 <>
                   <BackIcon />
                   <span style={{ marginLeft: "8px", fontWeight: "600" }}>
@@ -92,7 +92,7 @@ export default function Header({ setIsPatientListOpen }) {
               <DocumentIcon />
             </OptionsItem>
 
-            <OptionsItem>
+            <OptionsItem onClick={handleLogout}>
               <LogoutIcon />
             </OptionsItem>
           </Options>

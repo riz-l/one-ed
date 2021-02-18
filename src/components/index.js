@@ -16,6 +16,9 @@ export { default as PatientList } from "./PatientList/PatientList.component";
 // Export: PatientListItem
 export { default as PatientListItem } from "./PatientListItem/PatientListItem.component";
 
+// Export: ProtectedRoute
+export { default as ProtectedRoute } from "./ProtectedRoute/ProtectedRoute.component";
+
 // Export: ReportEntry
 export { default as ReportEntry } from "./ReportEntry/ReportEntry.component";
 

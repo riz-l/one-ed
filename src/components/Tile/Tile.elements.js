@@ -4,7 +4,8 @@ import styled from "styled-components/macro";
 // Element: Container
 export const Container = styled.div`
   align-items: center;
-  background: #11bac1;
+  /* background: #11bac1; */
+  background: #008ba3;
   cursor: pointer;
   display: flex;
   height: 140px;
@@ -31,7 +32,8 @@ export const Container = styled.div`
   }
 
   &:hover {
-    background: #0fa4a9;
+    /* background: #0fa4a9; */
+    background: #00687a;
     box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
     transform: translateY(-4px);
     transition: all 100ms linear;

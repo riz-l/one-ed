@@ -13,6 +13,9 @@ export { default as Dashboard } from "./Dashboard/Dashboard.component";
 // Export: EDOverview
 export { default as EDOverview } from "./EDOverview/EDOverview.component";
 
+// Export: Login
+export { default as Login } from "./Login/Login.component";
+
 // Export: Observations
 export { default as Observations } from "./Observations/Observations.component";
 
@@ -27,6 +30,9 @@ export { default as Seen } from "./Seen/Seen.component";
 
 // Export: TriageAndStream
 export { default as TriageAndStream } from "./TriageAndStream/TriageAndStream.component";
+
+// Export: Unauthorized
+export { default as Unauthorized } from "./Unauthorized/Unauthorized.component";
 
 // Export: ViewCAS
 export { default as ViewCAS } from "./ViewCAS/ViewCAS.component";

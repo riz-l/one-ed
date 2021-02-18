@@ -33,7 +33,7 @@ export default function Dashboard() {
     <Container>
       <Wrapper>
         <TileSection title="Ward">
-          <Link to="/ward/ed-overview">
+          <Link to="/dashboard/ward/ed-overview">
             <Tile
               text="ED Overview"
               icon={WardEDIcon}
@@ -43,7 +43,7 @@ export default function Dashboard() {
         </TileSection>
 
         <TileSection title="Patient">
-          <Link to="/patient/patient-overview">
+          <Link to="/dashboard/patient/patient-overview">
             <Tile
               text="Patient Overview"
               icon={PatientOverviewIcon}
@@ -51,7 +51,7 @@ export default function Dashboard() {
             />
           </Link>
 
-          <Link to="/patient/view-cas-card">
+          <Link to="/dashboard/patient/view-cas-card">
             <Tile
               text="View CAS Card"
               icon={PatientCASIcon}
@@ -59,7 +59,7 @@ export default function Dashboard() {
             />
           </Link>
 
-          <Link to="/patient/save-and-close-record">
+          <Link to="/dashboard/patient/save-and-close-record">
             <Tile
               text="Save and Close Record"
               icon={PatientSaveIcon}
@@ -67,7 +67,7 @@ export default function Dashboard() {
             />
           </Link>
 
-          <Link to="/patient/cancel-and-close-record">
+          <Link to="/dashboard/patient/cancel-and-close-record">
             <Tile
               text="Cancel and Close Record"
               icon={PatientCancelIcon}
@@ -77,7 +77,7 @@ export default function Dashboard() {
         </TileSection>
 
         <TileSection title="Assessments">
-          <Link to="/assessments/triage-and-stream">
+          <Link to="/dashboard/assessments/triage-and-stream">
             <Tile
               text="Triage and Stream"
               icon={AssessmentsTriageIcon}
@@ -85,7 +85,7 @@ export default function Dashboard() {
             />
           </Link>
 
-          <Link to="/assessments/observations">
+          <Link to="/dashboard/assessments/observations">
             <Tile
               text="Observations"
               icon={AssessmentsObservationsIcon}
@@ -93,11 +93,11 @@ export default function Dashboard() {
             />
           </Link>
 
-          <Link to="/assessments/seen">
+          <Link to="/dashboard/assessments/seen">
             <Tile text="Seen" icon={AssessmentsSeenIcon} alt="Stethoscope" />
           </Link>
 
-          <Link to="/assessments/clinical-notes">
+          <Link to="/dashboard/assessments/clinical-notes">
             <Tile
               text="Clinical Notes"
               icon={AssessmentsClinicalIcon}
@@ -105,7 +105,7 @@ export default function Dashboard() {
             />
           </Link>
 
-          <Link to="/assessments/view-seen">
+          <Link to="/dashboard/assessments/view-seen">
             <Tile
               text="View Seen"
               icon={AssessmentsViewIcon}
@@ -115,7 +115,7 @@ export default function Dashboard() {
         </TileSection>
 
         <TileSection title="Training">
-          <Link to="/training/clinical-guidelines">
+          <Link to="/dashboard/training/clinical-guidelines">
             <Tile
               text="Clinical Guidelines"
               icon={TrainingClinicalIcon}

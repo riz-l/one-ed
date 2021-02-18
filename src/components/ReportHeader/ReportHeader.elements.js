@@ -63,6 +63,10 @@ export const HeaderWrapper = styled.div`
   margin-left: 6.4rem;
   z-index: 2;
 
+  & h2 {
+    font-size: 1.3rem;
+  }
+
   @media screen and (max-width: 706px) {
     margin-left: 1rem;
 
@@ -120,7 +124,8 @@ export const NavToggle = styled.div`
 // Element: BigIcon
 export const BigIcon = styled.div`
   align-items: center;
-  background: #11bac1;
+  /* background: #11bac1; */
+  background: #008ba3;
   bottom: 1rem;
   display: flex;
   height: 70px;

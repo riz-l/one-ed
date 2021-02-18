@@ -1,9 +1,11 @@
 // Import: Dependencies
 import React, { useState } from "react";
-import styled from "styled-components/macro";
-import { Switch, Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
-// Import: Pages, Components
+// Import: Components, Pages
+import { ProtectedRoute } from "./components";
+import { Login, Unauthorized } from "./pages";
+
 import {
   CancelAndClose,
   ClinicalGuidelines,
@@ -22,88 +24,131 @@ import { Header, PatientList } from "./components";
 
 // Component: App
 export default function App() {
-  //State: isPatientListOpen
+  // State: isLoggedIn
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isPatientListOpen, setIsPatientListOpen] = useState(false);
+
+  // Sets isLoggedIn === true
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setIsLoggedIn(true);
+  };
+
+  // Sets isLoggedIn === false
+  const handleLogout = (e) => {
+    e.preventDefault();
+    setIsLoggedIn(false);
+  };
 
   return (
     <>
-      <Header setIsPatientListOpen={setIsPatientListOpen} />
-      <PatientList
-        isPatientListOpen={isPatientListOpen}
-        setIsPatientListOpen={setIsPatientListOpen}
-      />
+      {isLoggedIn ? (
+        <>
+          <Redirect to="/dashboard" />
+        </>
+      ) : null}
 
-      <Container>
-        <Switch>
-          {/* Dashboard */}
-          <Route path="/" exact>
-            <Dashboard />
-          </Route>
+      {!isLoggedIn && <Redirect to="/" />}
 
-          {/* Ward - ED Overview */}
-          <Route path="/ward/ed-overview">
-            <EDOverview />
-          </Route>
+      {isLoggedIn && (
+        <>
+          <Header
+            setIsPatientListOpen={setIsPatientListOpen}
+            handleLogout={handleLogout}
+          />
+          <PatientList
+            isPatientListOpen={isPatientListOpen}
+            setIsPatientListOpen={setIsPatientListOpen}
+          />
+        </>
+      )}
 
-          {/* Patient - Patient Overview */}
-          <Route path="/patient/patient-overview">
-            <PatientOverview />
-          </Route>
+      <Switch>
+        {/* Login */}
+        <Route
+          exact
+          path="/"
+          handleLogin={handleLogin}
+          render={(props) => (
+            <Login
+              {...props}
+              isLoggedIn={isLoggedIn.toString()}
+              handleLogin={handleLogin}
+            />
+          )}
+        />
 
-          {/* Patient - View CAS Card */}
-          <Route path="/patient/view-cas-card">
-            <ViewCAS />
-          </Route>
+        {/* Home */}
+        <ProtectedRoute
+          exact
+          path="/dashboard"
+          isLoggedIn={isLoggedIn}
+          component={Dashboard}
+        />
 
-          {/* Patient - Save and Close Record */}
-          <Route path="/patient/save-and-close-record">
-            <SaveAndClose />
-          </Route>
+        {/* 403: Unauthorized */}
+        <Route exact path="/unauthorized" component={Unauthorized} />
 
-          {/* Patient - Cancel and Close Record */}
-          <Route path="/patient/cancel-and-close-record">
-            <CancelAndClose />
-          </Route>
+        {/* Dashboard */}
+        <Route exact path="/dashboard">
+          <Dashboard />
+        </Route>
 
-          {/* Assessments - Triage and Stream */}
-          <Route path="/assessments/triage-and-stream">
-            <TriageAndStream />
-          </Route>
+        {/* Ward - ED Overview */}
+        <Route exact path="/dashboard/ward/ed-overview">
+          <EDOverview />
+        </Route>
 
-          {/* Assessments - Observations */}
-          <Route path="/assessments/observations">
-            <Observations />
-          </Route>
+        {/* Patient - Patient Overview */}
+        <Route exact path="/dashboard/patient/patient-overview">
+          <PatientOverview />
+        </Route>
 
-          {/* Assessments - Seen */}
-          <Route path="/assessments/seen">
-            <Seen />
-          </Route>
+        {/* Patient - View CAS Card */}
+        <Route exact path="/dashboard/patient/view-cas-card">
+          <ViewCAS />
+        </Route>
 
-          {/* Assessments - Clinical Notes */}
-          <Route path="/assessments/clinical-notes">
-            <ClinicalNotes />
-          </Route>
+        {/* Patient - Save and Close Record */}
+        <Route exact path="/dashboard/patient/save-and-close-record">
+          <SaveAndClose />
+        </Route>
 
-          {/* Assessments - View Seen */}
-          <Route path="/assessments/view-seen">
-            <ViewSeen />
-          </Route>
+        {/* Patient - Cancel and Close Record */}
+        <Route exact path="/dashboard/patient/cancel-and-close-record">
+          <CancelAndClose />
+        </Route>
 
-          {/* Training - Clinical Guidelines */}
-          <Route path="/training/clinical-guidelines">
-            <ClinicalGuidelines />
-          </Route>
-        </Switch>
-      </Container>
+        {/* Assessments - Triage and Stream */}
+        <Route exact path="/dashboard/assessments/triage-and-stream">
+          <TriageAndStream />
+        </Route>
+
+        {/* Assessments - Observations */}
+        <Route exact path="/dashboard/assessments/observations">
+          <Observations />
+        </Route>
+
+        {/* Assessments - Seen */}
+        <Route exact path="/dashboard/assessments/seen">
+          <Seen />
+        </Route>
+
+        {/* Assessments - Clinical Notes */}
+        <Route exact path="/dashboard/assessments/clinical-notes">
+          <ClinicalNotes />
+        </Route>
+
+        {/* Assessments - View Seen */}
+        <Route exact path="/dashboard/assessments/view-seen">
+          <ViewSeen />
+        </Route>
+
+        {/* Training - Clinical Guidelines */}
+        <Route exact path="/dashboard/training/clinical-guidelines">
+          <ClinicalGuidelines />
+        </Route>
+      </Switch>
     </>
   );
 }
-
-// Element: Container
-const Container = styled.main`
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-`;

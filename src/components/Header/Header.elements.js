@@ -15,7 +15,8 @@ export const Container = styled.header`
 
 // Element: PrimaryContainer
 export const PrimaryContainer = styled.div`
-  background: #11bac1;
+  /* background: #11bac1; */
+  background: #008ba3;
   height: 60px;
   min-height: 60px;
   width: 100%;
@@ -105,7 +106,8 @@ export const User = styled.div`
   transition: all 100ms linear;
 
   &:hover {
-    background: #0fa4a9;
+    /* background: #0fa4a9; */
+    background: #00687a;
     transition: all 100ms linear;
 
     & svg {
