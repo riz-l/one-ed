@@ -1,31 +1,33 @@
 // Import: Dependencies
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { lorenzoToken } from "../../utils/axios";
+// import axios from "axios";
+// import { lorenzoToken } from "../../utils/axios";
 
 // Import: Elements
 import { Container } from "./Login.elements";
 
 // Page: Login
 export default function Login(props) {
-  const [apiData, setApiData] = useState([]);
+  // State: apiData
+  // const [apiData, setApiData] = useState([]);
 
-  useEffect(() => {
-    async function getApiData() {
-      axios
-        .all([lorenzoToken.get(``, {})])
-        .then(
-          axios.spread((lorenzoTokenRes) => [setApiData(lorenzoTokenRes.data)])
-        )
-        .catch((error) => {
-          console.log(error);
-          throw new Error(error);
-        });
-    }
+  // useEffect(() => {
+  //   async function getApiData() {
+  //     axios
+  //       .all([lorenzoToken.get(``, {})])
+  //       .then(
+  //         axios.spread((lorenzoTokenRes) => [setApiData(lorenzoTokenRes.data)])
+  //       )
+  //       .catch((error) => {
+  //         console.log(error);
+  //         throw new Error(error);
+  //       });
+  //   }
 
-    getApiData();
-  }, []);
+  //   getApiData();
+  // console.log(apiData);
+  // }, []);
 
   return (
     <>
@@ -40,8 +42,6 @@ export default function Login(props) {
         <br />
         <br />
         <br />
-
-        <div>{apiData.toString()}</div>
       </Container>
     </>
   );
