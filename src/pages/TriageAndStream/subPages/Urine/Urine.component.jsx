@@ -5,7 +5,13 @@ import React, { useState, useEffect } from "react";
 import { Column, Container, Grid, Heading, Item } from "./Urine.elements";
 
 // Import: Components
-import { Dropdown, Checkbox, ReportForm, Text } from "../../../../components";
+import {
+  Dropdown,
+  Checkbox,
+  RadioButton,
+  ReportForm,
+  Text,
+} from "../../../../components";
 
 // SubPage: Urine
 export default function Urine({ db }) {
@@ -18,6 +24,7 @@ export default function Urine({ db }) {
     leu: "",
     nit: "",
     ket: "",
+    testRadio: "",
   });
 
   // Dropdown Options
@@ -51,6 +58,7 @@ export default function Urine({ db }) {
       const dbLeu = await db.formData.get("leu");
       const dbNit = await db.formData.get("nit");
       const dbKet = await db.formData.get("ket");
+      const dbTestRadio = await db.formData.get("testRadio");
 
       // If the urineForm values have not been added, populate with false || ""
       if (!dbNad) await db.formData.add({ id: "nad", value: false });
@@ -60,6 +68,7 @@ export default function Urine({ db }) {
       if (!dbLeu) await db.formData.add({ id: "leu", value: "" });
       if (!dbNit) await db.formData.add({ id: "nit", value: "" });
       if (!dbKet) await db.formData.add({ id: "ket", value: "" });
+      if (!dbTestRadio) await db.formData.add({ id: "testRadio", value: "" });
 
       // Set the initial values
       setUrineForm({
@@ -70,6 +79,7 @@ export default function Urine({ db }) {
         leu: dbLeu ? dbLeu.value : "",
         nit: dbNit ? dbNit.value : "",
         ket: dbKet ? dbKet.value : "",
+        testRadio: dbTestRadio ? dbTestRadio.value : "",
       });
     }).catch((error) => {
       console.log(error.stack || error);
@@ -210,6 +220,26 @@ export default function Urine({ db }) {
                 width="250px"
               />
             </Item>
+          </Column>
+        </Grid>
+
+        <Grid>
+          <Column>
+            <RadioButton
+              checked={urineForm.testRadio === "Massive"}
+              text="First RadioButton"
+              value="Massive"
+              name="test"
+              onChange={handleInputValues("testRadio")}
+            />
+
+            <RadioButton
+              checked={urineForm.testRadio === "Small"}
+              text="Second RadioButton"
+              value="Small"
+              name="test"
+              onChange={handleInputValues("testRadio")}
+            />
           </Column>
         </Grid>
       </ReportForm>

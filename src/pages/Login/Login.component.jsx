@@ -38,10 +38,6 @@ export default function Login(props) {
         </p>
         <p>Logged in status: {props.isLoggedIn}</p>
         <button onClick={props.handleLogin}>Log In</button>
-
-        <br />
-        <br />
-        <br />
       </Container>
     </>
   );

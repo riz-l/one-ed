@@ -257,8 +257,20 @@ $ npm install
   <Dropdown
     htmlFor="testDropdown"
     onChange={handleSetFormValues("testDropdown")}
-    labelText={detailsForm.testDropdown}
-    value={detailsForm.testDropdown}
+    labelText={exampleRenderForm.testDropdown}
+    value={exampleRenderForm.testDropdown}
     options={dropdownOptions}
+  />
+  ```
+
+- For a `<RadioButton />` component, our implementation will be as follows:
+
+  ```
+  <RadioButton
+    checked={exampleRenderForm.exampleRadioButton === "Test"}
+    text="Example RadioButton"
+    value="Test"
+    name="test"
+    onChange={handleReportInputValues("exampleRadioButton")}
   />
   ```
