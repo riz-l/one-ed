@@ -226,17 +226,17 @@ export default function Urine({ db }) {
         <Grid>
           <Column>
             <RadioButton
-              checked={urineForm.testRadio === "Massive"}
+              checked={urineForm.testRadio === "First Radio"}
               text="First RadioButton"
-              value="Massive"
+              value="First Radio"
               name="test"
               onChange={handleInputValues("testRadio")}
             />
 
             <RadioButton
-              checked={urineForm.testRadio === "Small"}
+              checked={urineForm.testRadio === "Second Radio"}
               text="Second RadioButton"
-              value="Small"
+              value="Second Radio"
               name="test"
               onChange={handleInputValues("testRadio")}
             />

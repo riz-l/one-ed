@@ -123,6 +123,16 @@ export default function Dashboard() {
             />
           </Link>
         </TileSection>
+
+        <TileSection title="Test">
+          <Link to="/dashboard/test/component-test">
+            <Tile
+              text="Component Test"
+              icon={TrainingClinicalIcon}
+              alt="Instruction booklet"
+            />
+          </Link>
+        </TileSection>
       </Wrapper>
     </Container>
   );

@@ -1,24 +1,32 @@
 // Import: Dependencies
 import React from "react";
 
+// Import: Assets
+import { ReactComponent as TickIcon } from "../../assets/img/icon/tick.svg";
+
 // Import: Elements
-import { Container } from "./RadioButton.elements";
+import { Container, Input, Label, VisualBox } from "./RadioButton.elements";
 
 // Component: RadioButton
 export default function RadioButton({ checked, name, onChange, text, value }) {
   return (
     <>
       <Container>
-        <label htmlFor={value}>
-          <input
-            type="radio"
-            value={value}
-            name={name}
-            checked={checked}
-            onChange={onChange}
-          />
+        <Label htmlFor={value}>
           {text}
-        </label>
+
+          <VisualBox checked={checked} onChange={onChange}>
+            <TickIcon />
+
+            <Input
+              type="radio"
+              value={value}
+              name={name}
+              checked={checked}
+              onChange={onChange}
+            />
+          </VisualBox>
+        </Label>
       </Container>
     </>
   );

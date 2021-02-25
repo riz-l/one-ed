@@ -7,6 +7,9 @@ export { default as ClinicalGuidelines } from "./ClinicalGuidelines/ClinicalGuid
 // Export: ClinicalNotes
 export { default as ClinicalNotes } from "./ClinicalNotes/ClinicalNotes.component";
 
+// Export: ComponentTest
+export { default as ComponentTest } from "./ComponentTest/ComponentTest.component";
+
 // Export: Dashboard
 export { default as Dashboard } from "./Dashboard/Dashboard.component";
 

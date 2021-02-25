@@ -4,19 +4,20 @@ import { Redirect, Route, Switch } from "react-router-dom";
 
 // Import: Components, Pages
 import { ProtectedRoute } from "./components";
-import { Login, Unauthorized } from "./pages";
-
 import {
   CancelAndClose,
   ClinicalGuidelines,
   ClinicalNotes,
+  ComponentTest,
   Dashboard,
   EDOverview,
+  Login,
   Observations,
   PatientOverview,
   SaveAndClose,
   Seen,
   TriageAndStream,
+  Unauthorized,
   ViewCAS,
   ViewSeen,
 } from "./pages";
@@ -147,6 +148,11 @@ export default function App() {
         {/* Training - Clinical Guidelines */}
         <Route exact path="/dashboard/training/clinical-guidelines">
           <ClinicalGuidelines />
+        </Route>
+
+        {/* Test - Component Test */}
+        <Route exact path="/dashboard/test/component-test">
+          <ComponentTest />
         </Route>
       </Switch>
     </>
