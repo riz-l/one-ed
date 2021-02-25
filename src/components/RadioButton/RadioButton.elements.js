@@ -12,6 +12,9 @@ export const Container = styled.div`
 // Element: Label
 export const Label = styled.label``;
 
+// Element: Text
+export const Text = styled.span``;
+
 // Element: Input
 export const Input = styled.input`
   cursor: pointer;
@@ -31,6 +34,7 @@ export const VisualBox = styled.div`
   display: flex;
   height: 50px;
   justify-content: center;
+  margin-top: 0.8rem;
   position: relative;
   transition: all 100ms linear;
   width: 50px;

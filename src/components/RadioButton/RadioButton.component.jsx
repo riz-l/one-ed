@@ -5,7 +5,13 @@ import React from "react";
 import { ReactComponent as TickIcon } from "../../assets/img/icon/tick.svg";
 
 // Import: Elements
-import { Container, Input, Label, VisualBox } from "./RadioButton.elements";
+import {
+  Container,
+  Input,
+  Label,
+  Text,
+  VisualBox,
+} from "./RadioButton.elements";
 
 // Component: RadioButton
 export default function RadioButton({ checked, name, onChange, text, value }) {
@@ -13,7 +19,7 @@ export default function RadioButton({ checked, name, onChange, text, value }) {
     <>
       <Container>
         <Label htmlFor={value}>
-          {text}
+          <Text>{text}</Text>
 
           <VisualBox checked={checked} onChange={onChange}>
             <TickIcon />

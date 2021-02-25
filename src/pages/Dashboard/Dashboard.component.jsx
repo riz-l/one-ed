@@ -14,6 +14,7 @@ import AssessmentsSeenIcon from "../../assets/img/icon/assessments-seen.svg";
 import AssessmentsClinicalIcon from "../../assets/img/icon/assessments-clinical.svg";
 import AssessmentsViewIcon from "../../assets/img/icon/assessments-view.svg";
 import TrainingClinicalIcon from "../../assets/img/icon/training-clinical.svg";
+import TestComponentIcon from "../../assets/img/icon/test-component.svg";
 
 // Import: Elements
 import { Container, Wrapper } from "./Dashboard.elements";
@@ -124,15 +125,15 @@ export default function Dashboard() {
           </Link>
         </TileSection>
 
-        <TileSection title="Test">
+        {/* <TileSection title="Test">
           <Link to="/dashboard/test/component-test">
             <Tile
               text="Component Test"
-              icon={TrainingClinicalIcon}
+              icon={TestComponentIcon}
               alt="Instruction booklet"
             />
           </Link>
-        </TileSection>
+        </TileSection> */}
       </Wrapper>
     </Container>
   );

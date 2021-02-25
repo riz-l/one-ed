@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 // Import: Elements
-import { Container } from "./ComponentTest.elements";
+import { Container, Wrapper } from "./ComponentTest.elements";
 
 // Import: Components
 import { RadioButton } from "../../components";
@@ -37,31 +37,34 @@ export default function ComponentTest() {
   return (
     <>
       <Container>
-        <h1>Component Test</h1>
-        <RadioButton
-          checked={testForm.testRadio === "First Radio"}
-          text="First RadioButton"
-          value="First Radio"
-          name="test"
-          onChange={handleInputValues("testRadio")}
-        />
+        <Wrapper>
+          <h1 style={{ marginBottom: "1rem" }}>Component Test</h1>
+          <h2>Component: RadioButton</h2>
+          <RadioButton
+            checked={testForm.testRadio === "First Radio"}
+            text="First RadioButton"
+            value="First Radio"
+            name="test"
+            onChange={handleInputValues("testRadio")}
+          />
 
-        <RadioButton
-          checked={testForm.testRadio === "Second Radio"}
-          text="Second RadioButton"
-          value="Second Radio"
-          name="test"
-          onChange={handleInputValues("testRadio")}
-        />
+          <RadioButton
+            checked={testForm.testRadio === "Second Radio"}
+            text="Second RadioButton"
+            value="Second Radio"
+            name="test"
+            onChange={handleInputValues("testRadio")}
+          />
 
-        <p>
-          Value of testForm.testRadio:{" "}
-          <strong>
-            {testForm.testRadio === ""
-              ? "Please select a RadioButton"
-              : testForm.testRadio.toString()}
-          </strong>
-        </p>
+          <p>
+            Value of testForm.testRadio:{" "}
+            <strong>
+              {testForm.testRadio === ""
+                ? "Please select a RadioButton"
+                : testForm.testRadio.toString()}
+            </strong>
+          </p>
+        </Wrapper>
       </Container>
     </>
   );
