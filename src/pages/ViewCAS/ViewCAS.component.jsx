@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { ReactComponent as TriageIcon } from "../../assets/img/icon/assessments-triage.svg";
 
 // Import: Elements
-import { Container, Wrapper, ItemWrapper } from "./ViewCAS.elements";
+import { Container, Wrapper } from "./ViewCAS.elements";
 
 // Import: Components
 import { ReportHeader, ReportSection } from "../../components";
